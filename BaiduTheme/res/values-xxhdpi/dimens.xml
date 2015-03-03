@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="folder_circle_fix_value">7.6999817dip</dimen>
+    <dimen name="theme_list_online_width">109.0dip</dimen>
+    <dimen name="theme_list_online_height">230.0dip</dimen>
+    <dimen name="theme_list_online_image_height">183.0dip</dimen>
+    <dimen name="theme_list_online_text1_margin_left">8.0dip</dimen>
+    <dimen name="theme_list_online_text1_margin_top">6.0dip</dimen>
+    <dimen name="theme_list_online_horizontal_dist">8.0dip</dimen>
+    <dimen name="theme_list_online_banner_height">176.0dip</dimen>
+    <dimen name="theme_list_online_banner_margin_botomm">15.0dip</dimen>
+    <dimen name="theme_detail_margin">22.0dip</dimen>
+</resources>
