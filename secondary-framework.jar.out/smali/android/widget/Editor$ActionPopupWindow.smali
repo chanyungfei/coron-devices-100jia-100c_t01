@@ -24,7 +24,7 @@
 # instance fields
 .field private mBaidkeTextView:Landroid/widget/TextView;
 
-.field private mPasteTextView:Landroid/widget/TextView;
+.field mPasteTextView:Landroid/widget/TextView;
 
 .field mReplaceTextView:Landroid/widget/TextView;
 

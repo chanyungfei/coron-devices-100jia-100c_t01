@@ -272,7 +272,7 @@
     goto :goto_0
 .end method
 
-.method private updatePosition(II)V
+.method protected updatePosition(II)V
     .locals 8
     .parameter "parentPositionX"
     .parameter "parentPositionY"

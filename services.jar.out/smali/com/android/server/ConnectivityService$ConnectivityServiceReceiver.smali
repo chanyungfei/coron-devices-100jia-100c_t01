@@ -167,7 +167,7 @@
 
     cmp-long v9, v11, v13
 
-    if-nez v9, :cond_4
+    if-nez v9, :cond_3
 
     .line 4321
     :cond_1
@@ -240,9 +240,30 @@
 
     const/4 v9, -0x1
 
-    if-eq v8, v9, :cond_2
+    if-eq v8, v9, :cond_4
 
-    :cond_2
+    iget-object v9, p0, Lcom/android/server/ConnectivityService$ConnectivityServiceReceiver;->this$0:Lcom/android/server/ConnectivityService;
+
+    #getter for: Lcom/android/server/ConnectivityService;->mContext:Landroid/content/Context;
+    invoke-static {v9}, Lcom/android/server/ConnectivityService;->access$1200(Lcom/android/server/ConnectivityService;)Landroid/content/Context;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v9
+
+    const-string v11, "mobile_data"
+
+    const/4 v12, 0x1
+
+    invoke-static {v9, v11, v12}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+
+    iget-object v9, p0, Lcom/android/server/ConnectivityService$ConnectivityServiceReceiver;->this$0:Lcom/android/server/ConnectivityService;
+
+    invoke-static {v9, v2}, Lcom/android/server/ConnectivityService$BaiduInjector;->setPreferSimSetting(Lcom/android/server/ConnectivityService;Ljava/lang/Long;)V
+
+    :goto_2
     iget-object v9, p0, Lcom/android/server/ConnectivityService$ConnectivityServiceReceiver;->this$0:Lcom/android/server/ConnectivityService;
 
     #calls: Lcom/android/server/ConnectivityService;->handleMobileDataConnectionChange(II)V
@@ -252,8 +273,8 @@
     .end local v5           #preSlotId:I
     .end local v7           #simId:Ljava/lang/Long;
     .end local v8           #slotId:I
-    :cond_3
-    :goto_2
+    :cond_2
+    :goto_3
     monitor-exit v10
 
     goto/16 :goto_0
@@ -270,7 +291,7 @@
     .line 4324
     .restart local v5       #preSlotId:I
     .restart local v7       #simId:Ljava/lang/Long;
-    :cond_4
+    :cond_3
     :try_start_1
     iget-object v9, p0, Lcom/android/server/ConnectivityService$ConnectivityServiceReceiver;->this$0:Lcom/android/server/ConnectivityService;
 
@@ -290,7 +311,28 @@
     .restart local v8       #slotId:I
     goto :goto_1
 
-    .line 4343
+    .restart local v2       #changeSimId:Ljava/lang/Long;
+    :cond_4
+    iget-object v9, p0, Lcom/android/server/ConnectivityService$ConnectivityServiceReceiver;->this$0:Lcom/android/server/ConnectivityService;
+
+    #getter for: Lcom/android/server/ConnectivityService;->mContext:Landroid/content/Context;
+    invoke-static {v9}, Lcom/android/server/ConnectivityService;->access$1200(Lcom/android/server/ConnectivityService;)Landroid/content/Context;
+
+    move-result-object v9
+
+    invoke-virtual {v9}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v9
+
+    const-string v11, "mobile_data"
+
+    const/4 v12, 0x0
+
+    invoke-static {v9, v11, v12}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+
+    goto :goto_2
+
+    .end local v2           #changeSimId:Ljava/lang/Long;
     .end local v5           #preSlotId:I
     .end local v7           #simId:Ljava/lang/Long;
     .end local v8           #slotId:I
@@ -320,7 +362,7 @@
 
     invoke-virtual {v9, v3}, Lcom/android/server/ConnectivityService;->setUsbTethering(Z)I
 
-    goto :goto_2
+    goto :goto_3
 
     .line 4346
     .end local v3           #isConnected:Z
@@ -353,7 +395,7 @@
 
     move-result v9
 
-    if-nez v9, :cond_3
+    if-nez v9, :cond_2
 
     .line 4352
     iget-object v11, p0, Lcom/android/server/ConnectivityService$ConnectivityServiceReceiver;->this$0:Lcom/android/server/ConnectivityService;
@@ -368,18 +410,18 @@
 
     const/4 v9, 0x1
 
-    :goto_3
+    :goto_4
     const/4 v12, 0x0
 
     #calls: Lcom/android/server/ConnectivityService;->setDataOffNotification(ZZ)V
     invoke-static {v11, v9, v12}, Lcom/android/server/ConnectivityService;->access$4500(Lcom/android/server/ConnectivityService;ZZ)V
 
-    goto :goto_2
+    goto :goto_3
 
     :cond_7
     const/4 v9, 0x0
 
-    goto :goto_3
+    goto :goto_4
 
     .line 4357
     .end local v6           #serviceState:Landroid/telephony/ServiceState;
@@ -389,7 +431,7 @@
     #calls: Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
     invoke-static {v9}, Lcom/android/server/ConnectivityService;->access$400(Ljava/lang/String;)V
 
-    goto :goto_2
+    goto :goto_3
 
     .line 4359
     .end local v4           #obtainBundle:Landroid/os/Bundle;
@@ -400,7 +442,7 @@
 
     move-result v9
 
-    if-eqz v9, :cond_3
+    if-eqz v9, :cond_2
 
     .line 4360
     iget-object v11, p0, Lcom/android/server/ConnectivityService$ConnectivityServiceReceiver;->this$0:Lcom/android/server/ConnectivityService;
@@ -415,7 +457,7 @@
 
     const/4 v9, 0x1
 
-    :goto_4
+    :goto_5
     const/4 v12, 0x1
 
     #calls: Lcom/android/server/ConnectivityService;->setDataOffNotification(ZZ)V
@@ -423,10 +465,10 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_2
+    goto/16 :goto_3
 
     :cond_a
     const/4 v9, 0x0
 
-    goto :goto_4
+    goto :goto_5
 .end method

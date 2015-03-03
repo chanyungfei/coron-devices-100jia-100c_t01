@@ -4445,11 +4445,11 @@
 
     .line 12719
     :cond_0
-    move-object/from16 v0, p0
+    move-object/from16 v0, v46
 
-    move-object/from16 v1, v46
+    move-object/from16 v1, p0
 
-    invoke-direct {v0, v1}, Lcom/android/server/am/ActivityManagerService;->removeIncludeFlags(Landroid/content/Intent;)V
+    invoke-direct {v1, v0}, Lcom/android/server/am/ActivityManagerService;->removeIncludeFlags(Landroid/content/Intent;)V
 
     .line 12721
     sget-boolean v4, Lcom/android/server/am/ActivityManagerService;->DEBUG_BROADCAST_LIGHT:Z
@@ -5912,7 +5912,9 @@
 
     move-object/from16 v2, v46
 
-    invoke-static {v0, v1, v2, v4}, Lcom/baidu/security/bm/BroadcastManagerService;->filterBroadcastReceiver(Ljava/util/List;Ljava/util/List;Landroid/content/Intent;Ljava/util/ArrayList;)I
+    move/from16 v3, p13
+
+    invoke-static {v0, v1, v2, v4, v3}, Lcom/baidu/security/bm/BroadcastManagerService;->filterBroadcastReceiver(Ljava/util/List;Ljava/util/List;Landroid/content/Intent;Ljava/util/ArrayList;I)I
 
     invoke-virtual/range {v46 .. v46}, Landroid/content/Intent;->getFlags()I
 
@@ -6659,6 +6661,11 @@
     .end local v58           #seq:I
     :cond_39
     if-eqz v56, :cond_3b
+    move-object/from16 v0, p0
+
+    iget-object v4, v0, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
+
+    invoke-static {v4, v8}, Lcom/android/server/am/BaiduBroadcastInjector;->tryHookMessageBroadcast(Landroid/content/Context;Lcom/android/server/am/BroadcastRecord;)V
 
     invoke-virtual {v9, v8}, Lcom/android/server/am/BroadcastQueue;->replaceOrderedBroadcastLocked(Lcom/android/server/am/BroadcastRecord;)Z
 
@@ -63786,7 +63793,9 @@
     .local v9, r:Lcom/android/server/am/BroadcastRecord;
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v9}, Lcom/android/server/am/ActivityManagerService;->hookMessageBroadcastBaidu(Lcom/android/server/am/BroadcastRecord;)V
+    iget-object v4, v0, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
+
+    invoke-static {v4, v9}, Lcom/android/server/am/BaiduBroadcastInjector;->tryHookMessageBroadcast(Landroid/content/Context;Lcom/android/server/am/BroadcastRecord;)V
 
     invoke-virtual {v10, v9}, Lcom/android/server/am/BroadcastQueue;->enqueueParallelBroadcastLocked(Lcom/android/server/am/BroadcastRecord;)V
 

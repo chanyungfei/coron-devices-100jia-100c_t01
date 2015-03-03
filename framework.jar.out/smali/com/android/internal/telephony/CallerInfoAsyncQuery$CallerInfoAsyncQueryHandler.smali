@@ -380,11 +380,22 @@
     :cond_a
     iget-object v1, p0, Lcom/android/internal/telephony/CallerInfoAsyncQuery$CallerInfoAsyncQueryHandler;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
 
+    iget-object v0, v1, Lcom/android/internal/telephony/CallerInfo;->name:Ljava/lang/String;
+
+    invoke-direct {p0, v1}, Lcom/android/internal/telephony/CallerInfoAsyncQuery$CallerInfoAsyncQueryHandler;->isEmptyHook(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v0, :cond_baidu_b
+
+    :cond_baidu_b
+    iget-object v1, p0, Lcom/android/internal/telephony/CallerInfoAsyncQuery$CallerInfoAsyncQueryHandler;->mCallerInfo:Lcom/android/internal/telephony/CallerInfo;
+
     iget-object v2, p0, Lcom/android/internal/telephony/CallerInfoAsyncQuery$CallerInfoAsyncQueryHandler;->mQueryContext:Landroid/content/Context;
 
     iget-object v4, v10, Lcom/android/internal/telephony/CallerInfoAsyncQuery$CookieWrapper;->number:Ljava/lang/String;
 
-    invoke-virtual {v1, v2, v4}, Lcom/android/internal/telephony/CallerInfo;->updateGeoDescritionAndLabel(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-virtual {v1, v2, v4}, Lcom/android/internal/telephony/CallerInfo;->updateGeoDescriptionAndLabel(Landroid/content/Context;Ljava/lang/String;)V
 
     .line 332
     iget-object v1, v10, Lcom/android/internal/telephony/CallerInfoAsyncQuery$CookieWrapper;->number:Ljava/lang/String;

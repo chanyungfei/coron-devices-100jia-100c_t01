@@ -96,7 +96,7 @@
 
 .field private mShowCombinedVolumes:Z
 
-.field private mSliderGroup:Landroid/view/ViewGroup;
+.field protected final mSliderGroup:Landroid/view/ViewGroup;
 
 .field protected mStreamControls:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;

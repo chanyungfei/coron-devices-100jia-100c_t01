@@ -529,59 +529,56 @@
 
     iput-object v9, p0, Lcom/android/server/AlarmManagerService;->mDateChangeSender:Landroid/app/PendingIntent;
 
-    .line 476
     new-instance v9, Lcom/android/server/AlarmManagerService$ClockReceiver;
 
     invoke-direct {v9, p0}, Lcom/android/server/AlarmManagerService$ClockReceiver;-><init>(Lcom/android/server/AlarmManagerService;)V
 
     iput-object v9, p0, Lcom/android/server/AlarmManagerService;->mClockReceiver:Lcom/android/server/AlarmManagerService$ClockReceiver;
 
-    .line 477
     iget-object v9, p0, Lcom/android/server/AlarmManagerService;->mClockReceiver:Lcom/android/server/AlarmManagerService$ClockReceiver;
 
     invoke-virtual {v9}, Lcom/android/server/AlarmManagerService$ClockReceiver;->scheduleTimeTickEvent()V
 
-    .line 478
     iget-object v9, p0, Lcom/android/server/AlarmManagerService;->mClockReceiver:Lcom/android/server/AlarmManagerService$ClockReceiver;
 
     invoke-virtual {v9}, Lcom/android/server/AlarmManagerService$ClockReceiver;->scheduleDateChangedEvent()V
 
-    .line 479
     new-instance v9, Lcom/android/server/AlarmManagerService$UninstallReceiver;
 
     invoke-direct {v9, p0}, Lcom/android/server/AlarmManagerService$UninstallReceiver;-><init>(Lcom/android/server/AlarmManagerService;)V
 
     iput-object v9, p0, Lcom/android/server/AlarmManagerService;->mUninstallReceiver:Lcom/android/server/AlarmManagerService$UninstallReceiver;
 
-    .line 480
     new-instance v9, Lcom/android/server/AlarmManagerService$PowerOffAlarmReceiver;
 
     invoke-direct {v9, p0}, Lcom/android/server/AlarmManagerService$PowerOffAlarmReceiver;-><init>(Lcom/android/server/AlarmManagerService;)V
 
     iput-object v9, p0, Lcom/android/server/AlarmManagerService;->mReceiver:Lcom/android/server/AlarmManagerService$PowerOffAlarmReceiver;
 
-    .line 482
     new-instance v9, Ljava/util/ArrayList;
 
     invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v9, p0, Lcom/android/server/AlarmManagerService;->mAlarmIconPackageList:Ljava/util/ArrayList;
 
-    .line 483
     iget-object v9, p0, Lcom/android/server/AlarmManagerService;->mAlarmIconPackageList:Ljava/util/ArrayList;
 
     const-string v10, "com.android.deskclock"
 
     invoke-virtual {v9, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 484
     iget-object v9, p0, Lcom/android/server/AlarmManagerService;->mAlarmIconPackageList:Ljava/util/ArrayList;
 
     const-string v10, "com.baidu.baiduclock"
 
     invoke-virtual {v9, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 487
+    iget-object v10, p0, Lcom/android/server/AlarmManagerService;->mAlarmIconPackageList:Ljava/util/ArrayList;
+
+    const-string v11, "com.baidu.baiduclock"
+
+    invoke-virtual {v10, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
     :try_start_0
     const-string v9, "DmAgent"
 
@@ -7077,3 +7074,410 @@
 #    return-void
 #.end method
 
+.method private resetPoweroffAlarm()V
+    .locals 18
+
+    .prologue
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/server/AlarmManagerService;->mPoweroffAlarmMap:Ljava/util/HashMap;
+
+    invoke-virtual {v1}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
+
+    move-result-object v11
+
+    .local v11, packageList:Ljava/util/Set;,"Ljava/util/Set<Ljava/lang/String;>;"
+    invoke-interface {v11}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v8
+
+    .local v8, it:Ljava/util/Iterator;,"Ljava/util/Iterator<Ljava/lang/String;>;"
+    const/4 v12, 0x0
+
+    .local v12, setPackageName:Ljava/lang/String;
+    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v13
+
+    check-cast v13, Ljava/lang/String;
+
+    .local v13, tempName:Ljava/lang/String;
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/server/AlarmManagerService;->mPoweroffAlarmMap:Ljava/util/HashMap;
+
+    invoke-virtual {v1, v13}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/android/server/AlarmManagerService$AlarmPair;
+
+    iget-wide v9, v1, Lcom/android/server/AlarmManagerService$AlarmPair;->mTriggerTime:J
+
+    .local v9, latestTime:J
+    move-object v12, v13
+
+    :cond_0
+    :goto_0
+    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3
+
+    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v13
+
+    .end local v13           #tempName:Ljava/lang/String;
+    check-cast v13, Ljava/lang/String;
+
+    .restart local v13       #tempName:Ljava/lang/String;
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/server/AlarmManagerService;->mPoweroffAlarmMap:Ljava/util/HashMap;
+
+    invoke-virtual {v1, v13}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/android/server/AlarmManagerService$AlarmPair;
+
+    iget-wide v14, v1, Lcom/android/server/AlarmManagerService$AlarmPair;->mTriggerTime:J
+
+    .local v14, tempTime:J
+    cmp-long v1, v14, v9
+
+    if-gtz v1, :cond_0
+
+    cmp-long v1, v14, v9
+
+    if-nez v1, :cond_1
+
+    const-string v1, "com.android.deskclock"
+
+    invoke-virtual {v12, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    :cond_1
+    move-wide v9, v14
+
+    move-object v12, v13
+
+    goto :goto_0
+
+    .end local v9           #latestTime:J
+    .end local v13           #tempName:Ljava/lang/String;
+    .end local v14           #tempTime:J
+    :cond_2
+    const-string v1, "AlarmManager"
+
+    const-string v2, "reset poweroff alarm none"
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    :goto_1
+    return-void
+
+    .restart local v9       #latestTime:J
+    .restart local v13       #tempName:Ljava/lang/String;
+    :cond_3
+    const-string v1, "com.android.deskclock"
+
+    invoke-virtual {v12, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_4
+
+    const-string v1, "AlarmManager"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "mBootPackage = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " set Prop 1"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string v1, "persist.sys.bootpackage"
+
+    const-string v2, "1"
+
+    invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
+    move-object/from16 v0, p0
+
+    iget v2, v0, Lcom/android/server/AlarmManagerService;->mDescriptor:I
+
+    const/4 v3, 0x6
+
+    const-wide/16 v4, 0x3e8
+
+    div-long v4, v9, v4
+
+    const-wide/16 v6, 0x3e8
+
+    rem-long v6, v9, v6
+
+    const-wide/16 v16, 0x3e8
+
+    mul-long v6, v6, v16
+
+    const-wide/16 v16, 0x3e8
+
+    mul-long v6, v6, v16
+
+    move-object/from16 v1, p0
+
+    invoke-direct/range {v1 .. v7}, Lcom/android/server/AlarmManagerService;->setBaidu(IIJJ)V
+
+    :goto_2
+    const-string v1, "AlarmManager"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "rest power off alarm is "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string v1, "sys.power_off_alarm"
+
+    const-wide/16 v2, 0x3e8
+
+    div-long v2, v9, v2
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
+    move-object/from16 v0, p0
+
+    iget-object v1, v0, Lcom/android/server/AlarmManagerService;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v1
+
+    const-string v2, "power_off_alarm_package_name"
+
+    invoke-static {v1, v2, v12}, Landroid/provider/Settings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
+
+    goto :goto_1
+
+    :cond_4
+    const-string v1, "com.mediatek.schpwronoff"
+
+    invoke-virtual {v12, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_5
+
+    const-string v1, "AlarmManager"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "mBootPackage = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " set Prop 2"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string v1, "persist.sys.bootpackage"
+
+    const-string v2, "2"
+
+    invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
+    move-object/from16 v0, p0
+
+    iget v2, v0, Lcom/android/server/AlarmManagerService;->mDescriptor:I
+
+    const/4 v3, 0x7
+
+    const-wide/16 v4, 0x3e8
+
+    div-long v4, v9, v4
+
+    const-wide/16 v6, 0x3e8
+
+    rem-long v6, v9, v6
+
+    const-wide/16 v16, 0x3e8
+
+    mul-long v6, v6, v16
+
+    const-wide/16 v16, 0x3e8
+
+    mul-long v6, v6, v16
+
+    move-object/from16 v1, p0
+
+    invoke-direct/range {v1 .. v7}, Lcom/android/server/AlarmManagerService;->setBaidu(IIJJ)V
+
+    goto :goto_2
+
+    :cond_5
+    const-string v1, "com.mediatek.poweronofftest"
+
+    invoke-virtual {v12, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_6
+
+    const-string v1, "AlarmManager"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "mBootPackage = "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, " set Prop 2"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    const-string v1, "persist.sys.bootpackage"
+
+    const-string v2, "2"
+
+    invoke-static {v1, v2}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
+
+    move-object/from16 v0, p0
+
+    iget v2, v0, Lcom/android/server/AlarmManagerService;->mDescriptor:I
+
+    const/4 v3, 0x7
+
+    const-wide/16 v4, 0x3e8
+
+    div-long v4, v9, v4
+
+    const-wide/16 v6, 0x3e8
+
+    rem-long v6, v9, v6
+
+    const-wide/16 v16, 0x3e8
+
+    mul-long v6, v6, v16
+
+    const-wide/16 v16, 0x3e8
+
+    mul-long v6, v6, v16
+
+    move-object/from16 v1, p0
+
+    invoke-direct/range {v1 .. v7}, Lcom/android/server/AlarmManagerService;->setBaidu(IIJJ)V
+
+    goto/16 :goto_2
+
+    :cond_6
+    const-string v1, "AlarmManager"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "unknown package ("
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, ") to set power off alarm"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_2
+.end method

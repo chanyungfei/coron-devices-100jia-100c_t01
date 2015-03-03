@@ -959,7 +959,7 @@
 
     .line 159
     .local v2, data:Ljava/lang/CharSequence;
-    if-eqz v2, :cond_5
+    if-eqz v2, :cond_baidu_0
 
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -969,12 +969,8 @@
 
     move-result-object v2
 
-    :cond_5
-    if-eqz v2, :cond_0
-
-    iget-object v4, v1, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
-
-    invoke-static {p1, v4, v2}, Landroid/content/ThemeDefine;->interceptLabelRes(Landroid/content/pm/PackageManager;Ljava/lang/String;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    :cond_baidu_0
+    invoke-direct {p0, p1, v2}, Landroid/content/pm/ResolveInfo;->interceptLabelResBaidu(Landroid/content/pm/PackageManager;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     move-result-object v2
 

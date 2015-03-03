@@ -18,7 +18,7 @@
 
 
 # static fields
-.field private static final POPUP_TEXT_LAYOUT:I = #android:layout@yi_text_edit_action_popup_text#t
+.field private static final POPUP_TEXT_LAYOUT:I = #layout@yi_text_edit_action_popup_text#t
 
 
 # instance fields
@@ -236,7 +236,7 @@
 
     .line 2138
     .local v2, wrapContent:Landroid/view/ViewGroup$LayoutParams;
-    const v3, #android:layout@yi_text_edit_action_popup_text#t
+    const v3, #layout@yi_text_edit_action_popup_text#t
 
     const/4 v4, 0x0
 

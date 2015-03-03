@@ -573,53 +573,8 @@
 
     iput-boolean v5, v2, Lcom/android/internal/telephony/CallerInfo;->contactExists:Z
 
-    const-string v4, "width"
 
-    invoke-interface {p2, v4}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
-
-    move-result v0
-
-    invoke-interface {p2, v0}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v4
-
-    iput v4, v2, Lcom/android/internal/telephony/CallerInfo;->mPhotoWidth:I
-
-    const-string v4, "height"
-
-    invoke-interface {p2, v4}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
-
-    move-result v0
-
-    invoke-interface {p2, v0}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v4
-
-    iput v4, v2, Lcom/android/internal/telephony/CallerInfo;->mPhotoHeight:I
-
-    const-string v4, "photo_id"
-
-    invoke-interface {p2, v4}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
-
-    move-result v0
-
-    invoke-interface {p2, v0}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v4
-
-    iput v4, v2, Lcom/android/internal/telephony/CallerInfo;->mPhotoID:I
-
-    const-string v4, "view_mode"
-
-    invoke-interface {p2, v4}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
-
-    move-result v0
-
-    invoke-interface {p2, v0}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v4
-
-    iput v4, v2, Lcom/android/internal/telephony/CallerInfo;->mViewMode:I
+    invoke-static {v2, p2}, Lcom/android/internal/telephony/CallerInfo$BaiduInjector;->initCallerInfoExt(Lcom/android/internal/telephony/CallerInfo;Landroid/database/Cursor;)V
 
     .end local v0           #columnIndex:I
     :cond_6

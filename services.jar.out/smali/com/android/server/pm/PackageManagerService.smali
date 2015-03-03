@@ -19890,7 +19890,7 @@
 
     .line 4456
     .local v21, dataPathString:Ljava/lang/String;
-    invoke-static/range {p1 .. p1}, Lcom/android/server/pm/PackageManagerService;->isForwardLocked(Landroid/content/pm/PackageParser$Package;)Z
+    invoke-static/range {p1 .. p1}, Lcom/android/server/pm/PackageManagerService;->isSystemAppBaidu(Landroid/content/pm/PackageParser$Package;)Z
 
     move-result v3
 

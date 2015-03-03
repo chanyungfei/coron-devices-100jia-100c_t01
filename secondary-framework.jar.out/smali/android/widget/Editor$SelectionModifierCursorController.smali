@@ -403,25 +403,8 @@
     .locals 1
 
     .prologue
-    iget-object v0, p0, Landroid/widget/Editor$SelectionModifierCursorController;->this$0:Landroid/widget/Editor;
+    invoke-static {}, Landroid/widget/Editor$BaiduEditorInjector;->dismiss()V
 
-    #getter for: Landroid/widget/Editor;->mMagnifierController:Landroid/widget/MagnifierController;
-    invoke-static {v0}, Landroid/widget/Editor;->access$2800(Landroid/widget/Editor;)Landroid/widget/MagnifierController;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Landroid/widget/Editor$SelectionModifierCursorController;->this$0:Landroid/widget/Editor;
-
-    #getter for: Landroid/widget/Editor;->mMagnifierController:Landroid/widget/MagnifierController;
-    invoke-static {v0}, Landroid/widget/Editor;->access$2800(Landroid/widget/Editor;)Landroid/widget/MagnifierController;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/widget/MagnifierController;->dismiss()V
-
-    :cond_0
     iget-object v0, p0, Landroid/widget/Editor$SelectionModifierCursorController;->mStartHandle:Landroid/widget/Editor$SelectionStartHandleView;
 
     if-eqz v0, :cond_1

@@ -7284,6 +7284,8 @@
     const/4 v8, 0x1
 
     invoke-static {v6, v7, v8}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+
+    invoke-static {v0, v3}, Lcom/android/server/ConnectivityService$BaiduInjector;->setPreferSimSetting(Lcom/android/server/ConnectivityService;Ljava/lang/Long;)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -17093,86 +17095,243 @@
 .end method
 
 .method public setMobileDataEnabled(Z)V
-    .locals 5
+    .locals 10
     .parameter "enabled"
 
     .prologue
-    const/4 v1, 0x0
+    const/16 v9, 0x11
 
-    .line 1835
+    const/4 v8, 0x5
+
+    const/4 v7, -0x1
+
+    const/4 v6, 0x0
+
     invoke-direct {p0}, Lcom/android/server/ConnectivityService;->enforceChangePermission()V
 
-    .line 1837
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-object v3, p0, Lcom/android/server/ConnectivityService;->mContext:Landroid/content/Context;
 
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v3}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
-    const-string v2, "setMobileDataEnabled("
+    move-result-object v3
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v4, "gprs_connection_setting"
 
-    move-result-object v0
+    const/4 v5, -0x4
 
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-static {v3, v4, v5}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
-    move-result-object v0
+    move-result v3
 
-    const-string v2, ")"
+    add-int/lit8 v0, v3, -0x1
 
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .local v0, curSlotId:I
+    const-string v3, "ConnectivityService"
 
-    move-result-object v0
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-object v0
+    const-string v5, "setMobileDataEnabled("
 
-    invoke-static {v0}, Lcom/android/server/ConnectivityService;->log(Ljava/lang/String;)V
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1839
-    if-eqz p1, :cond_0
+    move-result-object v4
 
-    .line 1840
-    invoke-direct {p0}, Lcom/android/server/ConnectivityService;->checkAndSetDefaultDataConnectionSim()V
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    .line 1843
+    move-result-object v4
+
+    const-string v5, "): curSlotId="
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    if-eqz p1, :cond_4
+
+    if-ne v0, v7, :cond_4
+
+    const/4 v2, 0x0
+
+    .local v2, simInfo:Landroid/provider/Telephony$SIMInfo;
+    :try_start_0
+    invoke-direct {p0}, Lcom/android/server/ConnectivityService;->getITelephony()Lcom/android/internal/telephony/ITelephony;
+
+    move-result-object v3
+
+    iput-object v3, p0, Lcom/android/server/ConnectivityService;->mITelephony:Lcom/android/internal/telephony/ITelephony;
+
+    iget-object v3, p0, Lcom/android/server/ConnectivityService;->mITelephony:Lcom/android/internal/telephony/ITelephony;
+
+    if-nez v3, :cond_1
+
+    const-string v3, "ConnectivityService"
+
+    const-string v4, "NULL in mITelephony"
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .end local v2           #simInfo:Landroid/provider/Telephony$SIMInfo;
     :cond_0
-    iget-object v2, p0, Lcom/android/server/ConnectivityService;->mHandler:Lcom/android/server/ConnectivityService$InternalHandler;
+    :goto_0
+    return-void
+
+    .restart local v2       #simInfo:Landroid/provider/Telephony$SIMInfo;
+    :cond_1
+    iget-object v3, p0, Lcom/android/server/ConnectivityService;->mITelephony:Lcom/android/internal/telephony/ITelephony;
+
+    const/4 v4, 0x0
+
+    invoke-interface {v3, v4}, Lcom/android/internal/telephony/ITelephony;->getSimState(I)I
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v3
+
+    if-ne v3, v8, :cond_2
+
+    const/4 v0, 0x0
+
+    :goto_1
+    invoke-static {p0, v0}, Lcom/android/server/ConnectivityService$BaiduInjector;->getDefaultSlot(Lcom/android/server/ConnectivityService;I)I
+
+    move-result v0
 
     iget-object v3, p0, Lcom/android/server/ConnectivityService;->mHandler:Lcom/android/server/ConnectivityService$InternalHandler;
 
-    const/4 v4, 0x7
+    iget-object v4, p0, Lcom/android/server/ConnectivityService;->mHandler:Lcom/android/server/ConnectivityService$InternalHandler;
 
-    if-eqz p1, :cond_1
+    invoke-virtual {v4, v9, v0, v6}, Lcom/android/server/ConnectivityService$InternalHandler;->obtainMessage(III)Landroid/os/Message;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Lcom/android/server/ConnectivityService$InternalHandler;->sendMessage(Landroid/os/Message;)Z
+
+    goto :goto_0
+
+    :cond_2
+    :try_start_1
+    iget-object v3, p0, Lcom/android/server/ConnectivityService;->mITelephony:Lcom/android/internal/telephony/ITelephony;
+
+    const/4 v4, 0x1
+
+    invoke-interface {v3, v4}, Lcom/android/internal/telephony/ITelephony;->getSimState(I)I
+
+    move-result v3
+
+    if-ne v3, v8, :cond_3
 
     const/4 v0, 0x1
 
-    :goto_0
-    invoke-virtual {v3, v4, v0, v1}, Lcom/android/server/ConnectivityService$InternalHandler;->obtainMessage(III)Landroid/os/Message;
+    goto :goto_1
 
-    move-result-object v0
+    :cond_3
+    const-string v3, "ConnectivityService"
 
-    invoke-virtual {v2, v0}, Lcom/android/server/ConnectivityService$InternalHandler;->sendMessage(Landroid/os/Message;)Z
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    .line 1845
-    return-void
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    :cond_1
-    move v0, v1
+    const-string v5, "setMobileDataEnabled("
 
-    .line 1843
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, ") curSimID = DEFAULT_SIM_NOT_SET"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_1
+    .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception v1
+
+    .local v1, e:Landroid/os/RemoteException;
+    invoke-virtual {v1}, Landroid/os/RemoteException;->printStackTrace()V
+
+    goto :goto_0
+
+    .end local v1           #e:Landroid/os/RemoteException;
+    .end local v2           #simInfo:Landroid/provider/Telephony$SIMInfo;
+    :cond_4
+    if-nez p1, :cond_0
+
+    iget-object v3, p0, Lcom/android/server/ConnectivityService;->mHandler:Lcom/android/server/ConnectivityService$InternalHandler;
+
+    iget-object v4, p0, Lcom/android/server/ConnectivityService;->mHandler:Lcom/android/server/ConnectivityService$InternalHandler;
+
+    invoke-virtual {v4, v9, v7, v6}, Lcom/android/server/ConnectivityService$InternalHandler;->obtainMessage(III)Landroid/os/Message;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Lcom/android/server/ConnectivityService$InternalHandler;->sendMessage(Landroid/os/Message;)Z
+
+    const-string v3, "ConnectivityService"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "setMobileDataEnabled("
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, "): GPRS_CONNECTION_SIM_SETTING_NEVER"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     goto :goto_0
 .end method
 
 .method public setMobileDataEnabledGemini(I)Z
-    .locals 6
+    .locals 7
     .parameter "slotId"
 
     .prologue
-    .line 4577
+    const/4 v6, 0x1
+
     invoke-direct {p0}, Lcom/android/server/ConnectivityService;->enforceChangePermission()V
 
-    .line 4578
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -17268,7 +17427,19 @@
 
     if-eq p1, v2, :cond_0
 
-    :cond_0
+    iget-object v2, p0, Lcom/android/server/ConnectivityService;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    const-string v3, "mobile_data"
+
+    invoke-static {v2, v3, v6}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+
+    invoke-static {p0, v1}, Lcom/android/server/ConnectivityService$BaiduInjector;->setPreferSimSetting(Lcom/android/server/ConnectivityService;Ljava/lang/Long;)V
+
+    :goto_0
     iget-object v2, p0, Lcom/android/server/ConnectivityService;->mHandler:Lcom/android/server/ConnectivityService$InternalHandler;
 
     iget-object v3, p0, Lcom/android/server/ConnectivityService;->mHandler:Lcom/android/server/ConnectivityService$InternalHandler;
@@ -17281,10 +17452,22 @@
 
     invoke-virtual {v2, v3}, Lcom/android/server/ConnectivityService$InternalHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 4599
-    const/4 v2, 0x1
+    return v6
 
-    return v2
+    :cond_0
+    iget-object v2, p0, Lcom/android/server/ConnectivityService;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v2
+
+    const-string v3, "mobile_data"
+
+    const/4 v4, 0x0
+
+    invoke-static {v2, v3, v4}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+
+    goto :goto_0
 .end method
 
 .method public setNetworkPreference(I)V

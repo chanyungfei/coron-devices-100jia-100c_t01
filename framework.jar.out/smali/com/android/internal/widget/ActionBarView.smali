@@ -111,11 +111,11 @@
 
 .field private mUpGoerFive:Landroid/view/ViewGroup;
 
-.field private mUseActivityIcon:Z
+.field mUseActivityIcon:Z
 
-.field private mUseActivityLogo:Z
+.field mUseActivityLogo:Z
 
-.field private mUseCustomIcon:Z
+.field mUseCustomIcon:Z
 
 .field private mUserTitle:Z
 
@@ -5783,9 +5783,7 @@
 
     invoke-virtual {v0, p1}, Lcom/android/internal/widget/ActionBarView$HomeView;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/android/internal/widget/ActionBarView;->mUseCustomIcon:Z
+    invoke-static {p0}, Lcom/android/internal/widget/ActionBarView$BaiduInjector;->setUseCustomIcon(Lcom/android/internal/widget/ActionBarView;)V
 
     :cond_1
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarView;->mExpandedActionView:Landroid/view/View;
@@ -5858,9 +5856,7 @@
 
     invoke-virtual {v0, p1}, Lcom/android/internal/widget/ActionBarView$HomeView;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/android/internal/widget/ActionBarView;->mUseCustomIcon:Z
+    invoke-static {p0}, Lcom/android/internal/widget/ActionBarView$BaiduInjector;->setUseCustomIcon(Lcom/android/internal/widget/ActionBarView;)V
 
     :cond_0
     return-void

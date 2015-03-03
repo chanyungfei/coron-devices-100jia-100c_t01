@@ -7,7 +7,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lcom/android/server/BatteryService$SettingsObserver;,
-        Lcom/android/server/BatteryService$Led;
+        Lcom/android/server/BatteryService$Led;,
+        Lcom/android/server/BatteryService$BaiduInjector;
     }
 .end annotation
 
@@ -355,16 +356,7 @@
 
     .line 211
     :cond_0
-    new-instance v0, Lcom/android/server/BatteryService$SettingsObserver;
-
-    new-instance v1, Landroid/os/Handler;
-
-    invoke-direct {v1}, Landroid/os/Handler;-><init>()V
-
-    invoke-direct {v0, p0, v1}, Lcom/android/server/BatteryService$SettingsObserver;-><init>(Lcom/android/server/BatteryService;Landroid/os/Handler;)V
-
-    .local v0, observer:Lcom/android/server/BatteryService$SettingsObserver;
-    invoke-virtual {v0}, Lcom/android/server/BatteryService$SettingsObserver;->observe()V
+    invoke-static {p0}, Lcom/android/server/BatteryService$BaiduInjector;->init(Lcom/android/server/BatteryService;)V
 
     iget-object v2, p0, Lcom/android/server/BatteryService;->mLock:Ljava/lang/Object;
 
@@ -3663,4 +3655,13 @@
     invoke-static {p0}, Lcom/android/server/BatteryService$BaiduInjector;->shutdownIfNoPowerLockedBaidu(Lcom/android/server/BatteryService;)V
 
     return-void
+.end method
+
+.method static synthetic access$1300()Ljava/lang/String;
+    .locals 1
+
+    .prologue
+    sget-object v0, Lcom/android/server/BatteryService;->TAG:Ljava/lang/String;
+
+    return-object v0
 .end method

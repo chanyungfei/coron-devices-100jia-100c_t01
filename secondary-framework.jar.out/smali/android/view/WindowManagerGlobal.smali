@@ -675,14 +675,14 @@
     :cond_3
     invoke-virtual {p0, p1, v8}, Landroid/view/WindowManagerGlobal;->disablePopupWindow(Landroid/view/View;Landroid/view/WindowManager$LayoutParams;)Z
 
-    move-result v9
+    move-result v0
 
-    if-eqz v9, :cond_4
+    if-eqz v0, :cond_baidu_0
 
-    :goto_0
-    return-void
+    goto :goto_baidu_0
 
-    :cond_4
+    :cond_baidu_0
+
     const/4 v6, 0x0
 
     .local v6, panelParentView:Landroid/view/View;
@@ -915,19 +915,17 @@
     :try_end_2
     .catch Ljava/lang/RuntimeException; {:try_start_2 .. :try_end_2} :catch_0
 
-    goto/16 :goto_0
-
-    .line 289
+    :goto_baidu_0
+    return-void
+    
     :catch_0
     move-exception v2
 
-    .line 291
     .local v2, e:Ljava/lang/RuntimeException;
     iget-object v10, p0, Landroid/view/WindowManagerGlobal;->mLock:Ljava/lang/Object;
 
     monitor-enter v10
 
-    .line 292
     const/4 v9, 0x0
 
     :try_start_3

@@ -2024,9 +2024,8 @@
 
     iput-object v0, p0, Landroid/content/res/Configuration;->skin:Ljava/lang/String;
 
-    iget v0, p1, Landroid/content/res/Configuration;->themeChanged:I
+    invoke-static {p0, p1}, Landroid/content/res/Configuration$BaiduInjector;->setThemeChanged(Landroid/content/res/Configuration;Landroid/content/res/Configuration;)V
 
-    iput v0, p0, Landroid/content/res/Configuration;->themeChanged:I
 
     return-void
 .end method
@@ -2099,8 +2098,6 @@
     iput v2, p0, Landroid/content/res/Configuration;->seq:I
 
     iput-object v3, p0, Landroid/content/res/Configuration;->skin:Ljava/lang/String;
-
-    iput v2, p0, Landroid/content/res/Configuration;->themeChanged:I
 
     invoke-static {p0}, Landroid/content/res/Configuration$BaiduInjector;->setThemeChangedToDefault(Landroid/content/res/Configuration;)V
 
@@ -2485,13 +2482,7 @@
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     :cond_0
-    const-string v2, " themeChanged="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v2, p0, Landroid/content/res/Configuration;->themeChanged:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-static {p0, v1}, Landroid/content/res/Configuration$BaiduInjector;->appendToString(Landroid/content/res/Configuration;Ljava/lang/StringBuilder;)V
 
     const/16 v2, 0x7d
 
@@ -3537,9 +3528,9 @@
 
     .line 932
     :cond_1a
-    invoke-direct {p0, p1}, Landroid/content/res/Configuration;->multiTheme_dealThemeChange(Landroid/content/res/Configuration;)I
+    invoke-static {p0, p1, v0}, Landroid/content/res/Configuration$BaiduInjector;->multiTheme_dealThemeChange(Landroid/content/res/Configuration;Landroid/content/res/Configuration;I)I
 
-    move-result v1
+    move-result v0
 
     or-int/2addr v0, v1
 

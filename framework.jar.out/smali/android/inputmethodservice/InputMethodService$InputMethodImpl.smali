@@ -176,6 +176,10 @@
     .parameter "resultReceiver"
 
     .prologue
+    iget-object v1, p0, Landroid/inputmethodservice/InputMethodService$InputMethodImpl;->this$0:Landroid/inputmethodservice/InputMethodService;
+
+    invoke-static {v1}, Landroid/inputmethodservice/InputMethodService$BaiduInjector;->finishActionModeIfStarted(Landroid/inputmethodservice/InputMethodService;)V
+
     const/4 v2, 0x0
 
     .line 411

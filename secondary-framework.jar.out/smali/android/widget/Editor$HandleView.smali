@@ -878,26 +878,15 @@
     .local v2, newPosY:F
     invoke-virtual {p0, v1, v2}, Landroid/widget/Editor$HandleView;->updatePosition(FF)V
 
-    iget-object v8, p0, Landroid/widget/Editor$HandleView;->this$0:Landroid/widget/Editor;
-
-    #getter for: Landroid/widget/Editor;->mMagnifierController:Landroid/widget/MagnifierController;
-    invoke-static {v8}, Landroid/widget/Editor;->access$2800(Landroid/widget/Editor;)Landroid/widget/MagnifierController;
-
-    move-result-object v8
-
-    if-eqz v8, :cond_0
-
     .line 3608
     iget-object v8, p0, Landroid/widget/Editor$HandleView;->this$0:Landroid/widget/Editor;
 
-    #getter for: Landroid/widget/Editor;->mMagnifierController:Landroid/widget/MagnifierController;
-    invoke-static {v8}, Landroid/widget/Editor;->access$2800(Landroid/widget/Editor;)Landroid/widget/MagnifierController;
+    #getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
+    invoke-static {v8}, Landroid/widget/Editor;->access$900(Landroid/widget/Editor;)Landroid/widget/TextView;
 
     move-result-object v8
 
-    iget v9, p0, Landroid/widget/Editor$HandleView;->mCursorType:I
-
-    invoke-virtual {v8, v9}, Landroid/widget/MagnifierController;->update(I)V
+    invoke-static {v8, p0}, Landroid/widget/Editor$BaiduEditorInjector;->update(Landroid/widget/TextView;Landroid/widget/Editor$HandleView;)V
 
     goto/16 :goto_0
 
@@ -931,24 +920,7 @@
 
     iput-boolean v9, p0, Landroid/widget/Editor$HandleView;->mIsDragging:Z
 
-    iget-object v8, p0, Landroid/widget/Editor$HandleView;->this$0:Landroid/widget/Editor;
-
-    #getter for: Landroid/widget/Editor;->mMagnifierController:Landroid/widget/MagnifierController;
-    invoke-static {v8}, Landroid/widget/Editor;->access$2800(Landroid/widget/Editor;)Landroid/widget/MagnifierController;
-
-    move-result-object v8
-
-    if-eqz v8, :cond_0
-
-    .line 3619
-    iget-object v8, p0, Landroid/widget/Editor$HandleView;->this$0:Landroid/widget/Editor;
-
-    #getter for: Landroid/widget/Editor;->mMagnifierController:Landroid/widget/MagnifierController;
-    invoke-static {v8}, Landroid/widget/Editor;->access$2800(Landroid/widget/Editor;)Landroid/widget/MagnifierController;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Landroid/widget/MagnifierController;->hideDelayed()V
+    invoke-static {}, Landroid/widget/Editor$BaiduEditorInjector;->hideDelayed()V
 
     goto/16 :goto_0
 
@@ -1531,7 +1503,6 @@
 .method protected abstract updateSelection(I)V
 .end method
 
-
 .method protected recaculateHandleViewVerticalPosition(I)V
     .locals 5
     .parameter "line"
@@ -1629,4 +1600,134 @@
     .end local v2           #offsetToBaseLine:I
     :cond_1
     return-void
+.end method
+
+.method protected positionAtCursorOffset(IZ)V
+    .locals 6
+    .parameter "offset"
+    .parameter "parentScrolled"
+
+    .prologue
+    const/4 v3, 0x1
+
+    iget-object v4, p0, Landroid/widget/Editor$HandleView;->this$0:Landroid/widget/Editor;
+
+    #getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
+    invoke-static {v4}, Landroid/widget/Editor;->access$900(Landroid/widget/Editor;)Landroid/widget/TextView;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
+
+    move-result-object v0
+
+    .local v0, layout:Landroid/text/Layout;
+    if-nez v0, :cond_1
+
+    iget-object v3, p0, Landroid/widget/Editor$HandleView;->this$0:Landroid/widget/Editor;
+
+    invoke-virtual {v3}, Landroid/widget/Editor;->prepareCursorControllers()V
+
+    :cond_0
+    :goto_0
+    return-void
+
+    :cond_1
+    iget v4, p0, Landroid/widget/Editor$HandleView;->mPreviousOffset:I
+
+    if-eq p1, v4, :cond_4
+
+    move v2, v3
+
+    .local v2, offsetChanged:Z
+    :goto_1
+    if-nez v2, :cond_2
+
+    if-eqz p2, :cond_0
+
+    :cond_2
+    if-eqz v2, :cond_3
+
+    invoke-virtual {p0, p1}, Landroid/widget/Editor$HandleView;->updateSelection(I)V
+
+    invoke-direct {p0, p1}, Landroid/widget/Editor$HandleView;->addPositionToTouchUpFilter(I)V
+
+    :cond_3
+    invoke-virtual {v0, p1}, Landroid/text/Layout;->getLineForOffset(I)I
+
+    move-result v1
+
+    .local v1, line:I
+    invoke-virtual {v0, p1}, Landroid/text/Layout;->getPrimaryHorizontal(I)F
+
+    move-result v4
+
+    const/high16 v5, 0x3f00
+
+    sub-float/2addr v4, v5
+
+    iget v5, p0, Landroid/widget/Editor$HandleView;->mHotspotX:I
+
+    int-to-float v5, v5
+
+    sub-float/2addr v4, v5
+
+    float-to-int v4, v4
+
+    iput v4, p0, Landroid/widget/Editor$HandleView;->mPositionX:I
+
+    invoke-virtual {v0, v1}, Landroid/text/Layout;->getLineBottom(I)I
+
+    move-result v4
+
+    iput v4, p0, Landroid/widget/Editor$HandleView;->mPositionY:I
+
+    invoke-virtual {p0, v1}, Landroid/widget/Editor$HandleView;->recaculateHandleViewVerticalPosition(I)V
+
+    iget v4, p0, Landroid/widget/Editor$HandleView;->mPositionX:I
+
+    iget-object v5, p0, Landroid/widget/Editor$HandleView;->this$0:Landroid/widget/Editor;
+
+    #getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
+    invoke-static {v5}, Landroid/widget/Editor;->access$900(Landroid/widget/Editor;)Landroid/widget/TextView;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Landroid/widget/TextView;->viewportToContentHorizontalOffset()I
+
+    move-result v5
+
+    add-int/2addr v4, v5
+
+    iput v4, p0, Landroid/widget/Editor$HandleView;->mPositionX:I
+
+    iget v4, p0, Landroid/widget/Editor$HandleView;->mPositionY:I
+
+    iget-object v5, p0, Landroid/widget/Editor$HandleView;->this$0:Landroid/widget/Editor;
+
+    #getter for: Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
+    invoke-static {v5}, Landroid/widget/Editor;->access$900(Landroid/widget/Editor;)Landroid/widget/TextView;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Landroid/widget/TextView;->viewportToContentVerticalOffset()I
+
+    move-result v5
+
+    add-int/2addr v4, v5
+
+    iput v4, p0, Landroid/widget/Editor$HandleView;->mPositionY:I
+
+    iput p1, p0, Landroid/widget/Editor$HandleView;->mPreviousOffset:I
+
+    iput-boolean v3, p0, Landroid/widget/Editor$HandleView;->mPositionHasChanged:Z
+
+    goto :goto_0
+
+    .end local v1           #line:I
+    .end local v2           #offsetChanged:Z
+    :cond_4
+    const/4 v2, 0x0
+
+    goto :goto_1
 .end method

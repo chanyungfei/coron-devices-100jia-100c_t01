@@ -444,7 +444,7 @@
     goto :goto_0
 
     :cond_1
-    invoke-static {p0, v1}, Landroid/content/pm/ActivityInfo;->setOutputBaidu(II)I
+    invoke-static {p0, v1}, Landroid/content/pm/ActivityInfo$BaiduInjector;->setOutputBaidu(II)I
 
     move-result v1
 

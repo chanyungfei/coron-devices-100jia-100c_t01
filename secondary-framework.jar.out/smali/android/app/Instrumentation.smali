@@ -1210,6 +1210,20 @@
     .parameter "userId"
 
     .prologue
+    move-object/from16 v0, p5
+
+    move-object/from16 v1, p1
+
+    invoke-direct {p0, v1, v0}, Landroid/app/Instrumentation;->checkDynamicPermission(Landroid/content/Context;[Landroid/content/Intent;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_baidu_0
+
+    goto :goto_baidu_0
+
+    :cond_baidu_0
+
     move-object/from16 v2, p2
 
     check-cast v2, Landroid/app/IApplicationThread;

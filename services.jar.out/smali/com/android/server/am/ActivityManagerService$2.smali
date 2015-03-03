@@ -322,7 +322,7 @@
     move-result v30
 
     .local v30, criticalLow:Z
-    new-instance v7, Lcom/android/server/am/AppErrorDialog;
+    new-instance v7, Lcom/android/server/am/BaiduAppErrorDialog;
 
     move-object/from16 v0, p0
 

@@ -11372,7 +11372,7 @@
 
     move-result v4
 
-    if-nez v4, :cond_6
+    if-nez v4, :cond_baidu_0
 
     new-instance v4, Ljava/lang/StringBuilder;
 

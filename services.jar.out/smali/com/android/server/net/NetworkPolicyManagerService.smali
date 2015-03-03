@@ -7703,7 +7703,7 @@
     const/4 v3, 0x1
 
     :cond_2
-    invoke-direct {p0, v2, v3}, Lcom/android/server/net/NetworkPolicyManagerService;->getUidRulesBaidu(II)I
+    invoke-static {v2, v3}, Lcom/android/server/net/NetworkPolicyManagerService$BaiduInjector;->getUidRules(II)I
 
     move-result v3
 

@@ -1129,9 +1129,7 @@
     .line 1171
     .local v2, request:Landroid/location/LocationRequest;
     :try_start_0
-    iget-object v4, p0, Landroid/location/LocationManager;->mService:Landroid/location/ILocationManager;
-
-    invoke-interface {v4, v2, v1}, Landroid/location/ILocationManager;->getLastLocation(Landroid/location/LocationRequest;Ljava/lang/String;)Landroid/location/Location;
+    invoke-direct {p0, v2, v1}, Landroid/location/LocationManager;->getLastLocationBaidu(Landroid/location/LocationRequest;Ljava/lang/String;)Landroid/location/Location;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 

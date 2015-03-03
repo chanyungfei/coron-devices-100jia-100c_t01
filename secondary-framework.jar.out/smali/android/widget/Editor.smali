@@ -114,7 +114,7 @@
 
 .field mPreserveDetachedSelection:Z
 
-.field private mSearchText:Ljava/lang/CharSequence;
+.field public mSearchText:Ljava/lang/CharSequence;
 
 .field mSelectAllOnFocus:Z
 
@@ -7101,73 +7101,8 @@
     .parameter "handled"
 
     .prologue
-    iget-object v6, p0, Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
+    invoke-static {p0}, Landroid/widget/Editor$BaiduEditorInjector;->onEventWordSearch(Landroid/widget/Editor;)V
 
-    invoke-virtual {v6}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
-
-    move-result-object v6
-
-    const-string v7, "search_text"
-
-    invoke-static {v6, v7}, Landroid/util/FeatureData;->onEvent(Landroid/content/Context;Ljava/lang/String;)V
-
-    .line 898
-    if-nez p1, :cond_1
-
-    iget-object v6, p0, Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
-
-    invoke-virtual {v6}, Landroid/widget/TextView;->isTextSelectable()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_1
-
-    .line 900
-    iget-object v6, p0, Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
-
-    invoke-virtual {v6}, Landroid/widget/TextView;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v6
-
-    if-eqz v6, :cond_0
-
-    .line 901
-    iget-object v6, p0, Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
-
-    invoke-virtual {v6}, Landroid/widget/TextView;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v6
-
-    const/4 v7, 0x1
-
-    invoke-interface {v6, v7}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
-
-    .line 903
-    :cond_0
-    invoke-virtual {p0}, Landroid/widget/Editor;->startSelectionActionMode()Z
-
-    .line 904
-    invoke-virtual {p0}, Landroid/widget/Editor;->stopSelectionActionMode()V
-
-    .line 905
-    invoke-direct {p0}, Landroid/widget/Editor;->selectCurrentWord()Z
-
-    .line 906
-    iget-object v6, p0, Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
-
-    iget-object v7, p0, Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
-
-    invoke-virtual {v7}, Landroid/widget/TextView;->getRootView()Landroid/view/View;
-
-    move-result-object v7
-
-    invoke-virtual {p0, v6, v7}, Landroid/widget/Editor;->showPopup(Landroid/widget/TextView;Landroid/view/View;)V
-
-    .line 907
-    const/4 p1, 0x1
-
-    .line 911
-    :cond_1
     if-nez p1, :cond_2
 
     iget v6, p0, Landroid/widget/Editor;->mLastDownPositionX:F
@@ -7184,7 +7119,7 @@
 
     if-eqz v6, :cond_2
 
-    .line 913
+    .line 900
     iget-object v6, p0, Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
 
     iget v7, p0, Landroid/widget/Editor;->mLastDownPositionX:F
@@ -7195,11 +7130,10 @@
 
     move-result v3
 
-    .line 915
     .local v3, offset:I
     invoke-virtual {p0}, Landroid/widget/Editor;->stopSelectionActionMode()V
 
-    .line 916
+    .line 901
     iget-object v6, p0, Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v6}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
@@ -7210,17 +7144,14 @@
 
     invoke-static {v6, v3}, Landroid/text/Selection;->setSelection(Landroid/text/Spannable;I)V
 
-    .line 917
     invoke-virtual {p0}, Landroid/widget/Editor;->getInsertionController()Landroid/widget/Editor$InsertionPointCursorController;
 
     move-result-object v6
 
     invoke-virtual {v6}, Landroid/widget/Editor$InsertionPointCursorController;->showWithActionPopup()V
 
-    .line 918
     const/4 p1, 0x1
 
-    .line 921
     .end local v3           #offset:I
     :cond_2
     if-nez p1, :cond_3
@@ -7229,21 +7160,19 @@
 
     if-eqz v6, :cond_3
 
-    .line 922
     invoke-direct {p0}, Landroid/widget/Editor;->touchPositionIsInSelection()Z
 
     move-result v6
 
     if-eqz v6, :cond_5
 
-    .line 924
+    .line 913
     iget-object v6, p0, Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v6}, Landroid/widget/TextView;->getSelectionStart()I
 
     move-result v5
 
-    .line 925
     .local v5, start:I
     iget-object v6, p0, Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
 
@@ -8128,9 +8057,7 @@
     move-result v8
 
     .local v8, top:I
-    add-int/lit8 v9, v4, 0x1
-
-    invoke-virtual {v3, v9}, Landroid/text/Layout;->getLineTop(I)I
+    invoke-static {p0, v4}, Landroid/widget/Editor$BaiduEditorInjector;->fixCursorPostion(Landroid/widget/Editor;I)I
 
     move-result v0
 

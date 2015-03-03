@@ -2440,9 +2440,7 @@
     .parameter "newConfig"
 
     .prologue
-    iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mActionView:Lcom/android/internal/widget/ActionBarView;
-
-    invoke-virtual {v0}, Lcom/android/internal/widget/ActionBarView;->reloadHomeIcon()V
+    invoke-static {p0}, Lcom/android/internal/app/ActionBarImpl$BaiduInjector;->onConfigurationChanged(Lcom/android/internal/app/ActionBarImpl;)V
 
     iget-object v0, p0, Lcom/android/internal/app/ActionBarImpl;->mContext:Landroid/content/Context;
 

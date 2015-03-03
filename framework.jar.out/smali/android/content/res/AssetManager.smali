@@ -235,7 +235,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Landroid/content/res/AssetManager;->mIconPath:Ljava/util/HashMap;
+    invoke-static {p0}, Landroid/content/res/BaiduAssetManager$BaiduMultiThemeInjector;->init(Landroid/content/res/AssetManager;)V
 
     invoke-static {}, Landroid/content/res/AssetManager;->ensureSystemAssets()V
 
@@ -303,11 +303,7 @@
 
     invoke-direct {p0}, Landroid/content/res/AssetManager;->init()V
 
-    invoke-static {}, Landroid/content/ThemeDefine;->getIconPath()Ljava/util/HashMap;
-
-    move-result-object v0
-
-    iput-object v0, p0, Landroid/content/res/AssetManager;->mIconPath:Ljava/util/HashMap;
+    invoke-static {p0}, Landroid/content/res/BaiduAssetManager$BaiduMultiThemeInjector;->init(Landroid/content/res/AssetManager;)V
 
     return-void
 .end method
@@ -3210,7 +3206,7 @@
     return-object v0
 .end method
 
-.method public final open(Ljava/lang/String;I)Ljava/io/InputStream;
+.method public open(Ljava/lang/String;I)Ljava/io/InputStream;
     .locals 7
     .parameter "fileName"
     .parameter "accessMode"
@@ -3476,7 +3472,7 @@
     return-object v0
 .end method
 
-.method public final openNonAsset(ILjava/lang/String;I)Ljava/io/InputStream;
+.method public openNonAsset(ILjava/lang/String;I)Ljava/io/InputStream;
     .locals 6
     .parameter "cookie"
     .parameter "fileName"

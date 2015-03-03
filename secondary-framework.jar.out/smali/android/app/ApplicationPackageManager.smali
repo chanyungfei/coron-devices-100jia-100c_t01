@@ -1834,7 +1834,7 @@
     move-result-object v3
 
     .local v3, r:Landroid/content/res/Resources;
-    invoke-direct {p0, p3, p1, p2, v3}, Landroid/app/ApplicationPackageManager;->multiTheme_getDrawableLocal(Landroid/content/pm/ApplicationInfo;Ljava/lang/String;ILandroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
+    invoke-static {p3, p1, p2, v3}, Landroid/app/ApplicationPackageManager$BaiduInjector;->multiTheme_getDrawableLocal(Landroid/content/pm/ApplicationInfo;Ljava/lang/String;ILandroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
