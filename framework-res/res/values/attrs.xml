@@ -1861,6 +1861,4 @@
     <attr name="neverEncrypt" format="boolean" />
     <attr name="cantSaveState" format="boolean" />
     <attr name="primaryUserOnly" format="boolean" />
-    <attr name="pointOn" format="reference" />
-    <attr name="pointOff" format="reference" />
 </resources>
