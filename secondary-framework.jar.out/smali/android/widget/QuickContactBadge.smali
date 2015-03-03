@@ -9,6 +9,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/widget/QuickContactBadge$BaiduInjector;,
         Landroid/widget/QuickContactBadge$QueryHandler;
     }
 .end annotation
@@ -110,14 +111,14 @@
 
     :array_0
     .array-data 0x4
-        0x46t 0x1t 0x8t 0x1t
-        0x47t 0x1t 0x8t 0x1t
-        0x48t 0x1t 0x8t 0x1t
-        0x49t 0x1t 0x8t 0x1t
-        0x4at 0x1t 0x8t 0x1t
-        0x4bt 0x1t 0x8t 0x1t
-        0x4ct 0x1t 0x8t 0x1t
-        0x4dt 0x1t 0x8t 0x1t
+        #android:drawable@baidu_p001_small#a
+        #android:drawable@baidu_p002_small#a
+        #android:drawable@baidu_p003_small#a
+        #android:drawable@baidu_p004_small#a
+        #android:drawable@baidu_p005_small#a
+        #android:drawable@baidu_p006_small#a
+        #android:drawable@baidu_p007_small#a
+        #android:drawable@baidu_p008_small#a
     .end array-data
 .end method
 
@@ -200,10 +201,8 @@
 
     iput-object v1, p0, Landroid/widget/QuickContactBadge;->mQueryHandler:Landroid/widget/QuickContactBadge$QueryHandler;
 
-    .line 105
     invoke-virtual {p0, p0}, Landroid/widget/QuickContactBadge;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 108
     iget v1, p0, Landroid/view/View;->mPaddingLeft:I
 
     iget v2, p0, Landroid/view/View;->mPaddingTop:I
@@ -214,7 +213,6 @@
 
     invoke-virtual {p0, v1, v2, v3, v4}, Landroid/widget/QuickContactBadge;->setPadding(IIII)V
 
-    .line 109
     return-void
 .end method
 
@@ -224,7 +222,6 @@
     .parameter "x1"
 
     .prologue
-    .line 57
     iput-object p1, p0, Landroid/widget/QuickContactBadge;->mContactUri:Landroid/net/Uri;
 
     return-object p1
@@ -235,9 +232,9 @@
     .parameter "x0"
 
     .prologue
-    .line 57
     invoke-direct {p0}, Landroid/widget/QuickContactBadge;->onContactUriChanged()V
 
+    .line 109
     return-void
 .end method
 
@@ -770,17 +767,20 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 136
     invoke-super {p0, p1}, Landroid/widget/ImageView;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 139
+    invoke-static {}, Landroid/widget/QuickContactBadge$BaiduInjector;->enable()Z
+
+    move-result v1
+
+    if-nez v1, :cond_baidu_0
+
     invoke-virtual {p0}, Landroid/widget/QuickContactBadge;->isEnabled()Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 144
     :cond_0
     iget-object v0, p0, Landroid/widget/QuickContactBadge;->mOverlay:Landroid/graphics/drawable/Drawable;
 
@@ -827,6 +827,11 @@
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     goto :goto_0
+
+    :cond_baidu_0
+    invoke-static {p0, p1}, Landroid/widget/QuickContactBadge$BaiduInjector;->onDraw(Landroid/widget/QuickContactBadge;Landroid/graphics/Canvas;)V
+
+    goto :goto_baidu_0
 .end method
 
 .method public onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
@@ -897,7 +902,7 @@
 
     move-result-object v0
 
-    const v1, 0x1080364
+    const v1, #android:drawable@ic_contact_picture#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -935,7 +940,7 @@
 
     .line 420
     :cond_0
-    sget-object v1, Landroid/widget/QuickContactBadge;->res_id:[I
+    sget-object v1, Landroid/widget/QuickContactBadge$BaiduInjector;->res_id:[I
 
     array-length v1, v1
 
@@ -947,7 +952,7 @@
 
     .line 421
     .local v0, index:I
-    sget-object v1, Landroid/widget/QuickContactBadge;->res_id:[I
+    sget-object v1, Landroid/widget/QuickContactBadge$BaiduInjector;->res_id:[I
 
     aget v1, v1, v0
 
@@ -973,25 +978,51 @@
     .parameter "bottom"
 
     .prologue
-    .line 113
-    invoke-direct {p0, p1}, Landroid/widget/QuickContactBadge;->getMax(I)I
+    invoke-static {p1}, Landroid/widget/QuickContactBadge$BaiduInjector;->getMax(I)I
 
     move-result v0
 
-    invoke-direct {p0, p2}, Landroid/widget/QuickContactBadge;->getMax(I)I
+    invoke-static {p2}, Landroid/widget/QuickContactBadge$BaiduInjector;->getMax(I)I
 
     move-result v1
 
-    invoke-direct {p0, p3}, Landroid/widget/QuickContactBadge;->getMax(I)I
+    invoke-static {p3}, Landroid/widget/QuickContactBadge$BaiduInjector;->getMax(I)I
 
     move-result v2
 
-    invoke-direct {p0, p4}, Landroid/widget/QuickContactBadge;->getMax(I)I
+    invoke-static {p4}, Landroid/widget/QuickContactBadge$BaiduInjector;->getMax(I)I
 
     move-result v3
 
     invoke-super {p0, v0, v1, v2, v3}, Landroid/widget/ImageView;->setPadding(IIII)V
 
     .line 114
+    return-void
+.end method
+
+.method static synthetic access$iget-mOverlay-5af51b(Landroid/widget/QuickContactBadge;)Landroid/graphics/drawable/Drawable;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    iget-object v0, p0, Landroid/widget/QuickContactBadge;->mOverlay:Landroid/graphics/drawable/Drawable;
+
+    return-object v0
+.end method
+
+.method private initPadding()V
+    .locals 4
+
+    .prologue
+    iget v0, p0, Landroid/widget/QuickContactBadge;->mPaddingLeft:I
+
+    iget v1, p0, Landroid/widget/QuickContactBadge;->mPaddingTop:I
+
+    iget v2, p0, Landroid/widget/QuickContactBadge;->mPaddingRight:I
+
+    iget v3, p0, Landroid/widget/QuickContactBadge;->mPaddingBottom:I
+
+    invoke-virtual {p0, v0, v1, v2, v3}, Landroid/widget/QuickContactBadge;->setPadding(IIII)V
+
     return-void
 .end method

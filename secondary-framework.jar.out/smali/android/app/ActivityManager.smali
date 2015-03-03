@@ -645,23 +645,17 @@
 
     const/4 v3, 0x1
 
-    .line 401
     sget v2, Landroid/app/ActivityManager;->mIsLowMemoryReadStatus:I
 
-    const/4 v5, -0x1
+    if-nez v2, :cond_1
 
-    if-ne v2, v5, :cond_1
-
-    .line 402
     new-instance v1, Lcom/android/internal/util/MemInfoReader;
 
     invoke-direct {v1}, Lcom/android/internal/util/MemInfoReader;-><init>()V
 
-    .line 403
     .local v1, reader:Lcom/android/internal/util/MemInfoReader;
     invoke-virtual {v1}, Lcom/android/internal/util/MemInfoReader;->readMemInfo()V
 
-    .line 404
     const-string v2, "true"
 
     const-string v5, "ro.config.low_ram"
@@ -714,20 +708,17 @@
     :cond_2
     move v0, v4
 
-    .line 404
     goto :goto_0
 
     .restart local v0       #isLow:Z
     :cond_3
-    move v2, v4
+    const/4 v2, 0x2
 
-    .line 406
     goto :goto_1
 
     :cond_4
     move v3, v4
 
-    .line 408
     goto :goto_2
 .end method
 
@@ -1312,7 +1303,7 @@
 
     .line 1850
     .local v1, res:Landroid/content/res/Resources;
-    const/high16 v4, 0x105
+    const/high16 v4, #android:dimen@app_icon_size#h
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

@@ -238,19 +238,16 @@
 
     invoke-static {v9, v11, v12, v13}, Landroid/provider/Settings$System;->putLong(Landroid/content/ContentResolver;Ljava/lang/String;J)Z
 
-    .line 4331
     const/4 v9, -0x1
 
     if-eq v8, v9, :cond_2
 
-    .line 4342
     :cond_2
     iget-object v9, p0, Lcom/android/server/ConnectivityService$ConnectivityServiceReceiver;->this$0:Lcom/android/server/ConnectivityService;
 
     #calls: Lcom/android/server/ConnectivityService;->handleMobileDataConnectionChange(II)V
     invoke-static {v9, v5, v8}, Lcom/android/server/ConnectivityService;->access$3300(Lcom/android/server/ConnectivityService;II)V
 
-    .line 4369
     .end local v2           #changeSimId:Ljava/lang/Long;
     .end local v5           #preSlotId:I
     .end local v7           #simId:Ljava/lang/Long;

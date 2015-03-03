@@ -679,39 +679,32 @@
 
     if-eqz v9, :cond_4
 
-    .line 299
     :goto_0
     return-void
 
-    .line 219
     :cond_4
     const/4 v6, 0x0
 
-    .line 221
     .local v6, panelParentView:Landroid/view/View;
     iget-object v10, p0, Landroid/view/WindowManagerGlobal;->mLock:Ljava/lang/Object;
 
     monitor-enter v10
 
-    .line 223
     :try_start_0
     iget-object v9, p0, Landroid/view/WindowManagerGlobal;->mSystemPropertyUpdater:Ljava/lang/Runnable;
 
     if-nez v9, :cond_5
 
-    .line 224
     new-instance v9, Landroid/view/WindowManagerGlobal$1;
 
     invoke-direct {v9, p0}, Landroid/view/WindowManagerGlobal$1;-><init>(Landroid/view/WindowManagerGlobal;)V
 
     iput-object v9, p0, Landroid/view/WindowManagerGlobal;->mSystemPropertyUpdater:Ljava/lang/Runnable;
 
-    .line 233
     iget-object v9, p0, Landroid/view/WindowManagerGlobal;->mSystemPropertyUpdater:Ljava/lang/Runnable;
 
     invoke-static {v9}, Landroid/os/SystemProperties;->addChangeCallback(Ljava/lang/Runnable;)V
 
-    .line 236
     :cond_5
     const/4 v9, 0x0
 

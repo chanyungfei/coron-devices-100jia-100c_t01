@@ -823,7 +823,7 @@
     .line 564
     sget-object v4, Lcom/android/server/power/ShutdownThread;->mShutdownProgressDialog:Landroid/app/ProgressDialog;
 
-    const v6, 0x10400de
+    const v6, #android:string@power_off#t
 
     invoke-virtual {p0, v6}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -834,7 +834,7 @@
     .line 565
     sget-object v4, Lcom/android/server/power/ShutdownThread;->mShutdownProgressDialog:Landroid/app/ProgressDialog;
 
-    const v6, 0x10400e2
+    const v6, #android:string@shutdown_progress#t
 
     invoke-virtual {p0, v6}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -1145,7 +1145,7 @@
 
     .line 258
     .local v0, layoutInflater:Landroid/view/LayoutInflater;
-    const v4, 0x10900ce
+    const v4, #android:layout@quickboot_dialog_confirm#t
 
     invoke-virtual {v0, v4, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -1194,19 +1194,19 @@
 
     invoke-direct {v4, p0}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v5, 0x10400de
+    const v5, #android:string@power_off#t
 
     invoke-virtual {v4, v5}, Landroid/app/AlertDialog$Builder;->setTitle(I)Landroid/app/AlertDialog$Builder;
 
     move-result-object v4
 
-    const v5, 0x1040013
+    const v5, #android:string@yes#t
 
     invoke-virtual {v4, v5, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v4
 
-    const v5, 0x1040009
+    const v5, #android:string@no#t
 
     invoke-virtual {v4, v5, v6}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -1844,9 +1844,9 @@
     .parameter "confirm"
 
     .prologue
-    const v12, 0x1040013
+    const v12, #android:string@yes#t
 
-    const v11, 0x1040009
+    const v11, #android:string@no#t
 
     const/4 v10, 0x2
 
@@ -1897,7 +1897,7 @@
 
     move-result-object v7
 
-    const v8, 0x10e0017
+    const v8, #android:integer@config_longPressOnPowerBehavior#t
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -1909,16 +1909,14 @@
 
     if-eqz v7, :cond_3
 
-    const v3, 0x10400e6
+    const v3, #android:string@reboot_safemode_confirm#t
 
-    .line 316
     .local v3, resourceId1:I
     :goto_1
     if-ne v1, v10, :cond_5
 
-    const v4, 0x104055a
+    const v4, #android:string@reboot_confirm_question#t
 
-    .line 319
     .local v4, resourceId2:I
     :goto_2
     sget-boolean v7, Lcom/android/server/power/ShutdownThread;->mReboot:Z
@@ -1938,7 +1936,7 @@
 
     if-eqz v7, :cond_7
 
-    const v6, 0x10400e5
+    const v6, #android:string@reboot_safemode_title#t
 
     .line 323
     .local v6, titleId1:I
@@ -1951,7 +1949,7 @@
 
     if-nez v7, :cond_8
 
-    const v5, 0x1040558
+    const v5, #android:string@global_action_reboot#t
 
     .line 326
     .local v5, titleId:I
@@ -2101,14 +2099,12 @@
 
     if-nez v7, :cond_0
 
-    .line 424
     sget-object v7, Lcom/android/server/power/ShutdownThread;->sConfirmDialog:Landroid/app/AlertDialog;
 
     invoke-virtual {v7}, Landroid/app/AlertDialog;->show()V
 
     goto/16 :goto_0
 
-    .line 297
     .end local v0           #closer:Lcom/android/server/power/ShutdownThread$CloseDialogReceiver;
     .end local v1           #longPressBehavior:I
     .end local v2           #resourceId:I
@@ -2131,19 +2127,19 @@
     :cond_3
     if-ne v1, v10, :cond_4
 
-    const v3, 0x10400e4
+    const v3, #android:string@shutdown_confirm_question#t
 
     goto/16 :goto_1
 
     :cond_4
-    const v3, 0x10400e3
+    const v3, #android:string@shutdown_confirm#t
 
     goto/16 :goto_1
 
     .line 316
     .restart local v3       #resourceId1:I
     :cond_5
-    const v4, 0x1040559
+    const v4, #android:string@reboot_confirm#t
 
     goto/16 :goto_2
 
@@ -2157,7 +2153,7 @@
     .line 320
     .restart local v2       #resourceId:I
     :cond_7
-    const v6, 0x10400de
+    const v6, #android:string@power_off#t
 
     goto/16 :goto_4
 
@@ -3528,4 +3524,32 @@
     move-exception v2
 
     goto/16 :goto_a
+.end method
+
+.method static synthetic access$sput-mRebootReason-ba5398(Ljava/lang/String;)Ljava/lang/String;
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    sput-object p0, Lcom/android/server/power/ShutdownThread;->mRebootReason:Ljava/lang/String;
+
+    return-object p0
+.end method
+
+.method static synthetic access$sget-mReboot-7ffdb3()Z
+    .locals 1
+
+    .prologue
+    sget-boolean v0, Lcom/android/server/power/ShutdownThread;->mReboot:Z
+
+    return v0
+.end method
+
+.method static synthetic access$sget-mRebootSafeMode-6a6402()Z
+    .locals 1
+
+    .prologue
+    sget-boolean v0, Lcom/android/server/power/ShutdownThread;->mRebootSafeMode:Z
+
+    return v0
 .end method

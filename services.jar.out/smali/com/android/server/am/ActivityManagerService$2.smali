@@ -316,13 +316,11 @@
 
     check-cast v33, Lcom/android/server/DeviceStorageMonitorService;
 
-    .line 1042
     .local v33, dsm:Lcom/android/server/DeviceStorageMonitorService;
     invoke-virtual/range {v33 .. v33}, Lcom/android/server/DeviceStorageMonitorService;->isMemoryCriticalLow()Z
 
     move-result v30
 
-    .line 1043
     .local v30, criticalLow:Z
     new-instance v7, Lcom/android/server/am/AppErrorDialog;
 
@@ -340,7 +338,7 @@
 
     move-object/from16 v1, v47
 
-    invoke-direct {v7, v3, v5, v0, v1}, Lcom/android/server/am/AppErrorDialog;-><init>(Landroid/content/Context;Lcom/android/server/am/ActivityManagerService;Lcom/android/server/am/AppErrorResult;Lcom/android/server/am/ProcessRecord;)V
+    invoke-direct {v7, v3, v5, v0, v1}, Lcom/android/server/am/BaiduAppErrorDialog;-><init>(Landroid/content/Context;Lcom/android/server/am/ActivityManagerService;Lcom/android/server/am/AppErrorResult;Lcom/android/server/am/ProcessRecord;)V
 
     .line 1045
     .local v7, d:Landroid/app/Dialog;
@@ -551,8 +549,7 @@
 
     if-eqz v3, :cond_c
 
-    .line 1078
-    new-instance v7, Lcom/android/server/am/AppNotRespondingDialog;
+    new-instance v7, Lcom/android/server/am/BaiduAppNotRespondingDialog;
 
     move-object/from16 v0, p0
 
@@ -585,7 +582,7 @@
     :goto_3
     move-object/from16 v10, v47
 
-    invoke-direct/range {v7 .. v12}, Lcom/android/server/am/AppNotRespondingDialog;-><init>(Lcom/android/server/am/ActivityManagerService;Landroid/content/Context;Lcom/android/server/am/ProcessRecord;Lcom/android/server/am/ActivityRecord;Z)V
+    invoke-direct/range {v7 .. v12}, Lcom/android/server/am/BaiduAppNotRespondingDialog;-><init>(Lcom/android/server/am/ActivityManagerService;Landroid/content/Context;Lcom/android/server/am/ProcessRecord;Lcom/android/server/am/ActivityRecord;Z)V
 
     .line 1081
     .restart local v7       #d:Landroid/app/Dialog;
@@ -2364,7 +2361,7 @@
 
     iget-object v3, v3, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
 
-    const v4, 0x10403f0
+    const v4, #android:string@heavy_weight_notification#t
 
     const/4 v5, 0x1
 
@@ -2398,7 +2395,7 @@
 
     .line 1342
     .local v44, notification:Landroid/app/Notification;
-    const v3, 0x1080677
+    const v3, #android:drawable@stat_sys_adb#t
 
     move-object/from16 v0, v44
 
@@ -2453,7 +2450,7 @@
 
     iget-object v3, v3, Lcom/android/server/am/ActivityManagerService;->mContext:Landroid/content/Context;
 
-    const v4, 0x10403f1
+    const v4, #android:string@heavy_weight_notification_detail#t
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -2513,7 +2510,7 @@
 
     const/4 v14, 0x0
 
-    const v15, 0x10403f0
+    const v15, #android:string@heavy_weight_notification#t
 
     move-object/from16 v0, v53
 
@@ -2593,7 +2590,7 @@
 
     const/4 v4, 0x0
 
-    const v5, 0x10403f0
+    const v5, #android:string@heavy_weight_notification#t
 
     move-object/from16 v0, p1
 

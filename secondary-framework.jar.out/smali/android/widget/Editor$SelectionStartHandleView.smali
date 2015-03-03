@@ -158,228 +158,47 @@
 .end method
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 10
+    .locals 3
     .parameter "ev"
 
     .prologue
-    .line 3794
-    iget v4, p0, Landroid/widget/Editor$HandleView;->mIdealVerticalOffset:F
-
-    .line 3795
-    .local v4, previousVerticalOffset:F
-    const/4 v8, 0x2
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
-
-    move-result v9
-
-    if-ne v8, v9, :cond_2
-
-    .line 3796
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
-
-    move-result v5
-
-    .line 3797
-    .local v5, rawX:F
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
-
-    move-result v6
-
-    .line 3800
-    .local v6, rawY:F
-    iget v8, p0, Landroid/widget/Editor$HandleView;->mPositionY:I
-
-    iget v9, p0, Landroid/widget/Editor$HandleView;->mLastParentY:I
-
-    add-int/2addr v8, v9
-
-    iget-object v9, p0, Landroid/widget/Editor$HandleView;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v9}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
-
-    move-result v9
-
-    add-int/2addr v8, v9
-
-    int-to-float v8, v8
-
-    sub-float v0, v8, v6
-
-    .line 3804
-    .local v0, currentVerticalOffset:F
-    iget v8, p0, Landroid/widget/Editor$HandleView;->mIdealVerticalOffset:F
-
-    cmpg-float v8, v4, v8
-
-    if-gez v8, :cond_1
-
-    .line 3805
-    iget v8, p0, Landroid/widget/Editor$HandleView;->mIdealVerticalOffset:F
-
-    invoke-static {v0, v8}, Ljava/lang/Math;->min(FF)F
-
-    move-result v3
-
-    .line 3806
-    .local v3, newVerticalOffset:F
-    invoke-static {v3, v4}, Ljava/lang/Math;->max(FF)F
-
-    move-result v3
-
-    .line 3815
-    :goto_0
-    iget v8, p0, Landroid/widget/Editor$HandleView;->mTouchToWindowOffsetX:F
-
-    sub-float v8, v5, v8
-
-    iget v9, p0, Landroid/widget/Editor$HandleView;->mHotspotX:I
-
-    int-to-float v9, v9
-
-    add-float v1, v8, v9
-
-    .line 3816
-    .local v1, newPosX:F
-    iget v8, p0, Landroid/widget/Editor$HandleView;->mLastParentY:I
-
-    int-to-float v8, v8
-
-    sub-float v8, v6, v8
-
-    add-float/2addr v8, v3
-
-    iget v9, p0, Landroid/widget/Editor$HandleView;->mTouchOffsetY:F
-
-    sub-float v2, v8, v9
-
-    .line 3823
-    .local v2, newPosY:F
-    invoke-virtual {p0, v1, v2}, Landroid/widget/Editor$SelectionStartHandleView;->updatePosition(FF)V
-
-    .line 3825
-    iget-object v8, p0, Landroid/widget/Editor$SelectionStartHandleView;->this$0:Landroid/widget/Editor;
-
-    #getter for: Landroid/widget/Editor;->mMagnifierController:Landroid/widget/MagnifierController;
-    invoke-static {v8}, Landroid/widget/Editor;->access$2800(Landroid/widget/Editor;)Landroid/widget/MagnifierController;
-
-    move-result-object v8
-
-    if-eqz v8, :cond_0
-
-    .line 3826
-    iget-object v8, p0, Landroid/widget/Editor$SelectionStartHandleView;->this$0:Landroid/widget/Editor;
-
-    #getter for: Landroid/widget/Editor;->mMagnifierController:Landroid/widget/MagnifierController;
-    invoke-static {v8}, Landroid/widget/Editor;->access$2800(Landroid/widget/Editor;)Landroid/widget/MagnifierController;
-
-    move-result-object v8
-
-    iget v9, p0, Landroid/widget/Editor$HandleView;->mCursorType:I
-
-    invoke-virtual {v8, v9}, Landroid/widget/MagnifierController;->update(I)V
-
-    .line 3829
-    :cond_0
-    const/4 v7, 0x1
-
-    .line 3847
-    .end local v0           #currentVerticalOffset:F
-    .end local v1           #newPosX:F
-    .end local v2           #newPosY:F
-    .end local v3           #newVerticalOffset:F
-    .end local v5           #rawX:F
-    .end local v6           #rawY:F
-    :goto_1
-    return v7
-
-    .line 3808
-    .restart local v0       #currentVerticalOffset:F
-    .restart local v5       #rawX:F
-    .restart local v6       #rawY:F
-    :cond_1
-    iget v8, p0, Landroid/widget/Editor$HandleView;->mIdealVerticalOffset:F
-
-    invoke-static {v0, v8}, Ljava/lang/Math;->max(FF)F
-
-    move-result v3
-
-    .line 3809
-    .restart local v3       #newVerticalOffset:F
-    invoke-static {v3, v4}, Ljava/lang/Math;->min(FF)F
-
-    move-result v3
-
-    goto :goto_0
-
-    .line 3831
-    .end local v0           #currentVerticalOffset:F
-    .end local v3           #newVerticalOffset:F
-    .end local v5           #rawX:F
-    .end local v6           #rawY:F
-    :cond_2
     invoke-super {p0, p1}, Landroid/widget/Editor$HandleView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    move-result v7
+    move-result v0
 
-    .line 3833
-    .local v7, result:Z
+    .local v0, result:Z
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
-    move-result v8
+    move-result v1
 
-    packed-switch v8, :pswitch_data_0
+    packed-switch v1, :pswitch_data_0
 
-    goto :goto_1
+    :goto_0
+    return v0
 
     .line 3835
     :pswitch_0
-    iget v8, p0, Landroid/widget/Editor$HandleView;->mPositionY:I
+    invoke-virtual {p0}, Landroid/widget/Editor$SelectionStartHandleView;->hideActionPopupWindow()V
 
-    iget v9, p0, Landroid/widget/Editor$HandleView;->mLastParentY:I
+    goto :goto_0
 
-    add-int/2addr v8, v9
-
-    iget-object v9, p0, Landroid/widget/Editor$HandleView;->mDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v9}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
-
-    move-result v9
-
-    add-int/2addr v8, v9
-
-    int-to-float v8, v8
-
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
-
-    move-result v9
-
-    sub-float v4, v8, v9
-
-    .line 3836
-    invoke-virtual {p0}, Landroid/widget/Editor$SelectionStartHandleView;->dismissActionPopupWindow()V
-
-    goto :goto_1
-
-    .line 3839
     :pswitch_1
-    iget-object v8, p0, Landroid/widget/Editor$HandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
+    iget-object v1, p0, Landroid/widget/Editor$SelectionStartHandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
 
-    if-eqz v8, :cond_3
+    if-eqz v1, :cond_0
 
-    iget-object v8, p0, Landroid/widget/Editor$HandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
+    iget-object v1, p0, Landroid/widget/Editor$SelectionStartHandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
 
-    iget v9, p0, Landroid/widget/Editor$HandleView;->mCursorType:I
+    const/4 v2, 0x0
 
-    invoke-virtual {v8, v9}, Landroid/widget/Editor$ActionPopupWindow;->updatePositionFlag(I)V
+    invoke-virtual {v1, v2}, Landroid/widget/Editor$ActionPopupWindow;->updatePositionFlag(I)V
 
-    .line 3840
-    :cond_3
-    const/16 v8, 0xc8
+    :cond_0
+    const/16 v1, 0xc8
 
-    invoke-virtual {p0, v8}, Landroid/widget/Editor$SelectionStartHandleView;->showActionPopupWindow(I)V
+    invoke-virtual {p0, v1}, Landroid/widget/Editor$SelectionStartHandleView;->showActionPopupWindow(I)V
 
-    goto :goto_1
+    goto :goto_0
 
     .line 3833
     :pswitch_data_0

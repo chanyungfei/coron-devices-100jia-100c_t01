@@ -11,6 +11,7 @@
         Lcom/android/server/ConnectivityService$SettingsObserver;,
         Lcom/android/server/ConnectivityService$InternalHandler;,
         Lcom/android/server/ConnectivityService$NetworkStateTrackerHandler;,
+        Lcom/android/server/ConnectivityService$BaiduInjector;,
         Lcom/android/server/ConnectivityService$FeatureUser;,
         Lcom/android/server/ConnectivityService$DefaultNetworkFactory;,
         Lcom/android/server/ConnectivityService$NetworkFactory;,
@@ -630,7 +631,7 @@
 
     move-result-object v2
 
-    const v3, 0x1040022
+    const v3, #android:string@config_default_dns_server#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -755,7 +756,7 @@
 
     move-result-object v2
 
-    const v3, 0x10e0009
+    const v3, #android:integer@config_networkTransitionTimeout#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -815,7 +816,7 @@
 
     move-result-object v2
 
-    const v3, 0x1070017
+    const v3, #android:array@radioAttributes#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -1029,7 +1030,7 @@
 
     move-result-object v2
 
-    const v3, 0x1070015
+    const v3, #android:array@networkAttributes#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -1256,7 +1257,7 @@
 
     move-result-object v2
 
-    const v3, 0x1070016
+    const v3, #android:array@config_protectedNetworks#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getIntArray(I)[I
 
@@ -9072,7 +9073,7 @@
 
     move-result-object v17
 
-    const v18, 0x111003f
+    const v18, #android:bool@config_wimaxEnabled#t
 
     invoke-virtual/range {v17 .. v18}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -9088,7 +9089,7 @@
 
     move-result-object v17
 
-    const v18, 0x104002a
+    const v18, #android:string@config_wimaxServiceJarLocation#t
 
     invoke-virtual/range {v17 .. v18}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -9100,7 +9101,7 @@
 
     move-result-object v17
 
-    const v18, 0x104002b
+    const v18, #android:string@config_wimaxNativeLibLocation#t
 
     invoke-virtual/range {v17 .. v18}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -9112,7 +9113,7 @@
 
     move-result-object v17
 
-    const v18, 0x104002c
+    const v18, #android:string@config_wimaxManagerClassname#t
 
     invoke-virtual/range {v17 .. v18}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -9124,7 +9125,7 @@
 
     move-result-object v17
 
-    const v18, 0x104002d
+    const v18, #android:string@config_wimaxServiceClassname#t
 
     invoke-virtual/range {v17 .. v18}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -9136,7 +9137,7 @@
 
     move-result-object v17
 
-    const v18, 0x104002e
+    const v18, #android:string@config_wimaxStateTrackerClassname#t
 
     invoke-virtual/range {v17 .. v18}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -17263,12 +17264,10 @@
 
     invoke-static {v2, v3, v4, v5}, Landroid/provider/Settings$System;->putLong(Landroid/content/ContentResolver;Ljava/lang/String;J)Z
 
-    .line 4588
     const/4 v2, -0x1
 
     if-eq p1, v2, :cond_0
 
-    .line 4598
     :cond_0
     iget-object v2, p0, Lcom/android/server/ConnectivityService;->mHandler:Lcom/android/server/ConnectivityService$InternalHandler;
 
@@ -20544,4 +20543,26 @@
     move-result-object v0
 
     goto :goto_0
+.end method
+
+# Remove the first '#' if you want to enable this method. It might be invoked from codes of BOSP.
+#.method static synthetic access$invoke-handleSetMobileData-fc3ea6(Lcom/android/server/ConnectivityService;Z)V
+#    .locals 0
+#    .parameter "x0"
+#    .parameter "x1"
+#    .prologue
+#    invoke-direct {p0, p1}, Lcom/android/server/ConnectivityService;->handleSetMobileData(Z)V
+#    return-void
+#.end method
+
+.method static synthetic access$invoke-getITelephony-c3205c(Lcom/android/server/ConnectivityService;)Lcom/android/internal/telephony/ITelephony;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    invoke-direct {p0}, Lcom/android/server/ConnectivityService;->getITelephony()Lcom/android/internal/telephony/ITelephony;
+
+    move-result-object v0
+
+    return-object v0
 .end method

@@ -345,11 +345,9 @@
     .locals 2
 
     .prologue
-    .line 167
     invoke-super {p0}, Landroid/widget/RelativeLayout;->onFinishInflate()V
 
-    .line 170
-    const v0, 0x1020331
+    const v0, #android:id@timeDisplayBackground#t
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/DigitalClock;->findViewById(I)Landroid/view/View;
 
@@ -359,22 +357,19 @@
 
     iput-object v0, p0, Lcom/android/internal/widget/DigitalClock;->mTimeDisplayBackground:Landroid/widget/TextView;
 
-    .line 171
     iget-object v0, p0, Lcom/android/internal/widget/DigitalClock;->mTimeDisplayBackground:Landroid/widget/TextView;
 
     sget-object v1, Lcom/android/internal/widget/DigitalClock;->sBackgroundFont:Landroid/graphics/Typeface;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 172
     iget-object v0, p0, Lcom/android/internal/widget/DigitalClock;->mTimeDisplayBackground:Landroid/widget/TextView;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 174
-    const v0, 0x1020332
+    const v0, #android:id@timeDisplayForeground#t
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/DigitalClock;->findViewById(I)Landroid/view/View;
 

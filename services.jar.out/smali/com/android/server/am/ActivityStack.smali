@@ -17982,7 +17982,6 @@
 
     move-result-object v10
 
-    .line 3524
     .local v10, am:Lcom/baidu/access/AccessControllManager;
     invoke-virtual/range {p1 .. p1}, Landroid/content/Intent;->getFlags()I
 
@@ -20832,20 +20831,16 @@
 
     move-result-object v1
 
-    .line 1161
     .local v1, res:Landroid/content/res/Resources;
     iget v2, p0, Lcom/android/server/am/ActivityStack;->mThumbnailWidth:I
 
-    .line 1162
     .local v2, w:I
     iget v0, p0, Lcom/android/server/am/ActivityStack;->mThumbnailHeight:I
 
-    .line 1163
     .local v0, h:I
     if-gez v2, :cond_2
 
-    .line 1164
-    const v4, 0x1050002
+    const v4, #android:dimen@thumbnail_width#t
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -20853,8 +20848,7 @@
 
     iput v2, p0, Lcom/android/server/am/ActivityStack;->mThumbnailWidth:I
 
-    .line 1166
-    const v4, 0x1050001
+    const v4, #android:dimen@thumbnail_height#t
 
     invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -21541,18 +21535,28 @@
     .parameter "outActivity"
 
     .prologue
-    .line 2849
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
+
+    iget-boolean v3, v3, Lcom/android/server/am/ActivityManagerService;->mSystemReady:Z
+
+    if-nez v3, :cond_baidu_0
+
+    const/16 v3, 0x0
+
+    goto/16 :goto_baidu_0
+
+    :cond_baidu_0
+
     const/16 v23, 0x0
 
-    .line 2851
     .local v23, err:I
     const/16 v20, 0x0
 
-    .line 2852
     .local v20, callerApp:Lcom/android/server/am/ProcessRecord;
     if-eqz p1, :cond_0
 
-    .line 2853
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/android/server/am/ActivityStack;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -21842,20 +21846,16 @@
 
     if-eqz v28, :cond_9
 
-    .line 2899
     if-ltz p7, :cond_8
 
-    .line 2900
     invoke-static/range {p11 .. p11}, Landroid/app/ActivityOptions;->abort(Landroid/os/Bundle;)V
 
-    .line 2901
     const/4 v3, -0x3
 
-    .line 3037
     :goto_3
+    :goto_baidu_0
     return v3
 
-    .line 2858
     .end local v5           #resultRecord:Lcom/android/server/am/ActivityRecord;
     .end local v25           #launchFlags:I
     .end local v28           #sourceRecord:Lcom/android/server/am/ActivityRecord;

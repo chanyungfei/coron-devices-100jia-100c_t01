@@ -3,6 +3,14 @@
 .source "CallerInfo.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/android/internal/telephony/CallerInfo$BaiduInjector;
+    }
+.end annotation
+
+
 # static fields
 .field public static final PAYPHONE_NUMBER:Ljava/lang/String; = "-3"
 
@@ -563,66 +571,56 @@
     :goto_2
     iput-boolean v4, v2, Lcom/android/internal/telephony/CallerInfo;->shouldSendToVoicemail:Z
 
-    .line 304
     iput-boolean v5, v2, Lcom/android/internal/telephony/CallerInfo;->contactExists:Z
 
-    .line 306
-    const-string/jumbo v4, "width"
+    const-string v4, "width"
 
     invoke-interface {p2, v4}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 307
     invoke-interface {p2, v0}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v4
 
     iput v4, v2, Lcom/android/internal/telephony/CallerInfo;->mPhotoWidth:I
 
-    .line 309
     const-string v4, "height"
 
     invoke-interface {p2, v4}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 310
     invoke-interface {p2, v0}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v4
 
     iput v4, v2, Lcom/android/internal/telephony/CallerInfo;->mPhotoHeight:I
 
-    .line 312
-    const-string/jumbo v4, "photo_id"
+    const-string v4, "photo_id"
 
     invoke-interface {p2, v4}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 313
     invoke-interface {p2, v0}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v4
 
     iput v4, v2, Lcom/android/internal/telephony/CallerInfo;->mPhotoID:I
 
-    .line 315
-    const-string/jumbo v4, "view_mode"
+    const-string v4, "view_mode"
 
     invoke-interface {p2, v4}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 316
     invoke-interface {p2, v0}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v4
 
     iput v4, v2, Lcom/android/internal/telephony/CallerInfo;->mViewMode:I
 
-    .line 320
     .end local v0           #columnIndex:I
     :cond_6
     :goto_3
@@ -1577,8 +1575,7 @@
     .parameter "context"
 
     .prologue
-    .line 488
-    const v0, 0x10402ea
+    const v0, #android:string@emergency_call_dialog_number_for_display#t
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1586,17 +1583,14 @@
 
     iput-object v0, p0, Lcom/android/internal/telephony/CallerInfo;->phoneNumber:Ljava/lang/String;
 
-    .line 490
-    const v0, 0x108056e
+    const v0, #android:drawable@picture_emergency#t
 
     iput v0, p0, Lcom/android/internal/telephony/CallerInfo;->photoResource:I
 
-    .line 491
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/telephony/CallerInfo;->mIsEmergency:Z
 
-    .line 492
     return-object p0
 .end method
 
@@ -1992,5 +1986,25 @@
     iput-object v0, p0, Lcom/android/internal/telephony/CallerInfo;->notes:Ljava/lang/String;
 
     .line 643
+    return-void
+.end method
+
+.method static synthetic access$sget-VDBG-988cc2()Z
+    .locals 1
+
+    .prologue
+    sget-boolean v0, Lcom/android/internal/telephony/CallerInfo;->VDBG:Z
+
+    return v0
+.end method
+
+.method public updateGeoDescriptionAndLabel(Landroid/content/Context;Ljava/lang/String;)V
+    .locals 0
+    .parameter "context"
+    .parameter "fallbackNumber"
+
+    .prologue
+    invoke-static {p0, p1, p2}, Lcom/android/internal/telephony/CallerInfo$BaiduInjector;->updateGeoDescriptionAndLabel(Lcom/android/internal/telephony/CallerInfo;Landroid/content/Context;Ljava/lang/String;)V
+
     return-void
 .end method

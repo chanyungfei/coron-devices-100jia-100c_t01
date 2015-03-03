@@ -96,25 +96,22 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 3955
     :goto_0
     return v0
 
-    .line 3944
     :pswitch_0
-    invoke-virtual {p0}, Landroid/widget/Editor$SelectionEndHandleView;->dismissActionPopupWindow()V
+    invoke-virtual {p0}, Landroid/widget/Editor$SelectionEndHandleView;->hideActionPopupWindow()V
 
     goto :goto_0
 
-    .line 3947
     :pswitch_1
-    iget-object v1, p0, Landroid/widget/Editor$HandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
+    iget-object v1, p0, Landroid/widget/Editor$SelectionEndHandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Landroid/widget/Editor$HandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
+    iget-object v1, p0, Landroid/widget/Editor$SelectionEndHandleView;->mActionPopupWindow:Landroid/widget/Editor$ActionPopupWindow;
 
-    iget v2, p0, Landroid/widget/Editor$HandleView;->mCursorType:I
+    const/4 v2, 0x2
 
     invoke-virtual {v1, v2}, Landroid/widget/Editor$ActionPopupWindow;->updatePositionFlag(I)V
 
@@ -125,9 +122,6 @@
     invoke-virtual {p0, v1}, Landroid/widget/Editor$SelectionEndHandleView;->showActionPopupWindow(I)V
 
     goto :goto_0
-
-    .line 3942
-    nop
 
     :pswitch_data_0
     .packed-switch 0x0

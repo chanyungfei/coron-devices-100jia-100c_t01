@@ -157,37 +157,32 @@
     .locals 2
 
     .prologue
-    .line 534
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 230
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/app/Notification;->audioStreamType:I
 
-    .line 445
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     iput-object v0, p0, Landroid/app/Notification;->extras:Landroid/os/Bundle;
 
-    .line 535
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/app/Notification;->when:J
 
-    .line 536
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/app/Notification;->priority:I
 
-    .line 539
     invoke-direct {p0}, Landroid/app/Notification;->setSimIdAndInfoType()V
 
-    .line 541
+    invoke-direct {p0}, Landroid/app/Notification;->setSimIdAndInfoType()V
+
     return-void
 .end method
 
@@ -241,49 +236,40 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 548
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 230
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/app/Notification;->audioStreamType:I
 
-    .line 445
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     iput-object v0, p0, Landroid/app/Notification;->extras:Landroid/os/Bundle;
 
-    .line 549
     iput-wide p4, p0, Landroid/app/Notification;->when:J
 
-    .line 550
     iput p2, p0, Landroid/app/Notification;->icon:I
 
-    .line 551
     iput-object p3, p0, Landroid/app/Notification;->tickerText:Ljava/lang/CharSequence;
 
-    .line 554
     invoke-direct {p0}, Landroid/app/Notification;->setSimIdAndInfoType()V
 
-    .line 557
     invoke-static {p1, v1, p8, v1}, Landroid/app/PendingIntent;->getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v0
 
     invoke-virtual {p0, p1, p6, p7, v0}, Landroid/app/Notification;->setLatestEventInfo(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
-    .line 560
     iput v1, p0, Landroid/app/Notification;->simInfoType:I
 
-    .line 561
     const-wide/16 v0, -0x1
 
     iput-wide v0, p0, Landroid/app/Notification;->simId:J
 
-    .line 563
+    invoke-direct {p0}, Landroid/app/Notification;->setSimIdAndInfoType()V
+
     return-void
 .end method
 
@@ -1011,9 +997,9 @@
     .end annotation
 
     .prologue
-    const v6, 0x1020064
+    const v6, #android:id@time#t
 
-    const v4, 0x1020006
+    const v4, #android:id@icon#t
 
     .line 891
     new-instance v0, Landroid/widget/RemoteViews;
@@ -1022,7 +1008,7 @@
 
     move-result-object v2
 
-    const v3, 0x10900ac
+    const v3, #android:layout@notification_template_base#t
 
     invoke-direct {v0, v2, v3}, Landroid/widget/RemoteViews;-><init>(Ljava/lang/String;I)V
 
@@ -1045,41 +1031,34 @@
 
     if-ge v2, v3, :cond_1
 
-    .line 897
     const-string v2, "setBackgroundResource"
 
-    const v3, 0x108098c
+    const v3, #android:drawable@notification_template_icon_low_bg#t
 
     invoke-virtual {v0, v4, v2, v3}, Landroid/widget/RemoteViews;->setInt(ILjava/lang/String;I)V
 
-    .line 899
-    const v2, 0x102038d
+    const v2, #android:id@status_bar_latest_event_content#t
 
     const-string v3, "setBackgroundResource"
 
-    const v4, 0x108052b
+    const v4, #android:drawable@notification_bg_low#t
 
     invoke-virtual {v0, v2, v3, v4}, Landroid/widget/RemoteViews;->setInt(ILjava/lang/String;I)V
 
-    .line 902
     :cond_1
     if-eqz p2, :cond_2
 
-    .line 903
-    const v2, 0x1020016
+    const v2, #android:id@title#t
 
     invoke-virtual {v0, v2, p2}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
 
-    .line 905
     :cond_2
     if-eqz p3, :cond_3
 
-    .line 906
-    const v2, 0x1020046
+    const v2, #android:id@text#t
 
     invoke-virtual {v0, v2, p3}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
 
-    .line 908
     :cond_3
     iget-wide v2, p0, Landroid/app/Notification;->when:J
 
@@ -1114,7 +1093,7 @@
 
     .line 914
     .local v1, f:Ljava/text/NumberFormat;
-    const v2, 0x1020391
+    const v2, #android:id@info#t
 
     iget v3, p0, Landroid/app/Notification;->number:I
 
@@ -1844,3 +1823,13 @@
 
     goto :goto_9
 .end method
+
+# Remove the first '#' if you want to enable this method. It might be invoked from codes of BOSP.
+#.method static synthetic access$iput-extras-83da58(Landroid/app/Notification;Landroid/os/Bundle;)Landroid/os/Bundle;
+#    .locals 0
+#    .parameter "x0"
+#    .parameter "x1"
+#    .prologue
+#    iput-object p1, p0, Landroid/app/Notification;->extras:Landroid/os/Bundle;
+#    return-object p1
+#.end method

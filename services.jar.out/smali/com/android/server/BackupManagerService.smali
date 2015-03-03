@@ -1453,16 +1453,13 @@
     :try_end_5
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_5 .. :try_end_5} :catch_2
 
-    .line 858
     .end local v12           #info:Landroid/content/pm/ApplicationInfo;
     .end local v14           #intent:Landroid/content/Intent;
     :goto_4
     invoke-direct/range {p0 .. p0}, Lcom/android/server/BackupManagerService;->registerBaiduTransport()V
 
-    .line 861
     invoke-direct/range {p0 .. p0}, Lcom/android/server/BackupManagerService;->parseLeftoverJournals()V
 
-    .line 864
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/server/BackupManagerService;->mPowerManager:Landroid/os/PowerManager;

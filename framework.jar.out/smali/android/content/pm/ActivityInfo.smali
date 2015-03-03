@@ -6,6 +6,14 @@
 .implements Landroid/os/Parcelable;
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroid/content/pm/ActivityInfo$BaiduInjector;
+    }
+.end annotation
+
+
 # static fields
 .field public static final CONFIG_DENSITY:I = 0x1000
 
@@ -424,26 +432,22 @@
 
     if-eqz v2, :cond_0
 
-    .line 442
     sget-object v2, Landroid/content/pm/ActivityInfo;->CONFIG_NATIVE_BITS:[I
 
     aget v2, v2, v0
 
     or-int/2addr v1, v2
 
-    .line 440
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 446
     :cond_1
     invoke-static {p0, v1}, Landroid/content/pm/ActivityInfo;->setOutputBaidu(II)I
 
     move-result v1
 
-    .line 448
     return v1
 .end method
 

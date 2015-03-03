@@ -24,6 +24,7 @@
 
 .field private static final SEMIVIEW_DATA:Ljava/lang/String; = "Data"
 
+
 .field private static final SEMIVIEW_STYLE:Ljava/lang/String; = "Style"
 
 .field private static final SEMIVIEW_TOUCH_POINT_X:Ljava/lang/String; = "Touch_Point_X"
@@ -52,8 +53,7 @@
     .locals 0
 
     .prologue
-    .line 16
-    invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -66,10 +66,8 @@
     .parameter "startPointerY"
 
     .prologue
-    .line 57
     const/16 v5, 0xe
 
-    .line 58
     .local v5, style:I
     const/4 v4, 0x2
 
@@ -87,7 +85,6 @@
 
     invoke-static/range {v0 .. v7}, Lcom/android/internal/util/SearchHelper;->startSearch(Landroid/content/Context;Ljava/lang/String;IIIIILjava/lang/String;)V
 
-    .line 60
     return-void
 .end method
 
@@ -100,10 +97,8 @@
     .parameter "type"
 
     .prologue
-    .line 73
     const/16 v5, 0xe
 
-    .line 74
     .local v5, style:I
     const/4 v6, 0x3
 
@@ -121,7 +116,6 @@
 
     invoke-static/range {v0 .. v7}, Lcom/android/internal/util/SearchHelper;->startSearch(Landroid/content/Context;Ljava/lang/String;IIIIILjava/lang/String;)V
 
-    .line 76
     return-void
 .end method
 
@@ -231,55 +225,45 @@
     .parameter "searchText"
 
     .prologue
-    .line 119
     :try_start_0
     new-instance v1, Landroid/content/Intent;
 
     invoke-direct {v1}, Landroid/content/Intent;-><init>()V
 
-    .line 120
     .local v1, intent:Landroid/content/Intent;
     const-string v2, "android.intent.category.DEFAULT"
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 121
     const-string v2, "com.baidu.searchbox.action.SEARCH"
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 122
     const/high16 v2, 0x1000
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 123
-    const-string/jumbo v2, "key_value"
+    const-string v2, "key_value"
 
     invoke-virtual {v1, v2, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 124
     const-string v2, "BROWSER_RESTART"
 
     const/4 v3, 0x1
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 125
     invoke-virtual {p0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
     :try_end_0
     .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 129
     .end local v1           #intent:Landroid/content/Intent;
     :goto_0
     return-void
 
-    .line 126
     :catch_0
     move-exception v0
 
-    .line 127
     .local v0, e:Landroid/content/ActivityNotFoundException;
     invoke-static {p0, p1}, Lcom/android/internal/util/SearchHelper;->useBrowerSearch(Landroid/content/Context;Ljava/lang/String;)V
 
@@ -292,13 +276,12 @@
     .parameter "searchText"
 
     .prologue
-    const v7, 0x104055e
+    const v7, #string@search_baidu_web#t
 
     const/4 v4, 0x1
 
     const/4 v6, 0x0
 
-    .line 132
     new-array v4, v4, [Ljava/lang/Object;
 
     const-string v5, " "
@@ -309,9 +292,8 @@
 
     move-result-object v2
 
-    .line 134
     .local v2, url:Ljava/lang/String;
-    const v4, 0x104055e
+    const v4, #string@search_baidu_web#t
 
     const/4 v5, 0x1
 
@@ -320,7 +302,7 @@
 
     const/4 v6, 0x0
 
-    const-string/jumbo v7, "utf-8"
+    const-string v7, "utf-8"
 
     invoke-static {p1, v7}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -334,7 +316,6 @@
 
     move-result-object v2
 
-    .line 141
     :goto_0
     :try_start_1
     new-instance v3, Landroid/content/Intent;
@@ -347,43 +328,35 @@
 
     invoke-direct {v3, v4, v5}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 142
     .local v3, webSearchIntent:Landroid/content/Intent;
     const-string v4, "android.intent.category.BROWSABLE"
 
     invoke-virtual {v3, v4}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 143
     const/high16 v4, 0x1000
 
     invoke-virtual {v3, v4}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
 
-    .line 144
     invoke-virtual {p0, v3}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
     :try_end_1
     .catch Landroid/content/ActivityNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 148
     .end local v3           #webSearchIntent:Landroid/content/Intent;
     :goto_1
     return-void
 
-    .line 136
     :catch_0
     move-exception v1
 
-    .line 137
     .local v1, ex:Ljava/io/UnsupportedEncodingException;
     invoke-virtual {v1}, Ljava/io/UnsupportedEncodingException;->printStackTrace()V
 
     goto :goto_0
 
-    .line 145
     .end local v1           #ex:Ljava/io/UnsupportedEncodingException;
     :catch_1
     move-exception v0
 
-    .line 146
     .local v0, ee:Landroid/content/ActivityNotFoundException;
     invoke-virtual {v0}, Landroid/content/ActivityNotFoundException;->printStackTrace()V
 

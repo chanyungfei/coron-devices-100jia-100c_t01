@@ -3,6 +3,14 @@
 .source "Settings.java"
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lcom/android/server/pm/Settings$BaiduInjector;
+    }
+.end annotation
+
+
 # static fields
 .field private static final ATTR_CODE:Ljava/lang/String; = "code"
 
@@ -1816,21 +1824,18 @@
 
     goto :goto_6
 
-    .line 505
     .end local v6           #installed:Z
     :cond_a
     const/4 v6, 0x0
 
     goto :goto_7
 
-    .line 517
     .end local v12           #i$:Ljava/util/Iterator;
     .end local v14           #user:Landroid/content/pm/UserInfo;
     .end local v16           #users:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/UserInfo;>;"
     :cond_b
     if-eqz p4, :cond_c
 
-    .line 518
     move-object/from16 v0, p4
 
     iget v4, v0, Lcom/android/server/pm/SharedUserSetting;->userId:I
@@ -17397,4 +17402,16 @@
 
     .line 1048
     return-void
+.end method
+
+.method static synthetic access$invoke-getAllUsers-2e2378(Lcom/android/server/pm/Settings;)Ljava/util/List;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    invoke-direct {p0}, Lcom/android/server/pm/Settings;->getAllUsers()Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
 .end method

@@ -94,7 +94,7 @@
     return-void
 .end method
 
-.method private computeLocalPosition()V
+.method protected computeLocalPosition()V
     .locals 6
 
     .prologue
@@ -500,10 +500,8 @@
 
     invoke-virtual {v1, p0, v2}, Landroid/widget/Editor$PositionListener;->addSubscriber(Landroid/widget/Editor$TextViewPositionListener;Z)V
 
-    .line 2302
-    invoke-direct {p0}, Landroid/widget/Editor$PinnedPopupWindow;->computeLocalPosition()V
+    invoke-virtual {p0}, Landroid/widget/Editor$PinnedPopupWindow;->computeLocalPosition()V
 
-    .line 2304
     iget-object v1, p0, Landroid/widget/Editor$PinnedPopupWindow;->this$0:Landroid/widget/Editor;
 
     #calls: Landroid/widget/Editor;->getPositionListener()Landroid/widget/Editor$PositionListener;
@@ -511,7 +509,6 @@
 
     move-result-object v0
 
-    .line 2305
     .local v0, positionListener:Landroid/widget/Editor$PositionListener;
     invoke-virtual {v0}, Landroid/widget/Editor$PositionListener;->getPositionX()I
 
@@ -521,9 +518,8 @@
 
     move-result v2
 
-    invoke-direct {p0, v1, v2}, Landroid/widget/Editor$PinnedPopupWindow;->updatePosition(II)V
+    invoke-virtual {p0, v1, v2}, Landroid/widget/Editor$PinnedPopupWindow;->updatePosition(II)V
 
-    .line 2306
     return-void
 .end method
 
@@ -535,12 +531,10 @@
     .parameter "parentScrolled"
 
     .prologue
-    .line 2377
     instance-of v1, p0, Landroid/widget/Editor$ActionPopupWindow;
 
     if-eqz v1, :cond_4
 
-    .line 2378
     iget-object v1, p0, Landroid/widget/Editor$PinnedPopupWindow;->this$0:Landroid/widget/Editor;
 
     invoke-virtual {p0}, Landroid/widget/Editor$PinnedPopupWindow;->getTextOffset()I
@@ -554,28 +548,23 @@
 
     if-eqz v1, :cond_3
 
-    .line 2379
     invoke-virtual {p0}, Landroid/widget/Editor$PinnedPopupWindow;->isShowing()Z
 
     move-result v1
 
     if-eqz v1, :cond_2
 
-    .line 2380
     if-eqz p4, :cond_0
 
-    invoke-direct {p0}, Landroid/widget/Editor$PinnedPopupWindow;->computeLocalPosition()V
+    invoke-virtual {p0}, Landroid/widget/Editor$PinnedPopupWindow;->computeLocalPosition()V
 
-    .line 2381
     :cond_0
-    invoke-direct {p0, p1, p2}, Landroid/widget/Editor$PinnedPopupWindow;->updatePosition(II)V
+    invoke-virtual {p0, p1, p2}, Landroid/widget/Editor$PinnedPopupWindow;->updatePosition(II)V
 
-    .line 2399
     :cond_1
     :goto_0
     return-void
 
-    .line 2382
     :cond_2
     iget-object v1, p0, Landroid/widget/Editor$PinnedPopupWindow;->this$0:Landroid/widget/Editor;
 
@@ -590,10 +579,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 2383
+    .line 2302
     invoke-direct {p0}, Landroid/widget/Editor$PinnedPopupWindow;->computeLocalPosition()V
 
-    .line 2384
+    .line 2304
     iget-object v1, p0, Landroid/widget/Editor$PinnedPopupWindow;->this$0:Landroid/widget/Editor;
 
     #calls: Landroid/widget/Editor;->getPositionListener()Landroid/widget/Editor$PositionListener;
@@ -601,6 +590,7 @@
 
     move-result-object v0
 
+    .line 2305
     .line 2385
     .local v0, positionListener:Landroid/widget/Editor$PositionListener;
     invoke-virtual {v0}, Landroid/widget/Editor$PositionListener;->getPositionX()I

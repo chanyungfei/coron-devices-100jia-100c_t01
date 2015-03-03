@@ -969,7 +969,6 @@
 
     move-result-object v2
 
-    .line 162
     :cond_5
     if-eqz v2, :cond_0
 
@@ -1214,4 +1213,36 @@
 
     .line 293
     goto :goto_2
+.end method
+
+.method private interceptLabelResBaidu(Landroid/content/pm/PackageManager;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    .locals 2
+    .parameter "pm"
+    .parameter "data"
+
+    .prologue
+    if-eqz p2, :cond_0
+
+    iget-object v1, p0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
+
+    if-eqz v1, :cond_1
+
+    iget-object v0, p0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
+
+    .local v0, ci:Landroid/content/pm/ComponentInfo;
+    :goto_0
+    iget-object v1, v0, Landroid/content/pm/ComponentInfo;->packageName:Ljava/lang/String;
+
+    invoke-static {p1, v1, p2}, Landroid/content/ThemeDefine;->interceptLabelRes(Landroid/content/pm/PackageManager;Ljava/lang/String;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+
+    move-result-object p2
+
+    .end local v0           #ci:Landroid/content/pm/ComponentInfo;
+    :cond_0
+    return-object p2
+
+    :cond_1
+    iget-object v0, p0, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
+
+    goto :goto_0
 .end method

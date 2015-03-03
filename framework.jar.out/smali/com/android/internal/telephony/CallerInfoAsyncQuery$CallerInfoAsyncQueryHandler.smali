@@ -467,3 +467,13 @@
 
     goto/16 :goto_1
 .end method
+
+.method private isEmptyHook(Ljava/lang/CharSequence;)Z
+    .locals 1
+    .parameter "str"
+
+    .prologue
+    const/4 v0, 0x1
+
+    return v0
+.end method
