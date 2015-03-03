@@ -70,9 +70,9 @@
     .prologue
     const/4 v14, 0x2
 
-    const v13, 0x1080347
+    const v13, #android:drawable@ic_audio_vol_mute#t
 
-    const v12, 0x1080346
+    const v12, #android:drawable@ic_audio_vol#t
 
     const/4 v11, 0x1
 
@@ -85,11 +85,11 @@
 
     const/4 v3, 0x6
 
-    const v4, 0x1040402
+    const v4, #android:string@volume_icon_description_bluetooth#t
 
-    const v5, 0x108033e
+    const v5, #android:drawable@ic_audio_bt#t
 
-    const v6, 0x108033e
+    const v6, #android:drawable@ic_audio_bt#t
 
     move v7, v2
 
@@ -102,11 +102,11 @@
 
     const-string v4, "RingerStream"
 
-    const v7, 0x1040403
+    const v7, #android:string@volume_icon_description_ringer#t
 
-    const v8, 0x1080343
+    const v8, #android:drawable@ic_audio_ring_notif#t
 
-    const v9, 0x1080344
+    const v9, #android:drawable@ic_audio_ring_notif_mute#t
 
     move v5, v11
 
@@ -123,11 +123,11 @@
 
     const-string v4, "VoiceStream"
 
-    const v7, 0x1040404
+    const v7, #android:string@volume_icon_description_incall#t
 
-    const v8, 0x1080342
+    const v8, #android:drawable@ic_audio_phone#t
 
-    const v9, 0x1080342
+    const v9, #android:drawable@ic_audio_phone#t
 
     move v5, v14
 
@@ -148,11 +148,11 @@
 
     const/4 v6, 0x4
 
-    const v7, 0x10403ff
+    const v7, #android:string@volume_alarm#t
 
-    const v8, 0x108033c
+    const v8, #android:drawable@ic_audio_alarm#t
 
-    const v9, 0x108033d
+    const v9, #android:drawable@ic_audio_alarm_mute#t
 
     move v10, v2
 
@@ -171,9 +171,9 @@
 
     const v7, 0x2050051
 
-    const v8, 0x1080471
+    const v8, #android:drawable@ic_volume_small#t
 
-    const v9, 0x1080470
+    const v9, #android:drawable@ic_volume_off_small#t
 
     move v10, v2
 
@@ -192,9 +192,9 @@
 
     const v7, 0x2050052
 
-    const v8, 0x1080471
+    const v8, #android:drawable@ic_volume_small#t
 
-    const v9, 0x1080470
+    const v9, #android:drawable@ic_volume_off_small#t
 
     move v10, v2
 
@@ -211,7 +211,7 @@
 
     const/4 v6, 0x3
 
-    const v7, 0x1040405
+    const v7, #android:string@volume_icon_description_media#t
 
     move v8, v12
 
@@ -232,11 +232,11 @@
 
     const/4 v6, 0x5
 
-    const v7, 0x1040406
+    const v7, #android:string@volume_icon_description_notification#t
 
-    const v8, 0x1080340
+    const v8, #android:drawable@ic_audio_notification#t
 
-    const v9, 0x1080341
+    const v9, #android:drawable@ic_audio_notification_mute#t
 
     move v10, v11
 
@@ -253,7 +253,7 @@
 
     const/16 v6, -0x64
 
-    const v7, 0x1040405
+    const v7, #android:string@volume_icon_description_media#t
 
     move v8, v12
 
@@ -274,11 +274,11 @@
 
     const/16 v6, -0xc8
 
-    const v7, 0x1040405
+    const v7, #android:string@volume_icon_description_media#t
 
-    const v8, 0x108041c
+    const v8, #android:drawable@ic_media_route_on_holo_dark#t
 
-    const v9, 0x1080410
+    const v9, #android:drawable@ic_media_route_disabled_holo_dark#t
 
     move v10, v2
 
@@ -293,7 +293,7 @@
 
     const/16 v5, 0xa
 
-    const v7, 0x1040401
+    const v7, #android:string@volume_unknown#t
 
     move v6, v11
 
@@ -316,7 +316,7 @@
 
     const/16 v6, 0x8
 
-    const v7, 0x1040401
+    const v7, #android:string@volume_unknown#t
 
     move v8, v12
 

@@ -169,7 +169,7 @@
     if-ne p1, v3, :cond_1
 
     .line 130
-    const p1, 0x10302f2
+    const p1, #android:style@Theme.Dialog.Alert#t
 
     .line 145
     .end local p1
@@ -185,7 +185,7 @@
     if-ne p1, v1, :cond_2
 
     .line 132
-    const p1, 0x1030302
+    const p1, #android:style@Theme.Holo.Dialog.Alert#t
 
     goto :goto_0
 
@@ -196,7 +196,7 @@
     if-ne p1, v1, :cond_3
 
     .line 134
-    const p1, 0x1030306
+    const p1, #android:style@Theme.Holo.Light.Dialog.Alert#t
 
     goto :goto_0
 
@@ -207,7 +207,7 @@
     if-ne p1, v1, :cond_4
 
     .line 136
-    const p1, 0x103030e
+    const p1, #android:style@Theme.DeviceDefault.Dialog.Alert#t
 
     goto :goto_0
 
@@ -218,7 +218,7 @@
     if-ne p1, v1, :cond_5
 
     .line 138
-    const p1, 0x103030f
+    const p1, #android:style@Theme.DeviceDefault.Light.Dialog.Alert#t
 
     goto :goto_0
 
@@ -239,7 +239,7 @@
 
     move-result-object v1
 
-    const v2, 0x1010309
+    const v2, #android:attr@alertDialogTheme#t
 
     invoke-virtual {v1, v2, v0, v3}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 

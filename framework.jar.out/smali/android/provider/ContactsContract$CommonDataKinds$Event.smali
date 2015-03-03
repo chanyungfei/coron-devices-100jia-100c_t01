@@ -46,7 +46,7 @@
     .parameter "type"
 
     .prologue
-    const v0, 0x10402b3
+    const v0, #android:string@eventTypeOther#t
 
     .line 6610
     if-nez p0, :cond_0
@@ -65,19 +65,19 @@
     packed-switch v1, :pswitch_data_0
 
     .line 6618
-    const v0, 0x10402b0
+    const v0, #android:string@eventTypeCustom#t
 
     goto :goto_0
 
     .line 6615
     :pswitch_1
-    const v0, 0x10402b2
+    const v0, #android:string@eventTypeAnniversary#t
 
     goto :goto_0
 
     .line 6616
     :pswitch_2
-    const v0, 0x10402b1
+    const v0, #android:string@eventTypeBirthday#t
 
     goto :goto_0
 

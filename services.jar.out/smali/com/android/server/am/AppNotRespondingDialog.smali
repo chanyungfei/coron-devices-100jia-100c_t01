@@ -106,7 +106,7 @@
     if-eqz v1, :cond_2
 
     .line 60
-    const v4, 0x10403dc
+    const v4, #android:string@anr_activity_application#t
 
     .line 76
     .local v4, resid:I
@@ -137,7 +137,7 @@
     .line 80
     const/4 v5, -0x2
 
-    const v6, 0x10403e0
+    const v6, #android:string@force_close#t
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -154,7 +154,7 @@
     .line 83
     const/4 v5, -0x3
 
-    const v6, 0x10403e2
+    const v6, #android:string@wait#t
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -171,7 +171,7 @@
     .line 88
     const/4 v5, -0x1
 
-    const v6, 0x10403e1
+    const v6, #android:string@report#t
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -188,7 +188,7 @@
     invoke-virtual {p0, v5, v6, v7}, Lcom/android/server/am/AppNotRespondingDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
 
     .line 93
-    const v5, 0x10403db
+    const v5, #android:string@anr_title#t
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -288,7 +288,7 @@
     iget-object v2, p3, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
     .line 64
-    const v4, 0x10403de
+    const v4, #android:string@anr_application_process#t
 
     .restart local v4       #resid:I
     goto/16 :goto_1
@@ -302,7 +302,7 @@
     iget-object v2, p3, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
     .line 69
-    const v4, 0x10403dd
+    const v4, #android:string@anr_activity_process#t
 
     .restart local v4       #resid:I
     goto/16 :goto_1
@@ -313,7 +313,7 @@
     iget-object v1, p3, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
 
     .line 72
-    const v4, 0x10403df
+    const v4, #android:string@anr_process#t
 
     .restart local v4       #resid:I
     goto/16 :goto_1

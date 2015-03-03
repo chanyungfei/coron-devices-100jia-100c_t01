@@ -1374,7 +1374,7 @@
     iput v5, v2, Landroid/app/Notification;->flags:I
 
     .line 713
-    const v5, 0x108008a
+    const v5, #android:drawable@stat_sys_warning#t
 
     iput v5, v2, Landroid/app/Notification;->icon:I
 
@@ -1524,7 +1524,7 @@
     iput v5, v2, Landroid/app/Notification;->flags:I
 
     .line 643
-    const v5, 0x108008a
+    const v5, #android:drawable@stat_sys_warning#t
 
     iput v5, v2, Landroid/app/Notification;->icon:I
 

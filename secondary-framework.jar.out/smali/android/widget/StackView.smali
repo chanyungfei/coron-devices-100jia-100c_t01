@@ -145,7 +145,7 @@
 
     .prologue
     .line 171
-    const v0, 0x10103dd
+    const v0, #android:attr@stackViewStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/StackView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 

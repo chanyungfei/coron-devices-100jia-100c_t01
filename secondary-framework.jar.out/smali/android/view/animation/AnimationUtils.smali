@@ -1131,7 +1131,7 @@
     if-eqz p1, :cond_0
 
     .line 217
-    const v1, 0x10a0002
+    const v1, #android:anim@slide_in_left#t
 
     invoke-static {p0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -1159,7 +1159,7 @@
     .line 219
     .end local v0           #a:Landroid/view/animation/Animation;
     :cond_0
-    const v1, 0x10a005f
+    const v1, #android:anim@slide_in_right#t
 
     invoke-static {p0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -1175,7 +1175,7 @@
 
     .prologue
     .line 258
-    const v1, 0x10a005e
+    const v1, #android:anim@slide_in_child_bottom#t
 
     invoke-static {p0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -1210,7 +1210,7 @@
     if-eqz p1, :cond_0
 
     .line 238
-    const v1, 0x10a0003
+    const v1, #android:anim@slide_out_right#t
 
     invoke-static {p0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
@@ -1238,7 +1238,7 @@
     .line 240
     .end local v0           #a:Landroid/view/animation/Animation;
     :cond_0
-    const v1, 0x10a0062
+    const v1, #android:anim@slide_out_left#t
 
     invoke-static {p0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 

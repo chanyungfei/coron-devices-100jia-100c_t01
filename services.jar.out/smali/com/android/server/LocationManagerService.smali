@@ -3728,7 +3728,7 @@
 
     .line 495
     .local v3, providerPackageNames:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
-    const v0, 0x107002d
+    const v0, #android:array@config_locationProviderPackageNames#t
 
     invoke-virtual {v8, v0}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -3943,7 +3943,7 @@
 
     .line 430
     .local v3, providerPackageNames:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/String;>;"
-    const v0, 0x107002d
+    const v0, #android:array@config_locationProviderPackageNames#t
 
     invoke-virtual {v11, v0}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 

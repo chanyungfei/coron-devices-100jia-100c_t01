@@ -418,7 +418,7 @@
 
     move-result-object v4
 
-    const v5, 0x104058a
+    const v5, #android:string@baidu_account_verify_code_bind#t
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -430,7 +430,7 @@
 
     move-result-object v4
 
-    const v5, 0x104058b
+    const v5, #android:string@baidu_account_verify_code_password#t
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

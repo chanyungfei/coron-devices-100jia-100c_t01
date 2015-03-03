@@ -179,7 +179,7 @@
     .line 107
     const/4 v8, -0x2
 
-    const v9, 0x10403e0
+    const v9, #android:string@force_close#t
 
     invoke-virtual {v7, v9}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -259,7 +259,7 @@
 
     .line 130
     :cond_0
-    const v8, 0x10403d8
+    const v8, #android:string@aerr_title#t
 
     invoke-virtual {v7, v8}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -389,7 +389,7 @@
     .end local v4           #lsh:Lcom/mediatek/common/lowstorage/ILowStorageHandle;
     .end local v5           #message:Ljava/lang/CharSequence;
     :cond_2
-    const v8, 0x10403d9
+    const v8, #android:string@aerr_application#t
 
     const/4 v9, 0x2
 
@@ -514,7 +514,7 @@
 
     .line 98
     :cond_6
-    const v8, 0x10403da
+    const v8, #android:string@aerr_process#t
 
     const/4 v9, 0x1
 

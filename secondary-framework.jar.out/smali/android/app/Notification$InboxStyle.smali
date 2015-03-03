@@ -89,7 +89,7 @@
     invoke-static {v8, v11}, Landroid/app/Notification$Builder;->access$602(Landroid/app/Notification$Builder;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     .line 2047
-    const v8, 0x10900b0
+    const v8, #android:layout@notification_template_inbox#t
 
     invoke-virtual {p0, v8}, Landroid/app/Notification$InboxStyle;->getStandardView(I)Landroid/widget/RemoteViews;
 
@@ -97,7 +97,7 @@
 
     .line 2049
     .local v1, contentView:Landroid/widget/RemoteViews;
-    const v8, 0x1020015
+    const v8, #android:id@text2#t
 
     invoke-virtual {v1, v8, v10}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
@@ -194,7 +194,7 @@
     .line 2070
     .end local v7           #str:Ljava/lang/CharSequence;
     :cond_2
-    const v11, 0x102039e
+    const v11, #android:id@inbox_end_pad#t
 
     iget-object v8, p0, Landroid/app/Notification$InboxStyle;->mTexts:Ljava/util/ArrayList;
 
@@ -210,7 +210,7 @@
     invoke-virtual {v1, v11, v8}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
     .line 2073
-    const v8, 0x102039d
+    const v8, #android:id@inbox_more#t
 
     iget-object v11, p0, Landroid/app/Notification$InboxStyle;->mTexts:Ljava/util/ArrayList;
 
@@ -245,13 +245,13 @@
 
     :array_0
     .array-data 0x4
-        0x96t 0x3t 0x2t 0x1t
-        0x97t 0x3t 0x2t 0x1t
-        0x98t 0x3t 0x2t 0x1t
-        0x99t 0x3t 0x2t 0x1t
-        0x9at 0x3t 0x2t 0x1t
-        0x9bt 0x3t 0x2t 0x1t
-        0x9ct 0x3t 0x2t 0x1t
+        #android:id@inbox_text0#a
+        #android:id@inbox_text1#a
+        #android:id@inbox_text2#a
+        #android:id@inbox_text3#a
+        #android:id@inbox_text4#a
+        #android:id@inbox_text5#a
+        #android:id@inbox_text6#a
     .end array-data
 .end method
 

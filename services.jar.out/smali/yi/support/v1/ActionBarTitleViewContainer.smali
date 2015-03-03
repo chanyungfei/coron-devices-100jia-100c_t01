@@ -611,7 +611,7 @@
 
     move-result-object v1
 
-    const v3, 0x102002c
+    const v3, #android:id@home#t
 
     move v4, v2
 

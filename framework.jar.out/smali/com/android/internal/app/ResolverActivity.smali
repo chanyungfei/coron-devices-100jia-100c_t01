@@ -421,7 +421,7 @@
 
     move-result v2
 
-    const v1, 0x10203ca
+    const v1, #android:id@button_always#t
 
     if-ne v0, v1, :cond_0
 
@@ -459,7 +459,7 @@
 
     move-result-object v0
 
-    const v1, 0x10403d2
+    const v1, #android:string@whichApplication#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -505,7 +505,7 @@
     .prologue
     .line 112
     .local p5, rList:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
-    const v1, 0x103030f
+    const v1, #android:style@Theme.DeviceDefault.Light.Dialog.Alert#t
 
     invoke-virtual {p0, v1}, Lcom/android/internal/app/ResolverActivity;->setTheme(I)V
 
@@ -548,7 +548,7 @@
 
     move-result-object v1
 
-    const v2, 0x10e0037
+    const v2, #android:integer@config_maxResolverActivityColumns#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -689,7 +689,7 @@
 
     move-result-object v1
 
-    const v2, 0x10900d3
+    const v2, #android:layout@resolver_grid#t
 
     const/4 v3, 0x0
 
@@ -702,7 +702,7 @@
     .line 145
     iget-object v1, v9, Lcom/android/internal/app/AlertController$AlertParams;->mView:Landroid/view/View;
 
-    const v2, 0x10203c9
+    const v2, #android:id@resolver_grid#t
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -755,7 +755,7 @@
     if-eqz p6, :cond_1
 
     .line 168
-    const v1, 0x10202c3
+    const v1, #android:id@button_bar#t
 
     invoke-virtual {p0, v1}, Lcom/android/internal/app/ResolverActivity;->findViewById(I)Landroid/view/View;
 
@@ -773,7 +773,7 @@
     invoke-virtual {v10, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
     .line 171
-    const v1, 0x10203ca
+    const v1, #android:id@button_always#t
 
     invoke-virtual {v10, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -784,7 +784,7 @@
     iput-object v1, p0, Lcom/android/internal/app/ResolverActivity;->mAlwaysButton:Landroid/widget/Button;
 
     .line 172
-    const v1, 0x10203cb
+    const v1, #android:id@button_once#t
 
     invoke-virtual {v10, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -835,7 +835,7 @@
 
     move-result-object v1
 
-    const v2, 0x10403d7
+    const v2, #android:string@noApplications#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 

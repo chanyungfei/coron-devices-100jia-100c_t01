@@ -94,7 +94,7 @@
     .prologue
     const/4 v9, 0x0
 
-    const v8, 0x1020255
+    const v8, #android:id@image#t
 
     const/4 v7, 0x4
 
@@ -155,7 +155,7 @@
 
     .line 223
     .local v2, inflater:Landroid/view/LayoutInflater;
-    const v4, 0x109001f
+    const v4, #android:layout@activity_chooser_view#t
 
     invoke-virtual {v2, v4, p0, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -167,7 +167,7 @@
     iput-object v4, p0, Landroid/widget/ActivityChooserView;->mCallbacks:Landroid/widget/ActivityChooserView$Callbacks;
 
     .line 227
-    const v4, 0x1020253
+    const v4, #android:id@activity_chooser_view_content#t
 
     invoke-virtual {p0, v4}, Landroid/widget/ActivityChooserView;->findViewById(I)Landroid/view/View;
 
@@ -187,7 +187,7 @@
     iput-object v4, p0, Landroid/widget/ActivityChooserView;->mActivityChooserContentBackground:Landroid/graphics/drawable/Drawable;
 
     .line 230
-    const v4, 0x1020256
+    const v4, #android:id@default_activity_button#t
 
     invoke-virtual {p0, v4}, Landroid/widget/ActivityChooserView;->findViewById(I)Landroid/view/View;
 
@@ -223,7 +223,7 @@
     iput-object v4, p0, Landroid/widget/ActivityChooserView;->mDefaultActivityButtonImage:Landroid/widget/ImageView;
 
     .line 235
-    const v4, 0x1020254
+    const v4, #android:id@expand_activities_button#t
 
     invoke-virtual {p0, v4}, Landroid/widget/ActivityChooserView;->findViewById(I)Landroid/view/View;
 
@@ -287,7 +287,7 @@
 
     div-int/lit8 v4, v4, 0x2
 
-    const v5, 0x1050007
+    const v5, #android:dimen@config_prefDialogWidth#t
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -709,7 +709,7 @@
 
     iget-object v7, p0, Landroid/view/View;->mContext:Landroid/content/Context;
 
-    const v8, 0x10404d7
+    const v8, #android:string@activitychooserview_choose_application#t
 
     invoke-virtual {v7, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

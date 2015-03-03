@@ -7,7 +7,7 @@
 
 
 # static fields
-.field private static final POPUP_TEXT_LAYOUT:I = 0x109011d
+.field private static final POPUP_TEXT_LAYOUT:I = #android:layout@yi_text_edit_action_popup_text#t
 
 
 # instance fields
@@ -104,7 +104,7 @@
 
     const/4 v3, 0x0
 
-    const v4, 0x10102c8
+    const v4, #android:attr@textSelectHandleWindowStyle#t
 
     invoke-direct {v1, v2, v3, v4}, Landroid/widget/PopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -212,7 +212,7 @@
 
     move-result-object v1
 
-    const v2, 0x1080888
+    const v2, #android:drawable@yi_list_divider_baidu_light#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -236,7 +236,7 @@
 
     move-result-object v1
 
-    const v2, 0x105007f
+    const v2, #android:dimen@yi_floating_bar_divider_padding#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimension(I)F
 
@@ -252,7 +252,7 @@
     .line 126
     iget-object v1, p0, Landroid/webkit/PopupWindowView;->mContainer:Landroid/view/ViewGroup;
 
-    const v2, 0x1080954
+    const v2, #android:drawable@yi_text_edit_paste_window#t
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->setBackgroundResource(I)V
 
@@ -371,7 +371,7 @@
 
     const/4 v6, 0x0
 
-    const v5, 0x109011d
+    const v5, #android:layout@yi_text_edit_action_popup_text#t
 
     const/4 v4, 0x0
 
@@ -414,7 +414,7 @@
     .line 140
     iget-object v2, p0, Landroid/webkit/PopupWindowView;->mSearchTextView:Landroid/widget/TextView;
 
-    const v3, 0x10404b0
+    const v3, #android:string@websearch#t
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(I)V
 
@@ -461,7 +461,7 @@
     .line 148
     iget-object v2, p0, Landroid/webkit/PopupWindowView;->mBaidkeTextView:Landroid/widget/TextView;
 
-    const v3, 0x10405b9
+    const v3, #android:string@web_baike#t
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(I)V
 
@@ -508,7 +508,7 @@
     .line 156
     iget-object v2, p0, Landroid/webkit/PopupWindowView;->mTranslatorTextView:Landroid/widget/TextView;
 
-    const v3, 0x10405ba
+    const v3, #android:string@web_translator#t
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(I)V
 
@@ -1032,7 +1032,7 @@
 
     move-result-object v13
 
-    const v14, 0x10102eb
+    const v14, #android:attr@actionBarSize#t
 
     const/4 v15, 0x1
 

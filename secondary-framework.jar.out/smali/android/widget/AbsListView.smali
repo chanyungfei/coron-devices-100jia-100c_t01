@@ -540,7 +540,7 @@
 
     .prologue
     .line 796
-    const v0, 0x101006a
+    const v0, #android:attr@absListViewStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/AbsListView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -2059,7 +2059,7 @@
 
     .line 6049
     .local v1, layoutInflater:Landroid/view/LayoutInflater;
-    const v3, 0x1090103
+    const v3, #android:layout@typing_filter#t
 
     invoke-virtual {v1, v3, v7}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
@@ -2138,7 +2138,7 @@
     .line 6070
     iget-object v3, p0, Landroid/widget/AbsListView;->mPopup:Landroid/widget/PopupWindow;
 
-    const v4, 0x10301e5
+    const v4, #android:style@Animation.TypingFilter#t
 
     invoke-virtual {v3, v4}, Landroid/widget/PopupWindow;->setAnimationStyle(I)V
 
@@ -2150,7 +2150,7 @@
     :cond_1
     iget-object v3, p0, Landroid/widget/AbsListView;->mPopup:Landroid/widget/PopupWindow;
 
-    const v4, 0x10301e6
+    const v4, #android:style@Animation.TypingFilterRestore#t
 
     invoke-virtual {v3, v4}, Landroid/widget/PopupWindow;->setAnimationStyle(I)V
 
@@ -4780,7 +4780,7 @@
 
     move-result-object v0
 
-    const v1, 0x1080062
+    const v1, #android:drawable@list_selector_background#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

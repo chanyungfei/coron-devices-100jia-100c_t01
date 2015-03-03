@@ -980,7 +980,7 @@
 
     move-result-object v5
 
-    const v6, 0x107001a
+    const v6, #android:array@config_tether_wifi_regexs#t
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 

@@ -109,7 +109,7 @@
 
     move-result-object v0
 
-    const v1, 0x108050a
+    const v1, #android:drawable@longpress_select_magnifier#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -122,7 +122,7 @@
 
     move-result-object v0
 
-    const v1, 0x108050b
+    const v1, #android:drawable@longpress_select_magnifier_mask#t
 
     invoke-static {v0, v1}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 

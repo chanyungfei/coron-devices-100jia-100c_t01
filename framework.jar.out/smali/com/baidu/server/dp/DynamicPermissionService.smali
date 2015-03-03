@@ -1920,7 +1920,7 @@
     if-eqz v1, :cond_0
 
     .line 1504
-    const v0, 0x104059b
+    const v0, #android:string@action_call#t
 
     .line 1519
     .local v0, resId:I
@@ -1948,7 +1948,7 @@
 
     .line 1507
     :cond_1
-    const v0, 0x104059c
+    const v0, #android:string@action_sms#t
 
     .restart local v0       #resId:I
     goto :goto_0
@@ -1965,7 +1965,7 @@
     if-eqz v1, :cond_3
 
     .line 1509
-    const v0, 0x104059f
+    const v0, #android:string@action_access_sms#t
 
     .restart local v0       #resId:I
     goto :goto_0
@@ -1982,7 +1982,7 @@
     if-eqz v1, :cond_4
 
     .line 1511
-    const v0, 0x104059e
+    const v0, #android:string@action_access_call_log#t
 
     .restart local v0       #resId:I
     goto :goto_0
@@ -1999,7 +1999,7 @@
     if-eqz v1, :cond_5
 
     .line 1513
-    const v0, 0x10405a0
+    const v0, #android:string@action_access_contacts#t
 
     .restart local v0       #resId:I
     goto :goto_0
@@ -2016,7 +2016,7 @@
     if-eqz v1, :cond_6
 
     .line 1515
-    const v0, 0x10405a1
+    const v0, #android:string@action_access_location#t
 
     .restart local v0       #resId:I
     goto :goto_0
@@ -2024,7 +2024,7 @@
     .line 1517
     .end local v0           #resId:I
     :cond_6
-    const v0, 0x10404e7
+    const v0, #android:string@action_bar_home_description#t
 
     .restart local v0       #resId:I
     goto :goto_0
@@ -3218,7 +3218,7 @@
     .line 1550
     iget-object v9, p0, Lcom/baidu/server/dp/DynamicPermissionService;->mContext:Landroid/content/Context;
 
-    const v11, 0x10405aa
+    const v11, #android:string@data_sms_msg#t
 
     invoke-virtual {v9, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -3246,7 +3246,7 @@
     .local v1, content:Ljava/lang/String;
     iget-object v11, p0, Lcom/baidu/server/dp/DynamicPermissionService;->mContext:Landroid/content/Context;
 
-    const v12, 0x10405a9
+    const v12, #android:string@sms_info_msg#t
 
     new-array v13, v10, [Ljava/lang/Object;
 

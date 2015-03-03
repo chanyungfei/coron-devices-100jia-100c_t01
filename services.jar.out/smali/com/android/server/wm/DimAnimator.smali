@@ -570,7 +570,7 @@
 
     .line 120
     .local v9, tv:Landroid/util/TypedValue;
-    const/high16 v11, 0x112
+    const/high16 v11, #android:fraction@config_dimBehindFadeDuration#h
 
     const/4 v12, 0x1
 

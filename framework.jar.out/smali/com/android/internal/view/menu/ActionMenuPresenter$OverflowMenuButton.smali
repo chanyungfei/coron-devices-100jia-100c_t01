@@ -40,7 +40,7 @@
     iput-object p1, p0, Lcom/android/internal/view/menu/ActionMenuPresenter$OverflowMenuButton;->this$0:Lcom/android/internal/view/menu/ActionMenuPresenter;
 
     .line 575
-    const v0, 0x10102f6
+    const v0, #android:attr@actionOverflowButtonStyle#t
 
     invoke-direct {p0, p2, v6, v0}, Landroid/widget/ImageButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -69,7 +69,7 @@
 
     iget-object v1, p1, Lcom/android/internal/view/menu/ActionMenuPresenter;->mMenu:Lcom/android/internal/view/menu/MenuBuilder;
 
-    const v3, 0x102024d
+    const v3, #android:id@overflow_menu_presenter#t
 
     move v4, v2
 

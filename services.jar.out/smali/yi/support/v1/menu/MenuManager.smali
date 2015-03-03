@@ -249,7 +249,7 @@
 
     .line 209
     .local v1, currentTheme:Landroid/content/res/Resources$Theme;
-    const v5, 0x1010397
+    const v5, #android:attr@actionBarWidgetTheme#t
 
     invoke-virtual {v1, v5, v3, v6}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 

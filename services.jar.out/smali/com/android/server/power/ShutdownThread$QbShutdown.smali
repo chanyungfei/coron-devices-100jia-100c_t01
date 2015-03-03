@@ -113,15 +113,15 @@
     .line 708
     :array_0
     .array-data 0x4
-        0xcat 0x5t 0x4t 0x1t
-        0xcbt 0x5t 0x4t 0x1t
+        #android:string@quickboot_poweroff_alarm#a
+        #android:string@quickboot_schedule_pwonoff#a
     .end array-data
 
     .line 713
     :array_1
     .array-data 0x4
-        0xcct 0x5t 0x4t 0x1t
-        0xcdt 0x5t 0x4t 0x1t
+        #android:string@quickboot_lowbat_poweroff#a
+        #android:string@quickboot_lowbat_schedule_pwonoff#a
     .end array-data
 .end method
 
@@ -263,7 +263,7 @@
 
     move-result-object v3
 
-    const v4, 0x1070044
+    const v4, #android:array@quickboot_info_week_set#t
 
     invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -415,7 +415,7 @@
     :cond_0
     iget-object v1, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mQbConfirmView:Landroid/view/View;
 
-    const v2, 0x10203bf
+    const v2, #android:id@quickboot_dialog_text_info#t
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -428,7 +428,7 @@
     .line 813
     iget-object v1, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mQbConfirmView:Landroid/view/View;
 
-    const v2, 0x10203c1
+    const v2, #android:id@quickboot_dialog_text_warn#t
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -441,7 +441,7 @@
     .line 816
     iget-object v1, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mQbConfirmView:Landroid/view/View;
 
-    const v2, 0x10203c0
+    const v2, #android:id@quickboot_dialog_checkbox#t
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -648,7 +648,7 @@
     .line 853
     iget-object v3, p0, Lcom/android/server/power/ShutdownThread$QbShutdown;->mTextViewInfo:Landroid/widget/TextView;
 
-    const v4, 0x10405c9
+    const v4, #android:string@quick_boot_text_info#t
 
     invoke-virtual {v3, v4}, Landroid/widget/TextView;->setText(I)V
 
@@ -751,7 +751,7 @@
 
     .line 860
     :cond_1
-    const v0, 0x10405c8
+    const v0, #android:string@quickboot_real_shutdown#t
 
     goto :goto_0
 .end method

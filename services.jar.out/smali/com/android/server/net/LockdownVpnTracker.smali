@@ -208,9 +208,9 @@
     .locals 15
 
     .prologue
-    const v14, 0x1040492
+    const v14, #android:string@vpn_lockdown_error#t
 
-    const v13, 0x108076b
+    const v13, #android:drawable@vpn_disconnected#t
 
     const/4 v1, 0x0
 
@@ -399,7 +399,7 @@
     invoke-static {v5}, Lcom/android/server/EventLogTags;->writeLockdownVpnConnecting(I)V
 
     .line 138
-    const v10, 0x1040490
+    const v10, #android:string@vpn_lockdown_connecting#t
 
     invoke-direct {p0, v10, v13}, Lcom/android/server/net/LockdownVpnTracker;->showNotification(II)V
 
@@ -509,9 +509,9 @@
     invoke-static {v5}, Lcom/android/server/EventLogTags;->writeLockdownVpnConnected(I)V
 
     .line 159
-    const v10, 0x1040491
+    const v10, #android:string@vpn_lockdown_connected#t
 
-    const v11, 0x108076a
+    const v11, #android:drawable@vpn_connected#t
 
     invoke-direct {p0, v10, v11}, Lcom/android/server/net/LockdownVpnTracker;->showNotification(II)V
 
@@ -798,7 +798,7 @@
     .line 300
     iget-object v1, p0, Lcom/android/server/net/LockdownVpnTracker;->mContext:Landroid/content/Context;
 
-    const v2, 0x1040493
+    const v2, #android:string@vpn_lockdown_reset#t
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

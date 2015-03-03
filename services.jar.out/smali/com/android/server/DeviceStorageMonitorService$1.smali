@@ -181,7 +181,7 @@
 
     invoke-direct {v4, v5}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    const v5, 0x1080027
+    const v5, #android:drawable@ic_dialog_alert#t
 
     invoke-virtual {v4, v5}, Landroid/app/AlertDialog$Builder;->setIcon(I)Landroid/app/AlertDialog$Builder;
 
@@ -226,7 +226,7 @@
 
     move-result-object v5
 
-    const/high16 v6, 0x104
+    const/high16 v6, #android:string@cancel#h
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 

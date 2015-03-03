@@ -72,7 +72,7 @@
 
     check-cast v0, Landroid/util/AttributeSet;
 
-    const v1, 0x1010084
+    const v1, #android:attr@textViewStyle#t
 
     invoke-direct {p0, p1, v0, v1}, Lyi/widget/BadgeView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -87,7 +87,7 @@
 
     .prologue
     .line 70
-    const v0, 0x1010084
+    const v0, #android:attr@textViewStyle#t
 
     invoke-direct {p0, p1, p2, v0}, Lyi/widget/BadgeView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
@@ -159,7 +159,7 @@
     .line 74
     const/4 v2, 0x0
 
-    const v3, 0x1010084
+    const v3, #android:attr@textViewStyle#t
 
     move-object v0, p0
 
@@ -187,7 +187,7 @@
     .line 78
     const/4 v2, 0x0
 
-    const v3, 0x1010084
+    const v3, #android:attr@textViewStyle#t
 
     const/4 v6, 0x0
 

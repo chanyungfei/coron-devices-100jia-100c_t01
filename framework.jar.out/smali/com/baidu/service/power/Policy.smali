@@ -1199,7 +1199,7 @@
     invoke-virtual {v4, p1}, Lcom/baidu/service/power/PowerMode;->applyMode(Landroid/content/Context;)V
 
     .line 279
-    const v6, 0x10405af
+    const v6, #android:string@low_battery_toast#t
 
     invoke-virtual {p1, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -1681,7 +1681,7 @@
 
     .line 297
     .local v5, policyOk:Lcom/baidu/service/power/Policy;
-    const v0, 0x10900f1
+    const v0, #android:layout@super_mode_dialog#t
 
     const/4 v1, 0x0
 
@@ -1691,7 +1691,7 @@
 
     .line 298
     .local v13, v:Landroid/view/View;
-    const v0, 0x102000b
+    const v0, #android:id@message#t
 
     invoke-virtual {v13, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1701,7 +1701,7 @@
 
     .line 299
     .local v8, descView:Landroid/widget/TextView;
-    const v0, 0x1020409
+    const v0, #android:id@tips#t
 
     invoke-virtual {v13, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1711,7 +1711,7 @@
 
     .line 300
     .local v11, tipsView:Landroid/widget/TextView;
-    const v0, 0x1020408
+    const v0, #android:id@remember_or_not#t
 
     invoke-virtual {v13, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1745,7 +1745,7 @@
 
     .line 302
     .local v10, string:Ljava/lang/String;
-    const v0, 0x10405b3
+    const v0, #android:string@low_battery_dialog_title#t
 
     const/4 v1, 0x1
 
@@ -1778,12 +1778,12 @@
     invoke-virtual {v6, v13}, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
 
     .line 307
-    const v0, 0x1010355
+    const v0, #android:attr@alertDialogIcon#t
 
     invoke-virtual {v6, v0}, Landroid/app/AlertDialog$Builder;->setIconAttribute(I)Landroid/app/AlertDialog$Builder;
 
     .line 308
-    const/high16 v14, 0x104
+    const/high16 v14, #android:string@cancel#h
 
     new-instance v0, Lcom/baidu/service/power/Policy$1;
 
@@ -1794,7 +1794,7 @@
     invoke-virtual {v6, v14, v0}, Landroid/app/AlertDialog$Builder;->setNegativeButton(ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     .line 327
-    const v0, 0x104000a
+    const v0, #android:string@ok#t
 
     new-instance v1, Lcom/baidu/service/power/Policy$2;
 
@@ -1810,7 +1810,7 @@
     invoke-virtual {v2, v0}, Landroid/widget/CheckBox;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
     .line 351
-    const v0, 0x10405b4
+    const v0, #android:string@low_battery_dialog_desc#t
 
     invoke-virtual {v8, v0}, Landroid/widget/TextView;->setText(I)V
 

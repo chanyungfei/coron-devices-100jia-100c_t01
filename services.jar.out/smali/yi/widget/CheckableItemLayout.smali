@@ -61,7 +61,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x10100a0
+    const v2, #android:attr@state_checked#t
 
     aput v2, v0, v1
 
@@ -707,7 +707,7 @@
 
     move-result-object v2
 
-    const v3, 0x1010219
+    const v3, #android:attr@listChoiceIndicatorSingle#t
 
     invoke-virtual {v2, v3, v1, v4}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
@@ -768,7 +768,7 @@
 
     move-result-object v2
 
-    const v3, 0x101021a
+    const v3, #android:attr@listChoiceIndicatorMultiple#t
 
     invoke-virtual {v2, v3, v1, v4}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 

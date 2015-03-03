@@ -87,26 +87,26 @@
     packed-switch p0, :pswitch_data_0
 
     .line 6930
-    const v0, 0x10402dd
+    const v0, #android:string@sipAddressTypeCustom#t
 
     :goto_0
     return v0
 
     .line 6927
     :pswitch_0
-    const v0, 0x10402de
+    const v0, #android:string@sipAddressTypeHome#t
 
     goto :goto_0
 
     .line 6928
     :pswitch_1
-    const v0, 0x10402df
+    const v0, #android:string@sipAddressTypeWork#t
 
     goto :goto_0
 
     .line 6929
     :pswitch_2
-    const v0, 0x10402e0
+    const v0, #android:string@sipAddressTypeOther#t
 
     goto :goto_0
 

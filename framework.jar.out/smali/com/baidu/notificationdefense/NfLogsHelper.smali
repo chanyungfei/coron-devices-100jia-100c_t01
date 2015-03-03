@@ -116,7 +116,7 @@
 
     .line 35
     .local v2, root:Landroid/view/View;
-    const v8, 0x1020016
+    const v8, #android:id@title#t
 
     invoke-virtual {v2, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -154,7 +154,7 @@
     .line 43
     .end local v5           #title:Ljava/lang/CharSequence;
     :cond_1
-    const v8, 0x1020046
+    const v8, #android:id@text#t
 
     invoke-virtual {v2, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

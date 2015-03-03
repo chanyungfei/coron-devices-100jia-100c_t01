@@ -251,7 +251,7 @@
 
     .line 94
     :cond_1
-    const v5, 0x1020010
+    const v5, #android:id@summary#t
 
     invoke-virtual {p1, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

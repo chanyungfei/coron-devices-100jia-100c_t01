@@ -204,7 +204,7 @@
     const/4 v3, 0x0
 
     .line 119
-    const v1, 0x102000a
+    const v1, #android:id@list#t
 
     invoke-virtual {p0, v1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 

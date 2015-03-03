@@ -125,7 +125,7 @@
 
     move-result-object v0
 
-    const v1, 0x10403a1
+    const v1, #android:string@prepend_shortcut_label#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -142,7 +142,7 @@
 
     move-result-object v0
 
-    const v1, 0x10403a3
+    const v1, #android:string@menu_enter_shortcut_label#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -159,7 +159,7 @@
 
     move-result-object v0
 
-    const v1, 0x10403a4
+    const v1, #android:string@menu_delete_shortcut_label#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -176,7 +176,7 @@
 
     move-result-object v0
 
-    const v1, 0x10403a2
+    const v1, #android:string@menu_space_shortcut_label#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 

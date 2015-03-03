@@ -1187,7 +1187,7 @@
     if-eqz v2, :cond_0
 
     .line 141
-    const v2, 0x10405b2
+    const v2, #android:string@charge_complete#t
 
     invoke-virtual {p1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

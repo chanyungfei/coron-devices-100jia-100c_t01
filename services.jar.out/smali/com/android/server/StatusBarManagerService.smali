@@ -191,7 +191,7 @@
     .local v4, res:Landroid/content/res/Resources;
     iget-object v6, p0, Lcom/android/server/StatusBarManagerService;->mIcons:Lcom/android/internal/statusbar/StatusBarIconList;
 
-    const v7, 0x1070013
+    const v7, #android:array@config_statusBarIcons#t
 
     invoke-virtual {v4, v7}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 

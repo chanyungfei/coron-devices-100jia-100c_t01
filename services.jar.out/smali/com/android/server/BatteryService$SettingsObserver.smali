@@ -202,7 +202,7 @@
 
     const-string v3, "battery_light_low_color"
 
-    const v4, 0x10e001e
+    const v4, #android:integer@config_notificationsBatteryLowARGB#t
 
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -220,7 +220,7 @@
 
     const-string v3, "battery_light_medium_color"
 
-    const v4, 0x10e001f
+    const v4, #android:integer@config_notificationsBatteryMediumARGB#t
 
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -238,7 +238,7 @@
 
     const-string v3, "battery_light_full_color"
 
-    const v4, 0x10e0020
+    const v4, #android:integer@config_notificationsBatteryFullARGB#t
 
     invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getInteger(I)I
 

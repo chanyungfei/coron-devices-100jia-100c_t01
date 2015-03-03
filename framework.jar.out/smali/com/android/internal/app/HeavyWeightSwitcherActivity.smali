@@ -150,46 +150,46 @@
     iput-object v0, p0, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->mNewApp:Ljava/lang/String;
 
     .line 74
-    const v0, 0x109005f
+    const v0, #android:layout@heavy_weight_switcher#t
 
     invoke-virtual {p0, v0}, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->setContentView(I)V
 
     .line 76
-    const v1, 0x10202e4
+    const v1, #android:id@old_app_icon#t
 
-    const v2, 0x10202e5
+    const v2, #android:id@old_app_action#t
 
-    const v3, 0x10202e6
+    const v3, #android:id@old_app_description#t
 
     iget-object v4, p0, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->mCurApp:Ljava/lang/String;
 
-    const v5, 0x10403f4
+    const v5, #android:string@old_app_action#t
 
-    const v6, 0x10403f5
+    const v6, #android:string@old_app_description#t
 
     move-object v0, p0
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->setIconAndText(IIILjava/lang/String;II)V
 
     .line 78
-    const v1, 0x10202e8
+    const v1, #android:id@new_app_icon#t
 
-    const v2, 0x10202e9
+    const v2, #android:id@new_app_action#t
 
-    const v3, 0x10202ea
+    const v3, #android:id@new_app_description#t
 
     iget-object v4, p0, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->mNewApp:Ljava/lang/String;
 
-    const v5, 0x10403f6
+    const v5, #android:string@new_app_action#t
 
-    const v6, 0x10403f7
+    const v6, #android:string@new_app_description#t
 
     move-object v0, p0
 
     invoke-virtual/range {v0 .. v6}, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->setIconAndText(IIILjava/lang/String;II)V
 
     .line 81
-    const v0, 0x10202e3
+    const v0, #android:id@switch_old#t
 
     invoke-virtual {p0, v0}, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->findViewById(I)Landroid/view/View;
 
@@ -202,7 +202,7 @@
     invoke-virtual {v7, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 83
-    const v0, 0x10202e7
+    const v0, #android:id@switch_new#t
 
     invoke-virtual {p0, v0}, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->findViewById(I)Landroid/view/View;
 
@@ -214,7 +214,7 @@
     invoke-virtual {v7, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 85
-    const v0, 0x10202bf
+    const v0, #android:id@cancel#t
 
     invoke-virtual {p0, v0}, Lcom/android/internal/app/HeavyWeightSwitcherActivity;->findViewById(I)Landroid/view/View;
 
@@ -236,7 +236,7 @@
 
     move-result-object v0
 
-    const v1, 0x1010355
+    const v1, #android:attr@alertDialogIcon#t
 
     const/4 v2, 0x1
 

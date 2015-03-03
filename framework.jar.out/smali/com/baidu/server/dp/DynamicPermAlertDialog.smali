@@ -76,7 +76,7 @@
     const/4 v1, 0x0
 
     .line 57
-    const v0, 0x1030132
+    const v0, #android:style@Theme.DeviceDefault.Light.Dialog#t
 
     invoke-direct {p0, p1, v0}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
@@ -414,7 +414,7 @@
     invoke-super {p0, p1}, Landroid/app/Dialog;->onCreate(Landroid/os/Bundle;)V
 
     .line 69
-    const v0, 0x1090058
+    const v0, #android:layout@dynamic_perm_dialog#t
 
     invoke-virtual {p0, v0}, Lcom/baidu/server/dp/DynamicPermAlertDialog;->setContentView(I)V
 
@@ -423,12 +423,12 @@
 
     move-result-object v0
 
-    const v1, 0x106000d
+    const v1, #android:color@transparent#t
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->setBackgroundDrawableResource(I)V
 
     .line 71
-    const v0, 0x10202d2
+    const v0, #android:id@deny_btn#t
 
     invoke-virtual {p0, v0}, Lcom/baidu/server/dp/DynamicPermAlertDialog;->findViewById(I)Landroid/view/View;
 
@@ -446,7 +446,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 73
-    const v0, 0x10202d3
+    const v0, #android:id@permit_btn#t
 
     invoke-virtual {p0, v0}, Lcom/baidu/server/dp/DynamicPermAlertDialog;->findViewById(I)Landroid/view/View;
 
@@ -464,7 +464,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 75
-    const v0, 0x10202d0
+    const v0, #android:id@remember_cbx#t
 
     invoke-virtual {p0, v0}, Lcom/baidu/server/dp/DynamicPermAlertDialog;->findViewById(I)Landroid/view/View;
 
@@ -475,7 +475,7 @@
     iput-object v0, p0, Lcom/baidu/server/dp/DynamicPermAlertDialog;->mRememberCbx:Landroid/widget/CheckBox;
 
     .line 76
-    const v0, 0x10202cd
+    const v0, #android:id@dialog_text#t
 
     invoke-virtual {p0, v0}, Lcom/baidu/server/dp/DynamicPermAlertDialog;->findViewById(I)Landroid/view/View;
 
@@ -486,7 +486,7 @@
     iput-object v0, p0, Lcom/baidu/server/dp/DynamicPermAlertDialog;->mContentText:Landroid/widget/TextView;
 
     .line 77
-    const v0, 0x10202d1
+    const v0, #android:id@remember_tips#t
 
     invoke-virtual {p0, v0}, Lcom/baidu/server/dp/DynamicPermAlertDialog;->findViewById(I)Landroid/view/View;
 
@@ -497,7 +497,7 @@
     iput-object v0, p0, Lcom/baidu/server/dp/DynamicPermAlertDialog;->mRememberTipsText:Landroid/widget/TextView;
 
     .line 78
-    const v0, 0x10202ce
+    const v0, #android:id@dialog_phone_num_text#t
 
     invoke-virtual {p0, v0}, Lcom/baidu/server/dp/DynamicPermAlertDialog;->findViewById(I)Landroid/view/View;
 
@@ -508,7 +508,7 @@
     iput-object v0, p0, Lcom/baidu/server/dp/DynamicPermAlertDialog;->mPhoneNumInfoText:Landroid/widget/TextView;
 
     .line 79
-    const v0, 0x10202cf
+    const v0, #android:id@dialog_sms_content_text#t
 
     invoke-virtual {p0, v0}, Lcom/baidu/server/dp/DynamicPermAlertDialog;->findViewById(I)Landroid/view/View;
 
@@ -567,7 +567,7 @@
 
     iget-object v1, p0, Lcom/baidu/server/dp/DynamicPermAlertDialog;->mContext:Landroid/content/Context;
 
-    const v2, 0x10405a8
+    const v2, #android:string@phone_sms_info_msg#t
 
     new-array v3, v3, [Ljava/lang/Object;
 
@@ -623,7 +623,7 @@
 
     iget-object v1, p0, Lcom/baidu/server/dp/DynamicPermAlertDialog;->mContext:Landroid/content/Context;
 
-    const v2, 0x10405a7
+    const v2, #android:string@phone_call_info_msg#t
 
     new-array v3, v3, [Ljava/lang/Object;
 
@@ -806,7 +806,7 @@
     .line 150
     iget-object v3, p0, Lcom/baidu/server/dp/DynamicPermAlertDialog;->mContext:Landroid/content/Context;
 
-    const v4, 0x104059c
+    const v4, #android:string@action_sms#t
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -825,7 +825,7 @@
     :goto_0
     iget-object v3, p0, Lcom/baidu/server/dp/DynamicPermAlertDialog;->mContext:Landroid/content/Context;
 
-    const v4, 0x104059a
+    const v4, #android:string@dynamic_perm_dialog_msg#t
 
     const/4 v5, 0x2
 
@@ -953,7 +953,7 @@
 
     iget-object v1, p0, Lcom/baidu/server/dp/DynamicPermAlertDialog;->mContext:Landroid/content/Context;
 
-    const v2, 0x10405a8
+    const v2, #android:string@phone_sms_info_msg#t
 
     new-array v3, v3, [Ljava/lang/Object;
 
@@ -982,7 +982,7 @@
 
     iget-object v1, p0, Lcom/baidu/server/dp/DynamicPermAlertDialog;->mContext:Landroid/content/Context;
 
-    const v2, 0x10405a7
+    const v2, #android:string@phone_call_info_msg#t
 
     new-array v3, v3, [Ljava/lang/Object;
 

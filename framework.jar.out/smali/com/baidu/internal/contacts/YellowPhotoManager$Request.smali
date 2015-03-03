@@ -128,7 +128,7 @@
 
     .prologue
     .line 397
-    const v0, 0x108087c
+    const v0, #android:drawable@yi_ic_yellow_pages_holo_light#t
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setImageResource(I)V
 

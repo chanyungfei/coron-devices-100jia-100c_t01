@@ -177,7 +177,7 @@
 
     .line 134
     .local v9, res:Landroid/content/res/Resources;
-    const v0, 0x108087c
+    const v0, #android:drawable@yi_ic_yellow_pages_holo_light#t
 
     invoke-static {v9, v0}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
 

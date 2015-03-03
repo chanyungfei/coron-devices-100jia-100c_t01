@@ -1494,7 +1494,7 @@
 
     move-result-object v1
 
-    const v2, 0x1110023
+    const v2, #android:bool@config_use_strict_phone_number_comparation#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getBoolean(I)Z
 

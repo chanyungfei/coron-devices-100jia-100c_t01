@@ -307,7 +307,7 @@
 
     iget-object v6, p0, Landroid/net/wifi/WifiApConfigStore;->mContext:Landroid/content/Context;
 
-    const v7, 0x1040411
+    const v7, #android:string@wifi_tether_configure_ssid_default#t
 
     invoke-virtual {v6, v7}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

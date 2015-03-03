@@ -6440,9 +6440,9 @@
 
     const/4 v9, -0x1
 
-    const v8, 0x1040418
+    const v8, #android:string@decline#t
 
-    const v7, 0x104044c
+    const v7, #android:string@dlg_ok#t
 
     .line 3190
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
@@ -6814,7 +6814,7 @@
 
     move-result-object v5
 
-    const/high16 v6, 0x104
+    const/high16 v6, #android:string@cancel#h
 
     invoke-virtual {v3, v6}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -8332,7 +8332,7 @@
 
     move-result-object v3
 
-    const v4, 0x1080457
+    const v4, #android:drawable@ic_notify_wifidisplay#t
 
     invoke-virtual {v3, v4}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 

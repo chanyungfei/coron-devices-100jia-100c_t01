@@ -33,7 +33,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 110
-    const v1, 0x1020284
+    const v1, #android:id@am_pm#t
 
     invoke-virtual {p1, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

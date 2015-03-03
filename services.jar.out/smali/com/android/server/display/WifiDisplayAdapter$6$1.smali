@@ -43,7 +43,7 @@
     .prologue
     const/4 v10, 0x0
 
-    const v9, 0x1040524
+    const v9, #android:string@wifi_display_notification_title#t
 
     const/4 v8, 0x1
 
@@ -182,7 +182,7 @@
     .line 608
     .end local v3           #notification:Landroid/app/Notification;
     :cond_0
-    const v2, 0x1080457
+    const v2, #android:drawable@ic_notify_wifidisplay#t
 
     goto :goto_1
 

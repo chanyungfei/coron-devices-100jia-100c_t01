@@ -273,7 +273,7 @@
     iput-object v1, p0, Lcom/android/server/accessibility/TouchExplorer;->mExitGestureDetectionModeDelayed:Lcom/android/server/accessibility/TouchExplorer$ExitGestureDetectionModeDelayed;
 
     .line 233
-    const/high16 v1, 0x110
+    const/high16 v1, #android:raw@accessibility_gestures#h
 
     invoke-static {p1, v1}, Landroid/gesture/GestureLibraries;->fromRawResource(Landroid/content/Context;I)Landroid/gesture/GestureLibrary;
 

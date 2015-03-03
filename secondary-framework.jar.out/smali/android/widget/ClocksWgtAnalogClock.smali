@@ -159,7 +159,7 @@
     if-nez v2, :cond_0
 
     .line 139
-    const v2, 0x10802ab
+    const v2, #android:drawable@clock_dial#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -181,7 +181,7 @@
     if-nez v2, :cond_1
 
     .line 144
-    const v2, 0x10802ac
+    const v2, #android:drawable@clock_hand_hour#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -205,7 +205,7 @@
     if-nez v2, :cond_2
 
     .line 149
-    const v2, 0x10802ad
+    const v2, #android:drawable@clock_hand_minute#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

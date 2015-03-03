@@ -400,7 +400,7 @@
     if-eq v5, p2, :cond_0
 
     .line 22
-    const v5, 0x1020002
+    const v5, #android:id@content#t
 
     invoke-virtual {p1, v5}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 

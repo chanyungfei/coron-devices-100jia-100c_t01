@@ -109,7 +109,7 @@
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->format:I
 
     .line 349
-    const v1, 0x1030004
+    const v1, #android:style@Animation.Toast#t
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->windowAnimations:I
 

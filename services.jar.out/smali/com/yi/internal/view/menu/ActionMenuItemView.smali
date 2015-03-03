@@ -355,7 +355,7 @@
     invoke-super {p0}, Landroid/widget/LinearLayout;->onFinishInflate()V
 
     .line 81
-    const v0, 0x1020016
+    const v0, #android:id@title#t
 
     invoke-virtual {p0, v0}, Lcom/yi/internal/view/menu/ActionMenuItemView;->findViewById(I)Landroid/view/View;
 
@@ -380,7 +380,7 @@
     invoke-virtual {v0, v2, v2, v2, v1}, Landroid/widget/TextView;->setShadowLayer(FFFI)V
 
     .line 84
-    const v0, 0x1020006
+    const v0, #android:id@icon#t
 
     invoke-virtual {p0, v0}, Lcom/yi/internal/view/menu/ActionMenuItemView;->findViewById(I)Landroid/view/View;
 

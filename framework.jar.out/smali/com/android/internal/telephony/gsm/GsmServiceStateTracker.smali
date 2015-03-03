@@ -9545,7 +9545,7 @@
     .line 2945
     iget-object v7, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->mNotification:Landroid/app/Notification;
 
-    const v8, 0x108008a
+    const v8, #android:drawable@stat_sys_warning#t
 
     iput v8, v7, Landroid/app/Notification;->icon:I
 
@@ -18124,7 +18124,7 @@
 
     move-result-object v18
 
-    const v19, 0x10402eb
+    const v19, #android:string@lockscreen_carrier_default#t
 
     invoke-virtual/range {v18 .. v19}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 

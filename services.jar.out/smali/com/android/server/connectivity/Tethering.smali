@@ -507,7 +507,7 @@
 
     move-result-object v2
 
-    const v3, 0x107001d
+    const v3, #android:array@config_tether_dhcp_range#t
 
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -2613,7 +2613,7 @@
     if-eqz v11, :cond_9
 
     .line 605
-    const v14, 0x10806bb
+    const v14, #android:drawable@stat_sys_tether_usb#t
 
     const-string v15, "usb"
 
@@ -2635,7 +2635,7 @@
 
     .line 615
     :cond_8
-    const v14, 0x10806ba
+    const v14, #android:drawable@stat_sys_tether_general#t
 
     const-string v15, "comb"
 
@@ -2664,7 +2664,7 @@
 
     .line 617
     :cond_a
-    const v14, 0x10806bb
+    const v14, #android:drawable@stat_sys_tether_usb#t
 
     const-string v15, "usb"
 
@@ -2682,7 +2682,7 @@
     if-eqz v3, :cond_c
 
     .line 621
-    const v14, 0x10806ba
+    const v14, #android:drawable@stat_sys_tether_general#t
 
     const-string v15, "comb"
 
@@ -2694,7 +2694,7 @@
 
     .line 623
     :cond_c
-    const v14, 0x10806bc
+    const v14, #android:drawable@stat_sys_tether_wifi#t
 
     const-string v15, "wifi"
 
@@ -2709,7 +2709,7 @@
     if-eqz v3, :cond_e
 
     .line 626
-    const v14, 0x10806b9
+    const v14, #android:drawable@stat_sys_tether_bluetooth#t
 
     const-string v15, "bt"
 
@@ -2935,7 +2935,7 @@
 
     .line 750
     .local v20, r:Landroid/content/res/Resources;
-    const v1, 0x104049a
+    const v1, #android:string@tethered_notification_title#t
 
     move-object/from16 v0, v20
 
@@ -3255,7 +3255,7 @@
     .end local v8           #builder:Landroid/app/Notification$Builder;
     .end local v12           #enable:Z
     :cond_a
-    const v1, 0x104049b
+    const v1, #android:string@tethered_notification_message#t
 
     move-object/from16 v0, v20
 
@@ -3438,7 +3438,7 @@
 
     .line 690
     .local v13, title:Ljava/lang/CharSequence;
-    const v1, 0x104049b
+    const v1, #android:string@tethered_notification_message#t
 
     invoke-virtual {v12, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
@@ -3947,7 +3947,7 @@
 
     .line 851
     .local v17, r:Landroid/content/res/Resources;
-    const v21, 0x104049a
+    const v21, #android:string@tethered_notification_title#t
 
     move-object/from16 v0, v17
 
@@ -7223,7 +7223,7 @@
 
     move-result-object v9
 
-    const v10, 0x1070019
+    const v10, #android:array@config_tether_usb_regexs#t
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -7237,7 +7237,7 @@
 
     move-result-object v9
 
-    const v10, 0x107001a
+    const v10, #android:array@config_tether_wifi_regexs#t
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -7251,7 +7251,7 @@
 
     move-result-object v9
 
-    const v10, 0x107001c
+    const v10, #android:array@config_tether_bluetooth_regexs#t
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getStringArray(I)[Ljava/lang/String;
 
@@ -7265,7 +7265,7 @@
 
     move-result-object v9
 
-    const v10, 0x107001f
+    const v10, #android:array@config_tether_upstream_types#t
 
     invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getIntArray(I)[I
 

@@ -295,7 +295,7 @@
     .line 91
     iget-object v0, p0, Lyi/app/BaiduAppTitle;->mActivity:Landroid/app/Activity;
 
-    const v1, 0x1020016
+    const v1, #android:id@title#t
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
@@ -928,7 +928,7 @@
     :cond_1
     iget-object v4, p0, Lyi/app/BaiduAppTitle;->mActivity:Landroid/app/Activity;
 
-    const v5, 0x1020016
+    const v5, #android:id@title#t
 
     invoke-virtual {v4, v5}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 

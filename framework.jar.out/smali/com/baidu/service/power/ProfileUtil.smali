@@ -914,7 +914,7 @@
 
     move-result-object v3
 
-    const v5, 0x10e0027
+    const v5, #android:integer@config_screenBrightnessDim#t
 
     invoke-virtual {v3, v5}, Landroid/content/res/Resources;->getInteger(I)I
 

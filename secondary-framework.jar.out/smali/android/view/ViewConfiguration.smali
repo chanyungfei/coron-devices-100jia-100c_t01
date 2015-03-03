@@ -445,7 +445,7 @@
     .end local v9           #wm:Landroid/view/IWindowManager;
     :cond_0
     :goto_2
-    const v10, 0x1110013
+    const v10, #android:bool@config_ui_enableFadingMarquee#t
 
     invoke-virtual {v5, v10}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -454,7 +454,7 @@
     iput-boolean v10, p0, Landroid/view/ViewConfiguration;->mFadingMarqueeEnabled:Z
 
     .line 305
-    const v10, 0x1050008
+    const v10, #android:dimen@config_viewConfigurationTouchSlop#t
 
     invoke-virtual {v5, v10}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

@@ -137,7 +137,7 @@
 
     move-result-object v0
 
-    const v1, 0x1080617
+    const v1, #android:drawable@rice_text_select_magnifier#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 

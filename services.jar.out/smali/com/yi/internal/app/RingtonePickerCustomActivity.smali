@@ -1258,7 +1258,7 @@
     iput-object v0, p0, Lcom/yi/internal/app/RingtonePickerCustomActivity;->mVoiceList:Landroid/widget/ListView;
 
     .line 167
-    const v0, 0x1020004
+    const v0, #android:id@empty#t
 
     invoke-virtual {p0, v0}, Lcom/yi/internal/app/RingtonePickerCustomActivity;->findViewById(I)Landroid/view/View;
 
@@ -1275,7 +1275,7 @@
     .line 169
     new-instance v0, Landroid/widget/SimpleCursorAdapter;
 
-    const v2, 0x1090012
+    const v2, #android:layout@select_dialog_singlechoice#t
 
     iget-object v3, p0, Lcom/yi/internal/app/RingtonePickerCustomActivity;->mCursor:Landroid/database/Cursor;
 
@@ -1295,7 +1295,7 @@
 
     const/4 v1, 0x0
 
-    const v12, 0x1020014
+    const v12, #android:id@text1#t
 
     aput v12, v5, v1
 

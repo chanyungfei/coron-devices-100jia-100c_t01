@@ -209,7 +209,7 @@
 
     move-result-object v1
 
-    const v2, 0x1090012
+    const v2, #android:layout@select_dialog_singlechoice#t
 
     const/4 v3, 0x0
 
@@ -1013,7 +1013,7 @@
     .line 175
     new-instance v0, Landroid/widget/SimpleCursorAdapter;
 
-    const v2, 0x1090012
+    const v2, #android:layout@select_dialog_singlechoice#t
 
     iget-object v3, p0, Lcom/yi/internal/app/RingtonePickerSystemActivity;->mCursor:Landroid/database/Cursor;
 
@@ -1025,7 +1025,7 @@
 
     new-array v5, v12, [I
 
-    const v1, 0x1020014
+    const v1, #android:id@text1#t
 
     aput v1, v5, v13
 

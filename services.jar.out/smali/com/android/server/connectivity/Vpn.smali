@@ -440,7 +440,7 @@
     .line 452
     const/4 v2, 0x0
 
-    const v3, 0x108076a
+    const v3, #android:drawable@vpn_connected#t
 
     :try_start_0
     sget-object v4, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
@@ -493,7 +493,7 @@
     .parameter "icon"
 
     .prologue
-    const v10, 0x108076a
+    const v10, #android:drawable@vpn_connected#t
 
     const/4 v9, 0x1
 
@@ -539,7 +539,7 @@
 
     iget-object v4, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
 
-    const v5, 0x104048c
+    const v5, #android:string@vpn_title#t
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -554,7 +554,7 @@
 
     iget-object v4, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
 
-    const v5, 0x104048e
+    const v5, #android:string@vpn_text#t
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -627,7 +627,7 @@
     :cond_2
     iget-object v4, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
 
-    const v5, 0x104048d
+    const v5, #android:string@vpn_title_long#t
 
     new-array v6, v9, [Ljava/lang/Object;
 
@@ -644,7 +644,7 @@
     :cond_3
     iget-object v4, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
 
-    const v5, 0x104048f
+    const v5, #android:string@vpn_text_long#t
 
     new-array v6, v9, [Ljava/lang/Object;
 
@@ -1058,7 +1058,7 @@
 
     move-result-object v19
 
-    const v20, 0x1050005
+    const v20, #android:dimen@notification_large_icon_width#t
 
     invoke-virtual/range {v19 .. v20}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1076,7 +1076,7 @@
 
     move-result-object v19
 
-    const v20, 0x1050006
+    const v20, #android:dimen@notification_large_icon_height#t
 
     invoke-virtual/range {v19 .. v20}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

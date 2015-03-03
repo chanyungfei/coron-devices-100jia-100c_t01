@@ -146,7 +146,7 @@
 
     new-array v0, v0, [I
 
-    const v1, 0x10100a7
+    const v1, #android:attr@state_pressed#t
 
     aput v1, v0, v2
 
@@ -172,12 +172,12 @@
 
     :array_0
     .array-data 0x4
-        0x59t 0x3t 0x1t 0x1t
-        0x36t 0x3t 0x1t 0x1t
-        0x39t 0x3t 0x1t 0x1t
-        0x37t 0x3t 0x1t 0x1t
-        0x38t 0x3t 0x1t 0x1t
-        0x3at 0x3t 0x1t 0x1t
+        #android:attr@fastScrollTextColor#a
+        #android:attr@fastScrollThumbDrawable#a
+        #android:attr@fastScrollTrackDrawable#a
+        #android:attr@fastScrollPreviewBackgroundLeft#a
+        #android:attr@fastScrollPreviewBackgroundRight#a
+        #android:attr@fastScrollOverlayPosition#a
     .end array-data
 .end method
 
@@ -769,7 +769,7 @@
 
     move-result-object v5
 
-    const v6, 0x1050015
+    const v6, #android:dimen@fastscroll_overlay_size#t
 
     invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1152,7 +1152,7 @@
 
     move-result-object v0
 
-    const v1, 0x1050016
+    const v1, #android:dimen@fastscroll_thumb_width#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
@@ -1165,7 +1165,7 @@
 
     move-result-object v0
 
-    const v1, 0x1050017
+    const v1, #android:dimen@fastscroll_thumb_height#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 

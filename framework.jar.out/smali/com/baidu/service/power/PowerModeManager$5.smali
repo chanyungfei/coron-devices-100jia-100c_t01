@@ -171,7 +171,7 @@
 
     move-result-object v6
 
-    const v7, 0x10f000c
+    const v7, #android:xml@policys#t
 
     invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
     :try_end_2

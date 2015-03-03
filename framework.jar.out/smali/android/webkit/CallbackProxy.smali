@@ -191,7 +191,7 @@
     .line 1042
     iget-object v0, p0, Landroid/webkit/CallbackProxy;->mContext:Landroid/content/Context;
 
-    const v1, 0x1040347
+    const v1, #android:string@js_dialog_title_default#t
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -2438,7 +2438,7 @@
 
     move-result-object v4
 
-    const v10, 0x104000a
+    const v10, #android:string@ok#t
 
     new-instance v11, Landroid/webkit/CallbackProxy$2;
 
@@ -2597,7 +2597,7 @@
 
     move-result-object v4
 
-    const v10, 0x104000a
+    const v10, #android:string@ok#t
 
     new-instance v11, Landroid/webkit/CallbackProxy$5;
 
@@ -2611,7 +2611,7 @@
 
     move-result-object v4
 
-    const/high16 v10, 0x104
+    const/high16 v10, #android:string@cancel#h
 
     new-instance v11, Landroid/webkit/CallbackProxy$4;
 
@@ -2761,7 +2761,7 @@
 
     .line 753
     .local v43, factory:Landroid/view/LayoutInflater;
-    const v4, 0x1090065
+    const v4, #android:layout@js_prompt#t
 
     const/4 v10, 0x0
 
@@ -2773,7 +2773,7 @@
 
     .line 755
     .local v72, view:Landroid/view/View;
-    const v4, 0x10202f2
+    const v4, #android:id@value#t
 
     move-object/from16 v0, v72
 
@@ -2792,7 +2792,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     .line 758
-    const v4, 0x102000b
+    const v4, #android:id@message#t
 
     move-object/from16 v0, v72
 
@@ -2838,7 +2838,7 @@
 
     move-result-object v4
 
-    const v10, 0x104000a
+    const v10, #android:string@ok#t
 
     new-instance v11, Landroid/webkit/CallbackProxy$8;
 
@@ -2854,7 +2854,7 @@
 
     move-result-object v4
 
-    const/high16 v10, 0x104
+    const/high16 v10, #android:string@cancel#h
 
     new-instance v11, Landroid/webkit/CallbackProxy$7;
 
@@ -2990,7 +2990,7 @@
 
     iget-object v4, v0, Landroid/webkit/CallbackProxy;->mContext:Landroid/content/Context;
 
-    const v10, 0x1040348
+    const v10, #android:string@js_dialog_before_unload#t
 
     const/4 v11, 0x1
 
@@ -3027,7 +3027,7 @@
 
     move-result-object v4
 
-    const v10, 0x104000a
+    const v10, #android:string@ok#t
 
     new-instance v11, Landroid/webkit/CallbackProxy$11;
 
@@ -3041,7 +3041,7 @@
 
     move-result-object v4
 
-    const/high16 v10, 0x104
+    const/high16 v10, #android:string@cancel#h
 
     new-instance v11, Landroid/webkit/CallbackProxy$10;
 

@@ -3113,7 +3113,7 @@
 
     move-result-object v21
 
-    const v22, 0x1110039
+    const v22, #android:bool@config_mms_content_disposition_support#t
 
     invoke-virtual/range {v21 .. v22}, Landroid/content/res/Resources;->getBoolean(I)Z
 

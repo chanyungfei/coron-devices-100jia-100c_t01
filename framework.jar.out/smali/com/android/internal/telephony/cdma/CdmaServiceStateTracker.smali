@@ -10876,7 +10876,7 @@
 
     move-result-object v25
 
-    const v26, 0x10400bd
+    const v26, #android:string@roamingTextSearching#t
 
     invoke-virtual/range {v25 .. v26}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
 
@@ -12371,7 +12371,7 @@
 
     move-result-object v8
 
-    const v9, 0x10402eb
+    const v9, #android:string@lockscreen_carrier_default#t
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -12492,7 +12492,7 @@
 
     move-result-object v8
 
-    const v9, 0x1040305
+    const v9, #android:string@emergency_calls_only#t
 
     invoke-virtual {v8, v9}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
