@@ -2799,7 +2799,7 @@
     invoke-virtual {v5}, Ljava/util/HashMap;->clear()V
 
     .line 781
-    invoke-direct {p0}, Landroid/view/VolumePanel;->createSliders()V
+    #invoke-direct {p0}, Landroid/view/VolumePanel;->createSliders()V
 
     .line 782
     iget v5, p0, Landroid/view/VolumePanel;->mActiveStreamType:I
