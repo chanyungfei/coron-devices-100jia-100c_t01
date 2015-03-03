@@ -31,23 +31,23 @@
     .parameter "asset"
 
     .prologue
-    .line 993
+    .line 558
     iput-object p1, p0, Landroid/content/res/AssetManager$AssetInputStream;->this$0:Landroid/content/res/AssetManager;
 
     invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
 
-    .line 994
+    .line 559
     iput p2, p0, Landroid/content/res/AssetManager$AssetInputStream;->mAsset:I
 
-    .line 995
+    .line 560
     #calls: Landroid/content/res/AssetManager;->getAssetLength(I)J
-    invoke-static {p1, p2}, Landroid/content/res/AssetManager;->access$400(Landroid/content/res/AssetManager;I)J
+    invoke-static {p1, p2}, Landroid/content/res/AssetManager;->access$100(Landroid/content/res/AssetManager;I)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/content/res/AssetManager$AssetInputStream;->mLength:J
 
-    .line 996
+    .line 561
     return-void
 .end method
 
@@ -58,21 +58,10 @@
     .parameter "x2"
 
     .prologue
-    .line 988
+    .line 553
     invoke-direct {p0, p1, p2}, Landroid/content/res/AssetManager$AssetInputStream;-><init>(Landroid/content/res/AssetManager;I)V
 
     return-void
-.end method
-
-.method static synthetic access$100(Landroid/content/res/AssetManager$AssetInputStream;)J
-    .locals 2
-    .parameter "x0"
-
-    .prologue
-    .line 988
-    iget-wide v0, p0, Landroid/content/res/AssetManager$AssetInputStream;->mLength:J
-
-    return-wide v0
 .end method
 
 
@@ -86,17 +75,17 @@
     .end annotation
 
     .prologue
-    .line 1004
+    .line 569
     iget-object v2, p0, Landroid/content/res/AssetManager$AssetInputStream;->this$0:Landroid/content/res/AssetManager;
 
     iget v3, p0, Landroid/content/res/AssetManager$AssetInputStream;->mAsset:I
 
     #calls: Landroid/content/res/AssetManager;->getAssetRemainingLength(I)J
-    invoke-static {v2, v3}, Landroid/content/res/AssetManager;->access$600(Landroid/content/res/AssetManager;I)J
+    invoke-static {v2, v3}, Landroid/content/res/AssetManager;->access$300(Landroid/content/res/AssetManager;I)J
 
     move-result-wide v0
 
-    .line 1005
+    .line 570
     .local v0, len:J
     const-wide/32 v2, 0x7fffffff
 
@@ -124,31 +113,31 @@
     .end annotation
 
     .prologue
-    .line 1008
+    .line 573
     iget-object v1, p0, Landroid/content/res/AssetManager$AssetInputStream;->this$0:Landroid/content/res/AssetManager;
 
     monitor-enter v1
 
-    .line 1009
+    .line 574
     :try_start_0
     iget v0, p0, Landroid/content/res/AssetManager$AssetInputStream;->mAsset:I
 
     if-eqz v0, :cond_0
 
-    .line 1010
+    .line 575
     iget-object v0, p0, Landroid/content/res/AssetManager$AssetInputStream;->this$0:Landroid/content/res/AssetManager;
 
     iget v2, p0, Landroid/content/res/AssetManager$AssetInputStream;->mAsset:I
 
     #calls: Landroid/content/res/AssetManager;->destroyAsset(I)V
-    invoke-static {v0, v2}, Landroid/content/res/AssetManager;->access$700(Landroid/content/res/AssetManager;I)V
+    invoke-static {v0, v2}, Landroid/content/res/AssetManager;->access$400(Landroid/content/res/AssetManager;I)V
 
-    .line 1011
+    .line 576
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/content/res/AssetManager$AssetInputStream;->mAsset:I
 
-    .line 1012
+    .line 577
     iget-object v0, p0, Landroid/content/res/AssetManager$AssetInputStream;->this$0:Landroid/content/res/AssetManager;
 
     invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
@@ -156,16 +145,16 @@
     move-result v2
 
     #calls: Landroid/content/res/AssetManager;->decRefsLocked(I)V
-    invoke-static {v0, v2}, Landroid/content/res/AssetManager;->access$800(Landroid/content/res/AssetManager;I)V
+    invoke-static {v0, v2}, Landroid/content/res/AssetManager;->access$500(Landroid/content/res/AssetManager;I)V
 
-    .line 1014
+    .line 579
     :cond_0
     monitor-exit v1
 
-    .line 1015
+    .line 580
     return-void
 
-    .line 1014
+    .line 579
     :catchall_0
     move-exception v0
 
@@ -185,10 +174,10 @@
     .end annotation
 
     .prologue
-    .line 1041
+    .line 606
     invoke-virtual {p0}, Landroid/content/res/AssetManager$AssetInputStream;->close()V
 
-    .line 1042
+    .line 607
     return-void
 .end method
 
@@ -196,7 +185,7 @@
     .locals 1
 
     .prologue
-    .line 990
+    .line 555
     iget v0, p0, Landroid/content/res/AssetManager$AssetInputStream;->mAsset:I
 
     return v0
@@ -207,7 +196,7 @@
     .parameter "readlimit"
 
     .prologue
-    .line 1017
+    .line 582
     iget-object v0, p0, Landroid/content/res/AssetManager$AssetInputStream;->this$0:Landroid/content/res/AssetManager;
 
     iget v1, p0, Landroid/content/res/AssetManager$AssetInputStream;->mAsset:I
@@ -217,13 +206,13 @@
     const/4 v4, 0x0
 
     #calls: Landroid/content/res/AssetManager;->seekAsset(IJI)J
-    invoke-static {v0, v1, v2, v3, v4}, Landroid/content/res/AssetManager;->access$900(Landroid/content/res/AssetManager;IJI)J
+    invoke-static {v0, v1, v2, v3, v4}, Landroid/content/res/AssetManager;->access$600(Landroid/content/res/AssetManager;IJI)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Landroid/content/res/AssetManager$AssetInputStream;->mMarkPos:J
 
-    .line 1018
+    .line 583
     return-void
 .end method
 
@@ -231,7 +220,7 @@
     .locals 1
 
     .prologue
-    .line 1001
+    .line 566
     const/4 v0, 0x1
 
     return v0
@@ -246,13 +235,13 @@
     .end annotation
 
     .prologue
-    .line 998
+    .line 563
     iget-object v0, p0, Landroid/content/res/AssetManager$AssetInputStream;->this$0:Landroid/content/res/AssetManager;
 
     iget v1, p0, Landroid/content/res/AssetManager$AssetInputStream;->mAsset:I
 
     #calls: Landroid/content/res/AssetManager;->readAssetChar(I)I
-    invoke-static {v0, v1}, Landroid/content/res/AssetManager;->access$500(Landroid/content/res/AssetManager;I)I
+    invoke-static {v0, v1}, Landroid/content/res/AssetManager;->access$200(Landroid/content/res/AssetManager;I)I
 
     move-result v0
 
@@ -269,7 +258,7 @@
     .end annotation
 
     .prologue
-    .line 1023
+    .line 588
     iget-object v0, p0, Landroid/content/res/AssetManager$AssetInputStream;->this$0:Landroid/content/res/AssetManager;
 
     iget v1, p0, Landroid/content/res/AssetManager$AssetInputStream;->mAsset:I
@@ -279,7 +268,7 @@
     array-length v3, p1
 
     #calls: Landroid/content/res/AssetManager;->readAsset(I[BII)I
-    invoke-static {v0, v1, p1, v2, v3}, Landroid/content/res/AssetManager;->access$1000(Landroid/content/res/AssetManager;I[BII)I
+    invoke-static {v0, v1, p1, v2, v3}, Landroid/content/res/AssetManager;->access$700(Landroid/content/res/AssetManager;I[BII)I
 
     move-result v0
 
@@ -298,13 +287,13 @@
     .end annotation
 
     .prologue
-    .line 1026
+    .line 591
     iget-object v0, p0, Landroid/content/res/AssetManager$AssetInputStream;->this$0:Landroid/content/res/AssetManager;
 
     iget v1, p0, Landroid/content/res/AssetManager$AssetInputStream;->mAsset:I
 
     #calls: Landroid/content/res/AssetManager;->readAsset(I[BII)I
-    invoke-static {v0, v1, p1, p2, p3}, Landroid/content/res/AssetManager;->access$1000(Landroid/content/res/AssetManager;I[BII)I
+    invoke-static {v0, v1, p1, p2, p3}, Landroid/content/res/AssetManager;->access$700(Landroid/content/res/AssetManager;I[BII)I
 
     move-result v0
 
@@ -320,7 +309,7 @@
     .end annotation
 
     .prologue
-    .line 1020
+    .line 585
     iget-object v0, p0, Landroid/content/res/AssetManager$AssetInputStream;->this$0:Landroid/content/res/AssetManager;
 
     iget v1, p0, Landroid/content/res/AssetManager$AssetInputStream;->mAsset:I
@@ -330,9 +319,9 @@
     const/4 v4, -0x1
 
     #calls: Landroid/content/res/AssetManager;->seekAsset(IJI)J
-    invoke-static {v0, v1, v2, v3, v4}, Landroid/content/res/AssetManager;->access$900(Landroid/content/res/AssetManager;IJI)J
+    invoke-static {v0, v1, v2, v3, v4}, Landroid/content/res/AssetManager;->access$600(Landroid/content/res/AssetManager;IJI)J
 
-    .line 1021
+    .line 586
     return-void
 .end method
 
@@ -350,17 +339,17 @@
 
     const/4 v6, 0x0
 
-    .line 1029
+    .line 594
     iget-object v2, p0, Landroid/content/res/AssetManager$AssetInputStream;->this$0:Landroid/content/res/AssetManager;
 
     iget v3, p0, Landroid/content/res/AssetManager$AssetInputStream;->mAsset:I
 
     #calls: Landroid/content/res/AssetManager;->seekAsset(IJI)J
-    invoke-static {v2, v3, v7, v8, v6}, Landroid/content/res/AssetManager;->access$900(Landroid/content/res/AssetManager;IJI)J
+    invoke-static {v2, v3, v7, v8, v6}, Landroid/content/res/AssetManager;->access$600(Landroid/content/res/AssetManager;IJI)J
 
     move-result-wide v0
 
-    .line 1030
+    .line 595
     .local v0, pos:J
     add-long v2, v0, p1
 
@@ -370,26 +359,26 @@
 
     if-lez v2, :cond_0
 
-    .line 1031
+    .line 596
     iget-wide v2, p0, Landroid/content/res/AssetManager$AssetInputStream;->mLength:J
 
     sub-long p1, v2, v0
 
-    .line 1033
+    .line 598
     :cond_0
     cmp-long v2, p1, v7
 
     if-lez v2, :cond_1
 
-    .line 1034
+    .line 599
     iget-object v2, p0, Landroid/content/res/AssetManager$AssetInputStream;->this$0:Landroid/content/res/AssetManager;
 
     iget v3, p0, Landroid/content/res/AssetManager$AssetInputStream;->mAsset:I
 
     #calls: Landroid/content/res/AssetManager;->seekAsset(IJI)J
-    invoke-static {v2, v3, p1, p2, v6}, Landroid/content/res/AssetManager;->access$900(Landroid/content/res/AssetManager;IJI)J
+    invoke-static {v2, v3, p1, p2, v6}, Landroid/content/res/AssetManager;->access$600(Landroid/content/res/AssetManager;IJI)J
 
-    .line 1036
+    .line 601
     :cond_1
     return-wide p1
 .end method
