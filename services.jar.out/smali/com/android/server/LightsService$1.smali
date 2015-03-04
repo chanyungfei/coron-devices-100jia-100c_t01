@@ -96,7 +96,7 @@
     iget-object v2, p0, Lcom/android/server/LightsService$1;->this$0:Lcom/android/server/LightsService;
 
     #getter for: Lcom/android/server/LightsService;->mContext:Landroid/content/Context;
-    invoke-static {v2}, Lcom/android/server/LightsService;->access$100(Lcom/android/server/LightsService;)Landroid/content/Context;
+    invoke-static {v2}, Lcom/android/server/LightsService;->access$000(Lcom/android/server/LightsService;)Landroid/content/Context;
 
     move-result-object v2
 
@@ -111,7 +111,7 @@
     iget-object v2, p0, Lcom/android/server/LightsService$1;->this$0:Lcom/android/server/LightsService;
 
     #getter for: Lcom/android/server/LightsService;->mContext:Landroid/content/Context;
-    invoke-static {v2}, Lcom/android/server/LightsService;->access$100(Lcom/android/server/LightsService;)Landroid/content/Context;
+    invoke-static {v2}, Lcom/android/server/LightsService;->access$000(Lcom/android/server/LightsService;)Landroid/content/Context;
 
     move-result-object v2
 
@@ -168,7 +168,7 @@
     aput-byte v3, v0, v2
 
     .line 175
-    invoke-virtual {v1, v0}, Ljava/io/OutputStream;->write([B)V
+    invoke-virtual {v1, v0}, Ljava/io/FileOutputStream;->write([B)V
 
     .line 176
     invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V

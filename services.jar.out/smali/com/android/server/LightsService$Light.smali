@@ -74,7 +74,7 @@
 .end method
 
 .method private setLightLocked(IIIII)V
-    .locals 8
+    .locals 7
     .parameter "color"
     .parameter "mode"
     .parameter "onMS"
@@ -82,66 +82,25 @@
     .parameter "brightnessMode"
 
     .prologue
-    const/4 v7, 0x0
-
-    .line 118
-    iget-object v0, p0, Lcom/android/server/LightsService$Light;->this$0:Lcom/android/server/LightsService;
-
-    #getter for: Lcom/android/server/LightsService;->mContext:Landroid/content/Context;
-    invoke-static {v0}, Lcom/android/server/LightsService;->access$100(Lcom/android/server/LightsService;)Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    const-string v1, "button_light_off"
-
-    invoke-static {v0, v1, v7}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v7, 0x1
-
-    .line 121
-    .local v7, value:Z
-    :cond_0
-    iget v0, p0, Lcom/android/server/LightsService$Light;->mId:I
-
-    const/4 v1, 0x2
-
-    if-ne v0, v1, :cond_2
-
-    if-eqz v7, :cond_2
-
-    .line 134
-    :cond_1
-    :goto_0
-    return-void
-
-    .line 125
-    :cond_2
+    .line 136
     iget v0, p0, Lcom/android/server/LightsService$Light;->mColor:I
 
-    if-ne p1, v0, :cond_3
+    if-ne p1, v0, :cond_0
 
     iget v0, p0, Lcom/android/server/LightsService$Light;->mMode:I
 
-    if-ne p2, v0, :cond_3
+    if-ne p2, v0, :cond_0
 
     iget v0, p0, Lcom/android/server/LightsService$Light;->mOnMS:I
 
-    if-ne p3, v0, :cond_3
+    if-ne p3, v0, :cond_0
 
     iget v0, p0, Lcom/android/server/LightsService$Light;->mOffMS:I
 
     if-eq p4, v0, :cond_1
 
     .line 128
-    :cond_3
+    :cond_0
     iput p1, p0, Lcom/android/server/LightsService$Light;->mColor:I
 
     .line 129
@@ -176,7 +135,8 @@
     #calls: Lcom/android/server/LightsService;->setLight_native(IIIIIII)V
     invoke-static/range {v0 .. v6}, Lcom/android/server/LightsService;->access$300(IIIIIII)V
 
-    goto :goto_0
+    :cond_1
+    return-void
 .end method
 
 .method private stopFlashing()V
@@ -274,14 +234,14 @@
     iget-object v0, p0, Lcom/android/server/LightsService$Light;->this$0:Lcom/android/server/LightsService;
 
     #getter for: Lcom/android/server/LightsService;->mH:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/android/server/LightsService;->access$000(Lcom/android/server/LightsService;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/android/server/LightsService;->access$100(Lcom/android/server/LightsService;)Landroid/os/Handler;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/server/LightsService$Light;->this$0:Lcom/android/server/LightsService;
 
     #getter for: Lcom/android/server/LightsService;->mH:Landroid/os/Handler;
-    invoke-static {v1}, Lcom/android/server/LightsService;->access$000(Lcom/android/server/LightsService;)Landroid/os/Handler;
+    invoke-static {v1}, Lcom/android/server/LightsService;->access$100(Lcom/android/server/LightsService;)Landroid/os/Handler;
 
     move-result-object v1
 
@@ -320,7 +280,7 @@
     .prologue
     const/4 v0, 0x0
 
-    invoke-virtual {p0, p1, v0}, Lcom/android/server/LightsService$Light;->setBrightnessBaidu(II)V
+    invoke-direct {p0, p1, v0}, Lcom/android/server/LightsService$Light;->setBrightnessBaidu(II)V
 
     return-void
 .end method
@@ -507,7 +467,7 @@
     throw v0
 .end method
 
-.method protected setBrightnessBaidu(II)V
+.method private setBrightnessBaidu(II)V
     .locals 5
     .parameter "brightness"
     .parameter "brightnessMode"
@@ -524,7 +484,7 @@
     iget-object v2, p0, Lcom/android/server/LightsService$Light;->this$0:Lcom/android/server/LightsService;
 
     #getter for: Lcom/android/server/LightsService;->mContext:Landroid/content/Context;
-    invoke-static {v2}, Lcom/android/server/LightsService;->access$100(Lcom/android/server/LightsService;)Landroid/content/Context;
+    invoke-static {v2}, Lcom/android/server/LightsService;->access$000(Lcom/android/server/LightsService;)Landroid/content/Context;
 
     move-result-object v2
 

@@ -132,24 +132,24 @@
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/android/server/LightsService;)Landroid/os/Handler;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 31
-    iget-object v0, p0, Lcom/android/server/LightsService;->mH:Landroid/os/Handler;
-
-    return-object v0
-.end method
-
-.method static synthetic access$100(Lcom/android/server/LightsService;)Landroid/content/Context;
+.method static synthetic access$000(Lcom/android/server/LightsService;)Landroid/content/Context;
     .locals 1
     .parameter "x0"
 
     .prologue
     .line 31
     iget-object v0, p0, Lcom/android/server/LightsService;->mContext:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method static synthetic access$100(Lcom/android/server/LightsService;)Landroid/os/Handler;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 31
+    iget-object v0, p0, Lcom/android/server/LightsService;->mH:Landroid/os/Handler;
 
     return-object v0
 .end method
