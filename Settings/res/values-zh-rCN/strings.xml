@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="profile_choose_app">选择应用</string>
+    <string name="backpad_general_title">背板触控</string>
+    <string name="backpad_enable_general_title">常规</string>
+    <string name="backpad_enable_title">启动背板触控</string>
+    <string name="backpad_enable_summary">点击单独设置各应用的背板开关</string>
+    <string name="backpad_disable_msg">背板触控已关闭</string>
+    <string name="backpad_awake_general_title">唤醒及解锁</string>
+    <string name="backpad_application_general_title">快速启动应用</string>
+    <string name="backpad_camera_general_title">快速启动相机</string>
+    <string name="backpad_awake_title">双击以唤醒屏幕</string>
+    <string name="backpad_unlock_title">唤醒同时解锁</string>
+    <string name="backpad_call_camera_title">三击时唤醒屏幕并启动相机</string>
+    <string name="backpad_call_application_title">双击快速启动应用</string>
+    <string name="backpad_call_application_details">点击设置快速启动的应用</string>
+    <string name="backpad_call_application_details_default">（默认）</string>
     <string name="schedule_power_on_off_settings_title">定时开关机</string>
 </resources>

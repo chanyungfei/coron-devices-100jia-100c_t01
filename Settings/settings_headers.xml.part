@@ -1,3 +1,4 @@
     <header android:icon="@drawable/ic_settings_schpwronoff" android:id="@+id/power_settings" android:title="@string/schedule_power_on_off_settings_title">
         <intent android:action="com.android.settings.SCHEDULE_POWER_ON_OFF_SETTING" />
     </header>
+    <header android:icon="@drawable/ic_settings_backpad" android:id="@id/backpad_settings" android:title="@string/backpad_general_title" android:fragment="com.android.settings.BackPadSettings" />

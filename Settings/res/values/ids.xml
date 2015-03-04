@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <add-resource type="id" name="icon" />
+    
+    <item type="id" name="icon">false</item>
+    <add-resource type="id" name="backpad_icon_pref" />
+    
+    <item type="id" name="backpad_icon_pref">false</item>
+    <add-resource type="id" name="backpad_settings" />
+    
+    <item type="id" name="backpad_settings">false</item>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    <PreferenceCategory android:title="@string/backpad_enable_general_title" android:key="backpad_section">
+        <com.android.settings.BackpadPreference android:title="@string/backpad_enable_title" android:key="backpad_enable" android:summary="@string/backpad_enable_summary" android:fragment="com.baidu.backpad.BackpadAppSettings" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/backpad_awake_general_title" android:key="awake_section">
+        <CheckBoxPreference android:title="@string/backpad_awake_title" android:key="backpad_awake" />
+        <CheckBoxPreference android:title="@string/backpad_unlock_title" android:key="backpad_unlock" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/backpad_camera_general_title" android:key="camera_section">
+        <CheckBoxPreference android:title="@string/backpad_call_camera_title" android:key="backpad_call_camera" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/backpad_application_general_title" android:key="application_section">
+        <CheckBoxPreference android:title="@string/backpad_call_application_title" android:key="backpad_call_application" />
+        <com.android.settings.BackpadDetailsPreference android:key="backpad_call_application_details" android:summary="@string/backpad_call_application_details" />
+    </PreferenceCategory>
+</PreferenceScreen>

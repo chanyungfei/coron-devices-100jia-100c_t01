@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <add-resource type="string" name="profile_choose_app" />
+    <string name="profile_choose_app">Choose application</string>
+    <add-resource type="string" name="backpad_general_title" />
+    <string name="backpad_general_title">Back pad settings</string>
+    <add-resource type="string" name="backpad_enable_general_title" />
+    <string name="backpad_enable_general_title">General</string>
+    <add-resource type="string" name="backpad_enable_title" />
+    <string name="backpad_enable_title">Enable back pad</string>
+    <add-resource type="string" name="backpad_enable_summary" />
+    <string name="backpad_enable_summary">Click to set app is back pad switch</string>
+    <add-resource type="string" name="backpad_disable_msg" />
+    <string name="backpad_disable_msg">The back pad is disabled</string>
+    <add-resource type="string" name="backpad_awake_general_title" />
+    <string name="backpad_awake_general_title">Awake and unlock</string>
+    <add-resource type="string" name="backpad_application_general_title" />
+    <string name="backpad_application_general_title">Quick actions of application</string>
+    <add-resource type="string" name="backpad_camera_general_title" />
+    <string name="backpad_camera_general_title">Quick actions camera</string>
+    <add-resource type="string" name="backpad_awake_title" />
+    <string name="backpad_awake_title">Double click to awake</string>
+    <add-resource type="string" name="backpad_unlock_title" />
+    <string name="backpad_unlock_title">Double click to unlock</string>
+    <add-resource type="string" name="backpad_call_camera_title" />
+    <string name="backpad_call_camera_title">Triple click to unlock and call camera</string>
+    <add-resource type="string" name="backpad_call_application_title" />
+    <string name="backpad_call_application_title">Double click to call an application</string>
+    <add-resource type="string" name="backpad_call_application_details" />
+    <string name="backpad_call_application_details">Click to choose an application</string>
+    <add-resource type="string" name="backpad_call_application_details_default" />
+    <string name="backpad_call_application_details_default">(default)</string>
     <add-resource type="string" name="schedule_power_on_off_settings_title" />
     <string name="schedule_power_on_off_settings_title">Scheduled power on &amp; off</string>
     <add-resource type="id" name="power_settings" />

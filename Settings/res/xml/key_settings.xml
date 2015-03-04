@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/key_settings"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    <PreferenceCategory android:title="@string/key_longpress_title" android:key="category_hardware_key" />
+    <PreferenceCategory android:title="@string/key_navbar_title" android:key="category_key_navbar">
+        <SwitchPreference android:persistent="true" android:title="@string/virtual_key_support_hide" android:key="nav_bar_hide_toggle" />
+        <PreferenceScreen android:title="@string/nav_bar_custom_title" android:key="nav_bar_custom" android:fragment="com.baidu.key.NavBarCustomSettings" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/key_other_title" android:key="category_key_other" />
+    <SwitchPreference android:title="@string/disable_power_menu_when_lock" android:key="disable_power_menu_when_lock" android:summary="@string/disable_power_menu_when_lock_summary" />
+    <SwitchPreference android:title="@string/volume_revoke_title" android:key="volume_revoke" />
+    <SwitchPreference android:title="@string/prevent_wakeup_title" android:key="prevent_wakeup" />
+    <SwitchPreference android:title="@string/title_button_light_switch" android:key="button_light_switch" />
+    <Preference android:title="屏幕助手" android:key="mipop">
+            <intent android:targetPackage="com.android.mipop" android:action="android.intent.action.MAIN" android:targetClass="com.android.mipop.MIPopActivity" />
+        </Preference>
+</PreferenceScreen>
