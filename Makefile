@@ -54,7 +54,7 @@ vendor_remove_dirs := etc/channel_files etc/voicecommand app
 # The default value is Bluetooth.
 # You can configure the apk name in the vendor/system/app or vendor/system/pri-app directory.
 #-----------------------------------------------------------------------------
-vendor_saved_apps := Bluetooth Stk1 StkSelection BaiduFM 
+vendor_saved_apps := Bluetooth Stk1 StkSelection BaiduFM
 
 ##############################################################################
 # The value decides which vendor apk you want to modify.
@@ -63,7 +63,7 @@ vendor_saved_apps := Bluetooth Stk1 StkSelection BaiduFM
 # You need ro decode FMRadio.apk to the project directory(use apktool d FMRadio.apk) first,
 # and then you can make it by:   make FMRadio
 #-----------------------------------------------------------------------------
-#vendor_modify_apps := FMRadio
+vendor_modify_apps := SchedulePowerOnOff
 
 ##############################################################################
 # The value decides which vendor jar you want to modify.
