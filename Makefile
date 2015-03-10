@@ -154,6 +154,10 @@ override_property += \
     romjd.rom.version=baidurom67 \
     romjd.rom.version.code=1 \
     
+override_property += \
+    romzj.rom.id=f8d97a9b-7cb0-b293-cc2d-36ef141bdcfa \
+    romzj.rom.version=baidurom67 \
+    romzj.rom.version.code=1 \
 
 ##############################################################################
 # The value decides which property you will remove from the build.prop.
