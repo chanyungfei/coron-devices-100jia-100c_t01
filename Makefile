@@ -93,7 +93,7 @@ vendor_modify_jars := framework mediatek-framework mediatek-telephony-common pm 
 # The default value is nothing.
 # You can configure the baidu system apk name in the value.
 #-----------------------------------------------------------------------------
-baidu_remove_apps := BaiduMap BaiduUpdate iReader GameCenter
+baidu_remove_apps := BaiduMap BaiduUpdate iReader GameCenter BaiduAppsearch BaiduBrowser SearchBox
 
 ##############################################################################
 # The value decides which apk you want to modify, when the apk is based on the baidu system apk.
